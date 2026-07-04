@@ -1,20 +1,23 @@
-import { MeshGradient } from "@paper-design/shaders-react"
+import { memo } from "react"
+import { StaticMeshGradient } from "@paper-design/shaders-react"
 
-export default function PageBackground() {
+const GRADIENT_COLORS = ["#050506", "#0C0C0E", "#1C1C1E", "#3A3A3C", "#8E8E93"]
+
+function PageBackground() {
   return (
     <div
       className="fixed inset-0 pointer-events-none"
       style={{ zIndex: 0 }}
       aria-hidden="true"
     >
-      <MeshGradient
+      <StaticMeshGradient
         className="w-full h-full"
         width="100%"
         height="100%"
-        colors={["#050506", "#0C0C0E", "#1C1C1E", "#3A3A3C", "#8E8E93"]}
-        speed={0.3}
-        distortion={0.35}
-        swirl={0.15}
+        colors={GRADIENT_COLORS}
+        waveX={0.35}
+        waveY={0.35}
+        mixing={0.5}
         grainOverlay={0.04}
       />
 
@@ -29,3 +32,5 @@ export default function PageBackground() {
     </div>
   )
 }
+
+export default memo(PageBackground)
