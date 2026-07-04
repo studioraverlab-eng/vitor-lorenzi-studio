@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { MessageCircle, Mail } from 'lucide-react'
 
@@ -23,38 +24,101 @@ function IconLinkedin({ size = 15 }: { size?: number }) {
   )
 }
 
-const socials = [
+type Social = {
+  label: string
+  Icon: React.FC
+  href: string
+  desc: string
+  hoverIconColor: string
+  hoverTextStyle: React.CSSProperties
+}
+
+const socials: Social[] = [
   {
     label: 'WhatsApp',
     Icon: () => <MessageCircle size={15} strokeWidth={1.5} />,
-    href: 'https://wa.me/5500000000000',
+    href: 'https://wa.me/5515991684097',
     desc: 'Resposta rápida',
+    hoverIconColor: '#25D366',
+    hoverTextStyle: { color: '#25D366' },
   },
   {
     label: 'Instagram',
     Icon: () => <IconInstagram size={15} />,
     href: 'https://instagram.com/vitorlorenzi',
     desc: '@vitorlorenzi',
+    hoverIconColor: '#F77737',
+    hoverTextStyle: {
+      background: 'linear-gradient(90deg, #C13584 0%, #E1306C 30%, #FD5949 60%, #FCAF45 100%)',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      backgroundClip: 'text',
+    },
   },
   {
     label: 'LinkedIn',
     Icon: () => <IconLinkedin size={15} />,
     href: 'https://linkedin.com/in/vitorlorenzi',
     desc: 'Conectar',
+    hoverIconColor: '#0A66C2',
+    hoverTextStyle: { color: '#0A66C2' },
   },
   {
     label: 'Email',
     Icon: () => <Mail size={15} strokeWidth={1.5} />,
     href: 'mailto:contato@vitorlorenzi.studio',
     desc: 'contato@vitorlorenzi.studio',
+    hoverIconColor: '#EA4335',
+    hoverTextStyle: { color: '#EA4335' },
   },
 ]
+
+function SocialCard({ s, i }: { s: Social; i: number }) {
+  const [hovered, setHovered] = useState(false)
+
+  return (
+    <motion.a
+      href={s.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      initial={{ opacity: 0, y: 14 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: 0.4 + i * 0.08, ease }}
+      whileHover={{ scale: 1.04, y: -2 }}
+      whileTap={{ scale: 0.97 }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="flex items-center gap-3 px-6 py-3.5
+        bg-white/[0.04] hover:bg-white/[0.06]
+        border border-white/[0.08] hover:border-white/[0.14]
+        rounded-full transition-all duration-300
+        shadow-[0_2px_12px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_24px_rgba(0,0,0,0.4)]"
+    >
+      <span
+        className="transition-colors duration-300"
+        style={{ color: hovered ? s.hoverIconColor : 'rgba(255,255,255,0.35)' }}
+      >
+        <s.Icon />
+      </span>
+      <div className="text-left">
+        <div
+          className="font-inter font-medium text-[13px] leading-tight transition-all duration-300"
+          style={hovered ? s.hoverTextStyle : { color: 'rgba(255,255,255,0.6)' }}
+        >
+          {s.label}
+        </div>
+        <div className="font-mono text-[9px] text-white/22 tracking-[0.08em] mt-0.5 hidden sm:block">
+          {s.desc}
+        </div>
+      </div>
+    </motion.a>
+  )
+}
 
 export default function Contact() {
   return (
     <section id="contato" className="relative min-h-screen flex items-center justify-center overflow-hidden py-40">
-      {/* Transparent — MeshGradient background shows through */}
-
       {/* Background atmosphere */}
       <motion.div
         className="absolute rounded-full pointer-events-none"
@@ -107,8 +171,8 @@ export default function Contact() {
           className="font-syne font-bold text-white/88 leading-[1.04] mb-8"
           style={{ fontSize: 'clamp(2.4rem, 6vw, 5.5rem)' }}
         >
-          Vamos criar algo<br />
-          <span className="text-white/25 italic">impossível de ignorar?</span>
+          Tem um projeto<br />
+          <span className="text-white/25 italic">em mente?</span>
         </motion.h2>
 
         <motion.p
@@ -118,41 +182,13 @@ export default function Contact() {
           transition={{ duration: 0.8, delay: 0.25, ease }}
           className="font-inter font-light text-[1rem] text-white/35 max-w-sm mx-auto leading-[1.8] mb-16"
         >
-          Um projeto começa com uma conversa. Conta o que você tem em mente.
+          Manda uma mensagem e conta o que você precisa. Vamos conversar.
         </motion.p>
 
         {/* Social buttons */}
         <div className="flex flex-wrap items-center justify-center gap-3">
           {socials.map((s, i) => (
-            <motion.a
-              key={s.label}
-              href={s.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 14 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 + i * 0.08, ease }}
-              whileHover={{ scale: 1.04, y: -2 }}
-              whileTap={{ scale: 0.97 }}
-              className="group flex items-center gap-3 px-6 py-3.5
-                bg-white/[0.04] hover:bg-white/[0.08]
-                border border-white/[0.08] hover:border-white/[0.16]
-                rounded-full transition-all duration-300
-                shadow-[0_2px_12px_rgba(0,0,0,0.3)] hover:shadow-[0_4px_24px_rgba(0,0,0,0.4)]"
-            >
-              <span className="text-white/35 group-hover:text-white/65 transition-colors duration-300">
-                <s.Icon />
-              </span>
-              <div className="text-left">
-                <div className="font-inter font-medium text-[13px] text-white/60 group-hover:text-white/88 transition-colors duration-300 leading-tight">
-                  {s.label}
-                </div>
-                <div className="font-mono text-[9px] text-white/22 tracking-[0.08em] mt-0.5 hidden sm:block">
-                  {s.desc}
-                </div>
-              </div>
-            </motion.a>
+            <SocialCard key={s.label} s={s} i={i} />
           ))}
         </div>
 
@@ -162,8 +198,12 @@ export default function Contact() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, delay: 0.8 }}
-          className="mt-20 font-mono text-[10px] tracking-[0.25em] text-white/15 uppercase"
+          className="mt-20 flex items-center justify-center gap-2 font-mono text-[10px] tracking-[0.25em] text-white/20 uppercase"
         >
+          <span className="relative flex h-1.5 w-1.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-40" style={{ backgroundColor: 'rgba(37,211,102,0.7)' }} />
+            <span className="relative inline-flex rounded-full h-1.5 w-1.5" style={{ backgroundColor: 'rgba(37,211,102,0.8)' }} />
+          </span>
           Disponível para novos projetos
         </motion.p>
       </div>

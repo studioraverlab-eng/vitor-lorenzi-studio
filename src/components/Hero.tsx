@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { useCinematicScroll } from '../context/CinematicScroll'
 
@@ -83,9 +82,9 @@ const stagger = {
 
 export default function Hero() {
   const { scrollY } = useScroll()
-  const y = useTransform(scrollY, [0, 600], [0, 100])
-  const opacity = useTransform(scrollY, [0, 350], [1, 0])
-  const { navigateTo } = useCinematicScroll()
+  const y = useTransform(scrollY, [0, 700], [0, 70])
+  const opacity = useTransform(scrollY, [0, 420], [1, 0])
+  const { navigateTo, navigateToPortfolio } = useCinematicScroll()
 
   return (
     <section
@@ -122,8 +121,14 @@ export default function Hero() {
           className="flex items-center justify-center gap-4 mb-8"
         >
           <span className="h-px w-8 bg-white/[0.14]" />
-          <span className="font-mono text-[10px] tracking-[0.32em] text-white/28 uppercase">
-            Creative Direction & Digital Experience
+          <span className="flex items-center gap-2">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-50" style={{ backgroundColor: 'rgba(37,211,102,0.6)' }} />
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5" style={{ backgroundColor: 'rgba(37,211,102,0.85)' }} />
+            </span>
+            <span className="font-mono text-[10px] tracking-[0.32em] text-white/28 uppercase">
+              Creative Direction & Digital Experience
+            </span>
           </span>
           <span className="h-px w-8 bg-white/[0.14]" />
         </motion.div>
@@ -157,8 +162,7 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.9 }}
           className="mt-8 font-inter font-light text-[1rem] md:text-[1.15rem] text-white/45 max-w-xl mx-auto leading-[1.72]"
         >
-          Design, branding e experiências digitais para marcas que querem ser impossíveis de
-          ignorar.
+          Design, branding e sites para marcas que querem se destacar de verdade.
         </motion.p>
 
         <motion.p
@@ -167,8 +171,7 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 1.1 }}
           className="mt-3 font-inter text-[0.82rem] text-white/24 max-w-md mx-auto leading-[1.8]"
         >
-          Criando identidades visuais, interfaces e experiências digitais com estética, direção
-          criativa e presença.
+          Identidade visual, UI e direção criativa com foco em resultado e estética.
         </motion.p>
 
         {/* CTAs */}
@@ -191,17 +194,14 @@ export default function Hero() {
             />
           </motion.button>
 
-          <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.97 }}>
-            <Link
-              to="/portfolio"
-              className="flex items-center px-7 py-3 bg-transparent hover:bg-white/[0.04]
-                border border-white/[0.12] hover:border-white/[0.22]
-                text-white/50 hover:text-white/82 font-inter font-medium text-[13px] rounded-full
-                transition-all duration-300"
-            >
-              Acessar Portfólios
-            </Link>
-          </motion.div>
+          <motion.button
+            onClick={navigateToPortfolio}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.97 }}
+            className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-3 text-sm font-medium text-white transition-all duration-300 hover:bg-white hover:text-black font-inter"
+          >
+            Acessar Portfólio
+          </motion.button>
         </motion.div>
       </motion.div>
 

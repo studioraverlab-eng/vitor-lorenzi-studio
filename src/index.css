@@ -32,7 +32,6 @@
 }
 
 html {
-  /* scroll-behavior removed — Lenis handles all scroll physics */
   scroll-padding-top: 90px;
 }
 
@@ -42,6 +41,45 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+/* Hint browser to composite scroll layer on GPU */
+[data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* Hide default cursor on mouse devices */
+@media (hover: hover) and (pointer: fine) {
+  * { cursor: none !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Animated film grain */
+@keyframes grain {
+  0%, 100% { transform: translate(0,    0)    }
+  10%       { transform: translate(-3%, -5%)  }
+  20%       { transform: translate( 5%,  3%)  }
+  30%       { transform: translate(-4%,  7%)  }
+  40%       { transform: translate( 7%, -4%)  }
+  50%       { transform: translate(-6%,  2%)  }
+  60%       { transform: translate( 3%, -7%)  }
+  70%       { transform: translate(-7%,  4%)  }
+  80%       { transform: translate( 4%,  6%)  }
+  90%       { transform: translate(-2%, -3%)  }
+}
+
+.noise-grain {
+  animation: grain 0.45s steps(1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .noise-grain { animation: none !important; }
 }
 
 ::selection {

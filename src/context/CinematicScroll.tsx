@@ -7,44 +7,52 @@ import {
   useCallback,
   type ReactNode,
 } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import Lenis from 'lenis'
 import gsap from 'gsap'
 
 interface CinematicScrollCtx {
-  navigateTo: (id: string) => void
+  navigateTo: (id: string, offset?: number) => void
   isNavigating: boolean
+  navigateToPortfolio: () => void
+  navigateToHome: () => void
 }
 
 const Ctx = createContext<CinematicScrollCtx>({
   navigateTo: () => {},
   isNavigating: false,
+  navigateToPortfolio: () => {},
+  navigateToHome: () => {},
 })
 
-// Expo inOut — rushes toward target then decelerates like a heavy object
-const expoInOut = (t: number): number => {
-  if (t === 0) return 0
-  if (t === 1) return 1
-  return t < 0.5
-    ? Math.pow(2, 20 * t - 10) / 2
-    : (2 - Math.pow(2, -20 * t + 10)) / 2
-}
+// Quart out — silky deceleration, luxury feel without the heavy tail of expo
+const quartOut = (t: number): number => 1 - Math.pow(1 - t, 4)
 
-// Expo out — base wheel scroll feels weighted and physical
-const expoOut = (t: number): number =>
-  t === 1 ? 1 : 1 - Math.pow(2, -10 * t)
+// Quint in-out — controlled cinematic travel for anchor navigation
+const quintInOut = (t: number): number =>
+  t < 0.5 ? 16 * t * t * t * t * t : 1 - Math.pow(-2 * t + 2, 5) / 2
+
+const prefersReducedMotion = () =>
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
 export function CinematicScrollProvider({ children }: { children: ReactNode }) {
+  const navigate = useNavigate()
   const lenisRef = useRef<Lenis | null>(null)
   const rafRef = useRef<number>(0)
   const [isNavigating, setIsNavigating] = useState(false)
+  const [showCinema, setShowCinema] = useState(false)
+  const [cinemaFading, setCinemaFading] = useState(false)
+  const [cinemaLabel, setCinemaLabel] = useState('PORTFÓLIO')
 
   useEffect(() => {
+    const reduced = prefersReducedMotion()
     const lenis = new Lenis({
-      duration: 2.2,
-      easing: expoOut,
+      duration: reduced ? 0 : 1.05,
+      easing: quartOut,
       smoothWheel: true,
-      wheelMultiplier: 0.82,
-      touchMultiplier: 2,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.8,
     })
 
     lenisRef.current = lenis
@@ -61,41 +69,80 @@ export function CinematicScrollProvider({ children }: { children: ReactNode }) {
     }
   }, [])
 
-  const navigateTo = useCallback((id: string) => {
+  const navigateTo = useCallback((id: string, offset = 120) => {
     const target = document.getElementById(id)
     if (!target || !lenisRef.current) return
 
-    // Phase 1 — scale compression: interface "resists" before launching
+    // Phase 1 — subtle scale breath: hints the page is about to travel
     const content = document.getElementById('page-content')
-    if (content) {
+    if (!prefersReducedMotion() && content) {
       gsap.timeline()
         .to(content, {
-          scale: 0.9982,
-          duration: 0.22,
-          ease: 'power3.in',
+          scale: 0.9975,
+          duration: 0.18,
+          ease: 'power2.in',
           transformOrigin: '50% 50%',
         })
         .to(content, {
           scale: 1,
-          duration: 0.9,
-          ease: 'elastic.out(1, 0.42)',
+          duration: 0.7,
+          ease: 'power4.out',
         })
     }
 
     // Phase 2 — veil flash signals the travel
     setIsNavigating(true)
-    setTimeout(() => setIsNavigating(false), 680)
+    setTimeout(() => setIsNavigating(false), 500)
 
-    // Phase 3 — Lenis cinematic scroll: heavy acceleration + long deceleration
+    // Phase 3 — Lenis anchor scroll: controlled cinematic travel
     lenisRef.current.scrollTo(target, {
-      offset: -76,
-      duration: 2.7,
-      easing: expoInOut,
+      offset,
+      duration: prefersReducedMotion() ? 0 : 1.6,
+      easing: quintInOut,
     })
   }, [])
 
+  const cinemaGo = useCallback((path: string, label: string) => {
+    setCinemaLabel(label)
+    setCinemaFading(false)
+    setShowCinema(true)
+    setTimeout(() => {
+      navigate(path)
+      setCinemaFading(true)
+      setTimeout(() => setShowCinema(false), 520)
+    }, 820)
+  }, [navigate])
+
+  const navigateToPortfolio = useCallback(() => cinemaGo('/portfolio', 'PORTFÓLIO'), [cinemaGo])
+  const navigateToHome      = useCallback(() => cinemaGo('/', 'STUDIO'),             [cinemaGo])
+
   return (
-    <Ctx.Provider value={{ navigateTo, isNavigating }}>
+    <Ctx.Provider value={{ navigateTo, isNavigating, navigateToPortfolio, navigateToHome }}>
+      {/* Cinema transition overlay — rendered at provider level, covers all routes */}
+      {showCinema && (
+        <motion.div
+          className="fixed inset-0 flex items-center justify-center"
+          style={{ zIndex: 99999, backgroundColor: '#000000', pointerEvents: cinemaFading ? 'none' : 'all' }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: cinemaFading ? 0 : 1 }}
+          transition={{ duration: cinemaFading ? 0.7 : 0.45, ease: 'easeInOut' }}
+        >
+          <motion.span
+            style={{
+              fontFamily: "'Syne', sans-serif",
+              fontWeight: 700,
+              letterSpacing: '0.25em',
+              fontSize: 'clamp(1.8rem, 5vw, 3.8rem)',
+            }}
+            className="text-white uppercase select-none"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: cinemaFading ? 0 : 1, y: cinemaFading ? -8 : 0 }}
+            transition={{ delay: 0.18, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          >
+            {cinemaLabel}
+          </motion.span>
+        </motion.div>
+      )}
       {children}
     </Ctx.Provider>
   )

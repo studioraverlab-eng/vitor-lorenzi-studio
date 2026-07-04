@@ -7,6 +7,7 @@ import Process from '../components/Process'
 import PortfolioTeaser from '../components/PortfolioTeaser'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
+import SectionDivider from '../components/SectionDivider'
 
 export default function Home() {
   return (
@@ -22,11 +23,17 @@ export default function Home() {
       >
         <Navbar />
         <Hero />
+        <SectionDivider />
         <About />
+        <SectionDivider />
         <Services />
+        <SectionDivider />
         <Process />
+        <SectionDivider />
         <PortfolioTeaser />
+        <SectionDivider />
         <Contact />
+        <SectionDivider />
         <Footer />
       </div>
     </div>

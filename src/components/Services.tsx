@@ -7,49 +7,49 @@ const services = [
     n: '01',
     icon: Globe,
     title: 'Criação de Sites',
-    desc: 'Interfaces construídas para impressionar e converter, com atenção total ao detalhe e à experiência.',
+    desc: 'Sites que funcionam e que ficam bem. Responsivos, rápidos e com acabamento de verdade.',
   },
   {
     n: '02',
     icon: Layout,
     title: 'Landing Pages',
-    desc: 'Páginas que capturam atenção e transformam visitas em resultados — sem ruído, sem desperdício.',
+    desc: 'Páginas diretas ao ponto. Feitas pra converter sem encher de informação.',
   },
   {
     n: '03',
     icon: Palette,
     title: 'Identidade Visual',
-    desc: 'Sistemas visuais coerentes que definem como a marca é percebida antes de dizer uma palavra.',
+    desc: 'Logo, cores, tipografia e tudo que define como sua marca aparece pro mundo.',
   },
   {
     n: '04',
     icon: Sparkles,
     title: 'Branding',
-    desc: 'Da nomenclatura à linguagem visual: construindo marcas com personalidade, propósito e permanência.',
+    desc: 'Nome, posicionamento e linguagem visual. A base pra sua marca fazer sentido.',
   },
   {
     n: '05',
     icon: Compass,
     title: 'Direção Criativa',
-    desc: 'Orientação estratégica para a comunicação visual do seu negócio — do conceito à execução.',
+    desc: 'Orientação visual e estratégica pra quem precisa de coerência na comunicação.',
   },
   {
     n: '06',
     icon: Zap,
     title: 'Experiências Digitais',
-    desc: 'Interações imersivas que criam memória emocional e tornam cada visita memorável.',
+    desc: 'Interfaces que fazem sentido de usar e que deixam uma boa impressão.',
   },
   {
     n: '07',
     icon: Play,
     title: 'Motion & Visual Design',
-    desc: 'Movimento com propósito. Animações que comunicam, engajam e deixam uma impressão duradoura.',
+    desc: 'Animações e elementos visuais que complementam sem chamar atenção pra si mesmos.',
   },
   {
     n: '08',
     icon: Layers,
     title: 'Interfaces Premium',
-    desc: 'UI/UX com acabamento de alto padrão. Para quem não aceita o comum como resposta.',
+    desc: 'UI/UX com cuidado nos detalhes. Pra quem sabe a diferença.',
   },
 ]
 
@@ -106,7 +106,7 @@ function ServiceCard({ service, index }: CardProps) {
         <span className="font-mono text-[10px] tracking-[0.25em] text-white/18">{service.n}</span>
         <Icon
           size={17}
-          className="text-white/18 group-hover:text-white/38 transition-colors duration-400"
+          className={`text-white/18 transition-colors duration-400 ${index % 2 === 0 ? 'group-hover:text-emerald-400/60' : 'group-hover:text-white/55'}`}
           strokeWidth={1.5}
         />
       </div>
@@ -123,7 +123,7 @@ function ServiceCard({ service, index }: CardProps) {
 
 export default function Services() {
   return (
-    <section id="servicos" className="py-36 md:py-52" style={{ background: 'rgba(12,12,14,0.72)' }}>
+    <section id="servicos" className="py-36 md:py-52">
       <div className="max-w-7xl mx-auto px-6">
         {/* Label */}
         <motion.div
@@ -131,7 +131,7 @@ export default function Services() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="flex items-center gap-4 mb-6"
+          className="flex items-center gap-4 mb-5"
         >
           <span className="font-mono text-[10px] tracking-[0.35em] text-white/22 uppercase">02 — Serviços</span>
           <span className="h-px w-12 bg-white/[0.07]" />
@@ -147,7 +147,7 @@ export default function Services() {
             style={{ fontSize: 'clamp(1.9rem, 3.8vw, 3rem)' }}
           >
             O que o studio<br />
-            <span className="text-white/28 italic">oferece.</span>
+            <span className="text-white/28 italic">faz.</span>
           </motion.h2>
 
           <motion.p
@@ -157,11 +157,11 @@ export default function Services() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="font-inter text-[0.88rem] text-white/32 max-w-xs leading-[1.8]"
           >
-            Cada entrega é tratada como se fosse a única — com estética, estratégia e profundidade.
+            Cada projeto é tratado com o mesmo cuidado, seja o primeiro ou o décimo.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {services.map((s, i) => (
             <ServiceCard key={s.n} service={s} index={i} />
           ))}

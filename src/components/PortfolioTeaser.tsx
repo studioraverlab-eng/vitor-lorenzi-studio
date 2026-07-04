@@ -1,14 +1,12 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
-import { ArrowUpRight } from 'lucide-react'
+import { useCinematicScroll } from '../context/CinematicScroll'
 
 export default function PortfolioTeaser() {
+  const { navigateToPortfolio } = useCinematicScroll()
+
   return (
     <section className="relative py-0 overflow-hidden">
-      {/* Separator line */}
-      <div className="w-full h-px bg-white/[0.05]" />
-
-      <div className="relative py-40 md:py-56" style={{ background: 'rgba(12,12,14,0.68)' }}>
+      <div className="relative py-40 md:py-56">
         {/* Background orb */}
         <motion.div
           className="absolute rounded-full pointer-events-none"
@@ -47,8 +45,8 @@ export default function PortfolioTeaser() {
             className="font-syne font-bold text-white/82 leading-[1.07] mb-7"
             style={{ fontSize: 'clamp(2.2rem, 5vw, 4.5rem)' }}
           >
-            Projetos, conceitos e<br />
-            <span className="text-white/26 italic">experiências.</span>
+            Uma seleção de<br />
+            <span className="text-white/26 italic">projetos.</span>
           </motion.h2>
 
           <motion.p
@@ -58,7 +56,7 @@ export default function PortfolioTeaser() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="font-inter text-[0.95rem] text-white/32 max-w-md mx-auto leading-[1.8] mb-14"
           >
-            Projetos, conceitos e experiências desenvolvidas pelo Vitor Lorenzi Studio.
+            Sites, marcas e experiências criados com atenção ao que importa.
           </motion.p>
 
           {/* CTA */}
@@ -68,27 +66,17 @@ export default function PortfolioTeaser() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.35 }}
           >
-            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-              <Link
-                to="/portfolio"
-                className="group inline-flex items-center gap-3 px-10 py-4.5 font-inter font-medium text-[14px]
-                  bg-white/[0.06] hover:bg-white/[0.10] border border-white/[0.10] hover:border-white/[0.20]
-                  text-white/65 hover:text-white rounded-full transition-all duration-300
-                  shadow-[0_0_60px_rgba(255,255,255,0.04)] hover:shadow-[0_0_80px_rgba(255,255,255,0.07)]"
-                style={{ padding: '14px 40px' }}
-              >
-                Acessar Portfólios
-                <ArrowUpRight
-                  size={14}
-                  className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200"
-                />
-              </Link>
-            </motion.div>
+            <motion.button
+              onClick={navigateToPortfolio}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-3 text-sm font-medium text-white transition-all duration-300 hover:bg-white hover:text-black font-inter"
+            >
+              Acessar Portfólio
+            </motion.button>
           </motion.div>
         </div>
       </div>
-
-      <div className="w-full h-px bg-white/[0.05]" />
     </section>
   )
 }
