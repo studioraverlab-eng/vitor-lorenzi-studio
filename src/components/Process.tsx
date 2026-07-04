@@ -30,7 +30,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="processo" className="py-36 md:py-52">
+    <section id="processo" className="py-20 md:py-36 lg:py-52">
       <div className="max-w-7xl mx-auto px-6">
         {/* Label */}
         <motion.div

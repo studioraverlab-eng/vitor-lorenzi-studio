@@ -216,7 +216,7 @@ export default function Portfolio() {
 
   // Responsive orbit radius — ref so no re-render
   useEffect(() => {
-    const sync = () => { radiusRef.current = window.innerWidth < 640 ? 115 : 210 }
+    const sync = () => { radiusRef.current = window.innerWidth < 640 ? 150 : 210 }
     sync()
     window.addEventListener("resize", sync)
     return () => window.removeEventListener("resize", sync)
@@ -297,12 +297,12 @@ export default function Portfolio() {
         </header>
 
         {/* ── Hero orbit section ── */}
-        <section className="relative min-h-screen px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center py-24">
+        <section className="relative min-h-dvh px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto flex min-h-dvh max-w-7xl flex-col items-center justify-center py-16 md:py-24">
 
             {/* Orbit stage */}
             <div
-              className="relative mb-28 h-[420px] w-full max-w-6xl sm:h-[520px]"
+              className="relative mb-16 md:mb-28 h-[460px] w-full max-w-6xl sm:h-[520px]"
               onMouseMove={handleMouseMove}
             >
               <div
@@ -323,7 +323,7 @@ export default function Portfolio() {
                       rel="noopener noreferrer"
                       aria-label={`Abrir site ${project.company}`}
                       style={{ transform: `rotateZ(${project.rotation}deg)`, display: "block" }}
-                      className="h-44 w-32 sm:h-56 sm:w-44"
+                      className="h-36 w-28 sm:h-56 sm:w-44"
                       onMouseEnter={pauseCarousel}
                       onMouseLeave={resumeCarousel}
                     >

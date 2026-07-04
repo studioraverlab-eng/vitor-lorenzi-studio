@@ -123,7 +123,7 @@ function ServiceCard({ service, index }: CardProps) {
 
 export default function Services() {
   return (
-    <section id="servicos" className="py-36 md:py-52">
+    <section id="servicos" className="py-20 md:py-36 lg:py-52">
       <div className="max-w-7xl mx-auto px-6">
         {/* Label */}
         <motion.div

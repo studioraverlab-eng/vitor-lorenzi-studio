@@ -6,7 +6,7 @@ export default function PortfolioTeaser() {
 
   return (
     <section className="relative py-0 overflow-hidden">
-      <div className="relative py-40 md:py-56">
+      <div className="relative py-20 md:py-40 lg:py-56">
         {/* Background orb */}
         <motion.div
           className="absolute rounded-full pointer-events-none"

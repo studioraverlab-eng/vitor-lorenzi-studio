@@ -118,7 +118,7 @@ function SocialCard({ s, i }: { s: Social; i: number }) {
 
 export default function Contact() {
   return (
-    <section id="contato" className="relative min-h-screen flex items-center justify-center overflow-hidden py-40">
+    <section id="contato" className="relative min-h-dvh flex items-center justify-center overflow-hidden py-20 md:py-32 lg:py-40">
       {/* Background atmosphere */}
       <motion.div
         className="absolute rounded-full pointer-events-none"

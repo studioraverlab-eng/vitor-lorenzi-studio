@@ -12,7 +12,7 @@ const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
 export default function About() {
   return (
-    <section id="sobre" className="py-36 md:py-52">
+    <section id="sobre" className="py-20 md:py-36 lg:py-52">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section label */}
         <motion.div
