@@ -4,27 +4,27 @@ const steps = [
   {
     n: '01',
     title: 'Escuta',
-    desc: 'Ouço o que você tem antes de propor qualquer coisa. Sem briefing preenchido, sem pressa.',
+    desc: 'Ouço antes de propor qualquer coisa.',
   },
   {
     n: '02',
     title: 'Estratégia',
-    desc: 'Entendo o mercado e o público. Traço o caminho visual e de comunicação da marca.',
+    desc: 'Entendo o mercado e traço o caminho visual.',
   },
   {
     n: '03',
     title: 'Direção Criativa',
-    desc: 'Desenvolvo o conceito e a identidade que vai guiar tudo que vier depois.',
+    desc: 'Desenvolvo o conceito que guia tudo depois.',
   },
   {
     n: '04',
     title: 'Execução',
-    desc: 'Código limpo, design com acabamento. Faço do jeito que eu gostaria de receber.',
+    desc: 'Código limpo, acabamento de verdade.',
   },
   {
     n: '05',
     title: 'Entrega',
-    desc: 'Lançamento, ajustes e suporte. O projeto termina quando está certo.',
+    desc: 'Lançamento, ajustes e suporte contínuo.',
   },
 ]
 

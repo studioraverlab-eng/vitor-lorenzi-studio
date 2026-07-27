@@ -66,45 +66,46 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.85, delay: 0.15, ease }}
             >
-              <p className="font-inter font-light text-[1.05rem] text-white/52 leading-[1.85] mb-6">
-                Sou Vitor Lorenzi. Acredito que as melhores referências vêm de fora da tela: festivais, trilhas, cachoeiras e viagens que ampliam a forma como enxergo o mundo. Tenho DJ como hobby e, nesses momentos longe do trabalho, é onde as ideias mais interessantes costumam aparecer.
-              </p>
-              <p className="font-inter text-[0.93rem] text-white/35 leading-[1.9]">
-                Trabalho com identidade visual e experiências digitais, sempre começando pelo que realmente importa: entender a marca, o contexto e quem vai se conectar com ela. O resultado precisa fazer sentido pra quem vai ver, não só pra quem criou. Estou me aprofundando em produção de vídeo também, pra integrar isso ao trabalho de forma criativa e profissional.
+              <p className="font-inter font-light text-[1.05rem] text-white/52 leading-[1.85]">
+                Sou Vitor Lorenzi. Minhas melhores referências vêm de fora da tela — festivais, viagens, música — e é isso que trago pro trabalho: identidade visual e experiências digitais pensadas pra fazer sentido pra quem vê, não só pra quem cria.
               </p>
             </motion.div>
 
             {/* Raver Lab aside */}
-            <motion.div
+            <motion.a
+              href="https://raverlab.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.75, delay: 0.3, ease }}
-              className="mt-10 pl-5"
+              className="group mt-10 flex items-center gap-4 pl-5 py-1"
               style={{ borderLeft: '1.5px solid rgba(255,255,255,0.12)' }}
             >
-              <div className="flex items-baseline gap-3 mb-2">
-                <span className="font-syne font-semibold text-[0.9rem] text-white/65">Raver Lab</span>
-                <span className="font-mono text-[9px] tracking-[0.18em] text-white/20 uppercase">projeto paralelo</span>
+              <div className="w-16 h-20 shrink-0 rounded-lg overflow-hidden border border-white/[0.1]">
+                <img
+                  src="/portfolio/raver-lab.jpg"
+                  alt="Raver Lab"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
               </div>
-              <p className="font-inter text-[0.82rem] text-white/32 leading-[1.8] max-w-sm mb-3">
-                Marca autoral nascida da cultura eletrônica. A ideia era transformar o que sinto nos festivais e nas pistas em algo visual, tangível e com identidade própria.
-              </p>
-              <p className="font-inter text-[0.82rem] text-white/22 leading-[1.8] max-w-sm">
-                Construída do zero: branding, e-commerce, comunicação e direção criativa.
-              </p>
-              <a
-                href="https://raverlab.com.br"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-3 inline-flex items-center gap-1.5 font-mono text-[10px] tracking-[0.14em] text-white/22 hover:text-white/50 transition-colors duration-300"
-              >
-                raverlab.com.br
-                <svg width="9" height="9" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M2 10L10 2M10 2H4M10 2v6" />
-                </svg>
-              </a>
-            </motion.div>
+              <div className="min-w-0">
+                <div className="flex items-baseline gap-3 mb-1.5">
+                  <span className="font-syne font-semibold text-[0.9rem] text-white/65 group-hover:text-white/85 transition-colors duration-300">Raver Lab</span>
+                  <span className="font-mono text-[9px] tracking-[0.18em] text-white/20 uppercase">projeto paralelo</span>
+                </div>
+                <p className="font-inter text-[0.82rem] text-white/32 leading-[1.7] group-hover:text-white/44 transition-colors duration-300">
+                  Marca autoral da cultura eletrônica — branding, e-commerce e direção criativa construídos do zero.
+                </p>
+                <span className="mt-1.5 inline-flex items-center gap-1.5 font-mono text-[10px] tracking-[0.14em] text-white/22 group-hover:text-white/50 transition-colors duration-300">
+                  raverlab.com.br
+                  <svg width="9" height="9" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path d="M2 10L10 2M10 2H4M10 2v6" />
+                  </svg>
+                </span>
+              </div>
+            </motion.a>
 
             <motion.div
               initial={{ opacity: 0, y: 18 }}

@@ -7,49 +7,49 @@ const services = [
     n: '01',
     icon: Globe,
     title: 'Criação de Sites',
-    desc: 'Sites que funcionam e que ficam bem. Responsivos, rápidos e com acabamento de verdade.',
+    desc: 'Responsivos, rápidos, com acabamento de verdade.',
   },
   {
     n: '02',
     icon: Layout,
     title: 'Landing Pages',
-    desc: 'Páginas diretas ao ponto. Feitas pra converter sem encher de informação.',
+    desc: 'Direto ao ponto — feitas pra converter.',
   },
   {
     n: '03',
     icon: Palette,
     title: 'Identidade Visual',
-    desc: 'Logo, cores, tipografia e tudo que define como sua marca aparece pro mundo.',
+    desc: 'Logo, cores e tipografia com propósito.',
   },
   {
     n: '04',
     icon: Sparkles,
     title: 'Branding',
-    desc: 'Nome, posicionamento e linguagem visual. A base pra sua marca fazer sentido.',
+    desc: 'Nome, posicionamento e linguagem visual.',
   },
   {
     n: '05',
     icon: Compass,
     title: 'Direção Criativa',
-    desc: 'Orientação visual e estratégica pra quem precisa de coerência na comunicação.',
+    desc: 'Coerência em tudo que sua marca comunica.',
   },
   {
     n: '06',
     icon: Zap,
     title: 'Experiências Digitais',
-    desc: 'Interfaces que fazem sentido de usar e que deixam uma boa impressão.',
+    desc: 'Interfaces que fazem sentido de usar.',
   },
   {
     n: '07',
     icon: Play,
     title: 'Motion & Visual Design',
-    desc: 'Animações e elementos visuais que complementam sem chamar atenção pra si mesmos.',
+    desc: 'Movimento que complementa, sem exagerar.',
   },
   {
     n: '08',
     icon: Layers,
     title: 'Interfaces Premium',
-    desc: 'UI/UX com cuidado nos detalhes. Pra quem sabe a diferença.',
+    desc: 'UI/UX com cuidado em cada detalhe.',
   },
 ]
 
@@ -91,7 +91,7 @@ function ServiceCard({ service, index }: CardProps) {
         transform: `perspective(900px) rotateX(${tilt.y}deg) rotateY(${tilt.x}deg)`,
         transition: tilt.x === 0 ? 'transform 0.5s ease' : 'transform 0.1s ease',
       }}
-      className="group relative p-7 rounded-2xl glass-card hover:border-white/[0.11] transition-colors duration-300 overflow-hidden cursor-default"
+      className="group relative p-6 rounded-2xl glass-card hover:border-white/[0.11] transition-colors duration-300 overflow-hidden cursor-default"
     >
       {/* Glow on hover */}
       <div
@@ -101,20 +101,34 @@ function ServiceCard({ service, index }: CardProps) {
         }}
       />
 
-      {/* Top row */}
-      <div className="flex items-start justify-between mb-7">
-        <span className="font-mono text-[10px] tracking-[0.25em] text-white/18">{service.n}</span>
+      {/* Oversized watermark numeral */}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-2 -top-5 font-syne font-extrabold text-white/[0.035] group-hover:text-white/[0.06] transition-colors duration-500 select-none"
+        style={{ fontSize: '5.5rem', lineHeight: 1 }}
+      >
+        {service.n}
+      </span>
+
+      {/* Icon badge */}
+      <div
+        className={`relative z-10 w-11 h-11 rounded-xl flex items-center justify-center mb-6 border transition-all duration-400 ${
+          index % 2 === 0
+            ? 'border-emerald-400/[0.12] bg-emerald-400/[0.05] group-hover:border-emerald-400/25 group-hover:bg-emerald-400/[0.09]'
+            : 'border-white/[0.08] bg-white/[0.03] group-hover:border-white/[0.16] group-hover:bg-white/[0.06]'
+        }`}
+      >
         <Icon
-          size={17}
-          className={`text-white/18 transition-colors duration-400 ${index % 2 === 0 ? 'group-hover:text-emerald-400/60' : 'group-hover:text-white/55'}`}
+          size={19}
+          className={`transition-colors duration-400 ${index % 2 === 0 ? 'text-emerald-400/50 group-hover:text-emerald-400/85' : 'text-white/35 group-hover:text-white/70'}`}
           strokeWidth={1.5}
         />
       </div>
 
-      <h3 className="font-syne font-semibold text-[1.05rem] text-white/72 mb-3 group-hover:text-white/88 transition-colors duration-300">
+      <h3 className="relative z-10 font-syne font-semibold text-[1.05rem] text-white/72 mb-2 group-hover:text-white/88 transition-colors duration-300">
         {service.title}
       </h3>
-      <p className="font-inter text-[0.83rem] text-white/30 leading-[1.75] group-hover:text-white/40 transition-colors duration-300">
+      <p className="relative z-10 font-inter text-[0.83rem] text-white/30 leading-[1.6] group-hover:text-white/42 transition-colors duration-300">
         {service.desc}
       </p>
     </motion.div>
