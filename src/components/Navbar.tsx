@@ -56,7 +56,7 @@ export default function Navbar() {
         `}
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
+        <Link href="/" className="focus-ring flex items-center gap-3 group">
           <div className="w-7 h-7 border border-white/[0.14] rounded-lg flex items-center justify-center bg-white/[0.04]">
             <span className="font-syne font-bold text-[9px] text-white/70 tracking-[0.08em]">VL</span>
           </div>
@@ -71,7 +71,7 @@ export default function Navbar() {
             <li key={item.id}>
               <button
                 onClick={() => handleNav(item.id, item.offset)}
-                className="relative font-inter text-[13px] text-white/40 hover:text-white/80 transition-colors duration-300 tracking-wide group"
+                className="focus-ring relative font-inter text-[13px] text-white/40 hover:text-white/80 transition-colors duration-300 tracking-wide group"
               >
                 {item.label}
                 <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-white/20 group-hover:w-full transition-all duration-300" />
@@ -83,7 +83,7 @@ export default function Navbar() {
         {/* CTA */}
         <button
           onClick={navigateToPortfolio}
-          className="hidden md:flex items-center px-4 py-2 text-[12px] font-inter font-medium tracking-wide
+          className="focus-ring hidden md:flex items-center px-4 py-2 text-[12px] font-inter font-medium tracking-wide
             bg-white/[0.05] hover:bg-white/[0.09] border border-white/[0.09] hover:border-white/[0.18]
             rounded-full text-white/70 hover:text-white transition-all duration-300
             shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]"
@@ -93,9 +93,10 @@ export default function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden flex flex-col gap-[5px] p-2"
+          className="focus-ring md:hidden flex flex-col gap-[5px] p-2"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Menu"
+          aria-expanded={mobileOpen}
         >
           <motion.span
             animate={{ rotate: mobileOpen ? 45 : 0, y: mobileOpen ? 7 : 0 }}
@@ -126,14 +127,14 @@ export default function Navbar() {
               <button
                 key={item.id}
                 onClick={() => handleNav(item.id, item.offset)}
-                className="block w-full text-left py-3 px-3 text-white/50 hover:text-white/90 font-inter text-[14px] border-b border-white/[0.05] last:border-0 transition-colors"
+                className="focus-ring block w-full text-left py-3 px-3 text-white/50 hover:text-white/90 font-inter text-[14px] border-b border-white/[0.05] last:border-0 transition-colors"
               >
                 {item.label}
               </button>
             ))}
             <button
               onClick={() => { setMobileOpen(false); navigateToPortfolio() }}
-              className="block w-full mt-3 text-center py-2.5 rounded-full bg-white/[0.06] text-white/70 text-sm font-inter border border-white/[0.09]"
+              className="focus-ring block w-full mt-3 text-center py-2.5 rounded-full bg-white/[0.06] text-white/70 text-sm font-inter border border-white/[0.09]"
             >
               Acessar Portfólios
             </button>
