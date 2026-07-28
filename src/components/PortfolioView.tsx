@@ -58,7 +58,7 @@ function WhatsAppFillButton() {
         whileTap={{ scale: 0.97 }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="relative inline-flex items-center gap-3 rounded-full px-8 py-4
+        className="focus-ring relative inline-flex items-center gap-3 rounded-full px-8 py-4
           font-inter text-[14px] font-medium overflow-hidden cursor-pointer"
         style={{ border: "1px solid rgba(255,255,255,0.13)" }}
       >
@@ -198,7 +198,7 @@ export default function PortfolioView() {
           <div className="mx-auto flex max-w-7xl items-center justify-between">
             <button
               onClick={navigateToHome}
-              className="group flex items-center gap-2 font-inter text-[11px] uppercase tracking-[0.12em] text-white/28 hover:text-white/65 transition-colors duration-300"
+              className="focus-ring group flex items-center gap-2 font-inter text-[11px] uppercase tracking-[0.12em] text-white/28 hover:text-white/65 transition-colors duration-300"
             >
               <ArrowLeft size={11} className="group-hover:-translate-x-0.5 transition-transform duration-200" />
               Vitor Lorenzi Studio
@@ -236,7 +236,7 @@ export default function PortfolioView() {
                       rel="noopener noreferrer"
                       aria-label={`Abrir site ${project.company}`}
                       style={{ transform: `rotateZ(${project.rotation}deg)`, display: "block" }}
-                      className="h-36 w-28 sm:h-56 sm:w-44"
+                      className="focus-ring h-36 w-28 sm:h-56 sm:w-44"
                       onMouseEnter={pauseCarousel}
                       onMouseLeave={resumeCarousel}
                     >
@@ -298,7 +298,7 @@ export default function PortfolioView() {
 
               <button
                 onClick={handleVerProjetos}
-                className="inline-flex items-center gap-2 rounded-full border border-white/[0.12] hover:border-white/[0.24] px-7 py-3 font-inter text-[13px] font-medium text-white/50 hover:text-white/85 transition-all duration-300 hover:bg-white/[0.04] cursor-pointer"
+                className="focus-ring inline-flex items-center gap-2 rounded-full border border-white/[0.12] hover:border-white/[0.24] px-7 py-3 font-inter text-[13px] font-medium text-white/50 hover:text-white/85 transition-all duration-300 hover:bg-white/[0.04] cursor-pointer"
               >
                 Ver projetos
                 <ArrowRight className="h-4 w-4" />
@@ -356,7 +356,7 @@ export default function PortfolioView() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Ver site ${project.company}`}
-                  className="flex items-start gap-6 sm:gap-10 py-9 sm:py-11 cursor-pointer"
+                  className="focus-ring flex items-start gap-6 sm:gap-10 py-9 sm:py-11 cursor-pointer"
                 >
                   {/* Index number */}
                   <span className="font-mono text-[11px] tracking-[0.18em] text-white/18 pt-1.5 shrink-0 w-7 group-hover:text-white/40 transition-colors duration-400">
@@ -485,7 +485,7 @@ export default function PortfolioView() {
             </div>
             <button
               onClick={navigateToHome}
-              className="font-inter text-[11px] text-white/20 hover:text-white/50 transition-colors duration-200"
+              className="focus-ring font-inter text-[11px] text-white/20 hover:text-white/50 transition-colors duration-200"
             >
               ← Voltar ao início
             </button>

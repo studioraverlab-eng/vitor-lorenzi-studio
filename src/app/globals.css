@@ -124,4 +124,22 @@ body {
     position: relative;
     z-index: 1;
   }
+
+  /* Keyboard focus — the custom cursor hides the native pointer entirely,
+     so a clear focus-visible ring is the only wayfinding keyboard users get. */
+  .focus-ring {
+    outline: none;
+  }
+  .focus-ring:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 3px;
+    border-radius: inherit;
+  }
+
+  /* Dot-grid atmosphere — same pattern as the studio's Instagram carousel
+     "browser chrome" identity, reused in the BrowserChrome section. */
+  .chrome-dot-grid {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1.4px, transparent 1.4px);
+    background-size: 28px 28px;
+  }
 }

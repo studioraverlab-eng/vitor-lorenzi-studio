@@ -115,7 +115,8 @@ export default function Hero() {
         style={{ y, opacity }}
         className="relative z-10 w-full max-w-6xl mx-auto px-6 text-center pt-20"
       >
-        {/* Label */}
+        {/* Label — the URL fragment is a quiet first note of the browser-chrome
+            signature that pays off fully further down the page. */}
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
@@ -128,8 +129,8 @@ export default function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-50" style={{ backgroundColor: 'rgba(37,211,102,0.6)' }} />
               <span className="relative inline-flex rounded-full h-1.5 w-1.5" style={{ backgroundColor: 'rgba(37,211,102,0.85)' }} />
             </span>
-            <span className="font-mono text-[10px] tracking-[0.32em] text-white/28 uppercase">
-              Creative Direction & Digital Experience
+            <span className="font-mono text-[10px] tracking-[0.28em] text-white/28 uppercase">
+              vitorlorenzi.studio <span className="text-white/[0.14]">/</span> direção criativa &amp; experiências digitais
             </span>
           </span>
           <span className="h-px w-8 bg-white/[0.14]" />
@@ -157,37 +158,30 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Subtitle */}
+        {/* Subtitle — one line carrying what/for whom/why different,
+            instead of two paragraphs splitting the same weight */}
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.9 }}
-          className="mt-8 font-inter font-light text-[1rem] md:text-[1.15rem] text-white/45 max-w-xl mx-auto leading-[1.72]"
+          className="mt-8 font-inter font-light text-body-lg text-white/48 max-w-xl mx-auto leading-[1.75]"
         >
-          Design, branding e sites para marcas que querem se destacar de verdade.
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 1.1 }}
-          className="mt-3 font-inter text-[0.82rem] text-white/24 max-w-md mx-auto leading-[1.8]"
-        >
-          Identidade visual, UI e direção criativa com foco em resultado e estética.
+          Sites, marcas e experiências digitais para quem não aceita ser mais um
+          — do conceito ao código, sempre a mesma pessoa cuidando de tudo.
         </motion.p>
 
         {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.3 }}
+          transition={{ duration: 0.8, delay: 1.15 }}
           className="mt-10 flex items-center justify-center gap-3 flex-wrap"
         >
           <motion.button
             onClick={() => navigateTo('contato')}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.97 }}
-            className="group flex items-center gap-2 px-7 py-3 bg-white/90 hover:bg-white text-[#050506] font-inter font-medium text-[13px] rounded-full transition-colors duration-300"
+            className="focus-ring group flex items-center gap-2 px-7 py-3 bg-white/90 hover:bg-white text-[#050506] font-inter font-medium text-[13px] rounded-full transition-colors duration-300"
           >
             Iniciar Projeto
             <ArrowRight
@@ -200,7 +194,7 @@ export default function Hero() {
             onClick={navigateToPortfolio}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-3 text-sm font-medium text-white transition-all duration-300 hover:bg-white hover:text-black font-inter"
+            className="focus-ring inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-3 text-sm font-medium text-white transition-all duration-300 hover:bg-white hover:text-black font-inter"
           >
             Acessar Portfólio
           </motion.button>
@@ -211,7 +205,7 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.2, delay: 2.4 }}
+        transition={{ duration: 1.2, delay: 2.1 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
       >
         <span className="font-mono text-[9px] tracking-[0.3em] text-white/16 uppercase">

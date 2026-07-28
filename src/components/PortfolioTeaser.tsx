@@ -20,7 +20,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.7, delay: index * 0.09, ease }}
       whileHover={{ y: -4 }}
-      className="group relative aspect-[3/4] w-full overflow-hidden rounded-2xl border border-white/[0.08] text-left shadow-2xl transition-colors duration-300 hover:border-white/[0.16]"
+      className="focus-ring group relative aspect-[3/4] w-full overflow-hidden rounded-2xl border border-white/[0.08] text-left shadow-2xl transition-colors duration-300 hover:border-white/[0.16]"
       style={{ background: projectGradients[project.id] }}
     >
       <img
@@ -85,7 +85,7 @@ export default function PortfolioTeaser() {
             transition={{ duration: 0.8, delay: 0.2 }}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-2.5 text-sm font-medium text-white/80 transition-all duration-300 hover:bg-white hover:text-black font-inter self-start md:self-auto shrink-0"
+            className="focus-ring inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-2.5 text-sm font-medium text-white/80 transition-all duration-300 hover:bg-white hover:text-black font-inter self-start md:self-auto shrink-0"
           >
             Ver todos os projetos
           </motion.button>

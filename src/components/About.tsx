@@ -82,7 +82,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.75, delay: 0.3, ease }}
-              className="group mt-10 flex items-center gap-4 pl-5 py-1"
+              className="focus-ring group mt-10 flex items-center gap-4 pl-5 py-1"
               style={{ borderLeft: '1.5px solid rgba(255,255,255,0.12)' }}
             >
               <div className="w-16 h-20 shrink-0 rounded-lg overflow-hidden border border-white/[0.1]">

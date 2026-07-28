@@ -91,7 +91,7 @@ function SocialCard({ s, i }: { s: Social; i: number }) {
       whileTap={{ scale: 0.97 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="flex items-center gap-3 px-6 py-3.5
+      className="focus-ring flex items-center gap-3 px-6 py-3.5
         bg-white/[0.04] hover:bg-white/[0.06]
         border border-white/[0.08] hover:border-white/[0.14]
         rounded-full transition-all duration-300
