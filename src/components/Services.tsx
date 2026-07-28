@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { Globe, Layout, Palette, Sparkles, Compass, Zap, Play, Layers } from 'lucide-react'
