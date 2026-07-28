@@ -104,8 +104,8 @@ function ServiceCard({ service, index }: CardProps) {
       {/* Oversized watermark numeral */}
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute -right-1 -top-4 font-mono font-normal tabular-nums text-white/[0.05] group-hover:text-white/[0.09] transition-colors duration-500 select-none"
-        style={{ fontSize: '5rem', lineHeight: 1 }}
+        className="pointer-events-none absolute -right-2 -top-5 font-syne font-extrabold text-white/[0.035] group-hover:text-white/[0.06] transition-colors duration-500 select-none"
+        style={{ fontSize: '5.5rem', lineHeight: 1, letterSpacing: '-0.1em' }}
       >
         {service.n}
       </span>
