@@ -1,5 +1,7 @@
+'use client'
+
 import { useState, useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useCinematicScroll } from '../context/CinematicScroll'
 
@@ -54,7 +56,7 @@ export default function Navbar() {
         `}
       >
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
+        <Link href="/" className="flex items-center gap-3 group">
           <div className="w-7 h-7 border border-white/[0.14] rounded-lg flex items-center justify-center bg-white/[0.04]">
             <span className="font-syne font-bold text-[9px] text-white/70 tracking-[0.08em]">VL</span>
           </div>

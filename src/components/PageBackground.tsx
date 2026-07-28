@@ -1,5 +1,14 @@
+'use client'
+
 import { memo } from "react"
-import { MeshGradient } from "@paper-design/shaders-react"
+import dynamic from "next/dynamic"
+
+// Third-party WebGL component — ssr:false since we can't verify it's
+// safe to touch the GPU/canvas context during a server render pass.
+const MeshGradient = dynamic(
+  () => import("@paper-design/shaders-react").then((m) => m.MeshGradient),
+  { ssr: false }
+)
 
 const GRADIENT_COLORS = ["#050506", "#0C0C0E", "#1C1C1E", "#3A3A3C", "#8E8E93"]
 

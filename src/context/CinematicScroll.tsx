@@ -1,3 +1,5 @@
+'use client'
+
 import {
   createContext,
   useContext,
@@ -7,7 +9,7 @@ import {
   useCallback,
   type ReactNode,
 } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import Lenis from 'lenis'
 import gsap from 'gsap'
@@ -37,7 +39,7 @@ const prefersReducedMotion = () =>
   window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
 export function CinematicScrollProvider({ children }: { children: ReactNode }) {
-  const navigate = useNavigate()
+  const router = useRouter()
   const lenisRef = useRef<Lenis | null>(null)
   const rafRef = useRef<number>(0)
   const [isNavigating, setIsNavigating] = useState(false)
@@ -68,6 +70,13 @@ export function CinematicScrollProvider({ children }: { children: ReactNode }) {
       lenis.destroy()
     }
   }, [])
+
+  // Prefetch both routes so router.push() after the cinema veil is instant,
+  // not a visible network wait (only 2 routes exist today, so this is cheap).
+  useEffect(() => {
+    router.prefetch('/')
+    router.prefetch('/portfolio')
+  }, [router])
 
   const navigateTo = useCallback((id: string, offset = 120) => {
     const target = document.getElementById(id)
@@ -107,11 +116,11 @@ export function CinematicScrollProvider({ children }: { children: ReactNode }) {
     setCinemaFading(false)
     setShowCinema(true)
     setTimeout(() => {
-      navigate(path)
+      router.push(path)
       setCinemaFading(true)
       setTimeout(() => setShowCinema(false), 520)
     }, 820)
-  }, [navigate])
+  }, [router])
 
   const navigateToPortfolio = useCallback(() => cinemaGo('/portfolio', 'PORTFÓLIO'), [cinemaGo])
   const navigateToHome      = useCallback(() => cinemaGo('/', 'STUDIO'),             [cinemaGo])

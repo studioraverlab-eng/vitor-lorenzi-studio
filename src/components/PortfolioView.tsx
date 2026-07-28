@@ -1,9 +1,11 @@
+'use client'
+
 import type React from "react"
 import { useEffect, useRef, useCallback, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight, ExternalLink, ArrowLeft } from "lucide-react"
-import PageBackground from "../components/PageBackground"
-import SectionDivider from "../components/SectionDivider"
+import PageBackground from "./PageBackground"
+import SectionDivider from "./SectionDivider"
 import { useCinematicScroll } from "../context/CinematicScroll"
 import { projects, projectGradients } from "../data/projects"
 
@@ -110,7 +112,7 @@ function WhatsAppFillButton() {
   )
 }
 
-export default function Portfolio() {
+export default function PortfolioView() {
   // ── All per-frame data lives in refs — zero React re-renders per frame ──
   const anglesRef       = useRef<number[]>(projects.map((_, i) => i * (360 / projects.length)))
   const wrapperRefs     = useRef<(HTMLDivElement | null)[]>([])
