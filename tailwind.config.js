@@ -8,17 +8,55 @@ export default {
         inter: ['var(--font-inter)', 'sans-serif'],
         mono: ['var(--font-mono)', 'monospace'],
       },
-      // Shared type scale — derived from the clamp() values already established
-      // per-heading across the site, formalized so new sections (Fase B) draw
-      // from the same rhythm instead of inventing their own sizes.
+      // Containers — exactly two. Every section width in the site derives
+      // from one of these; nothing else is allowed to invent a measure.
+      maxWidth: {
+        wide: 'var(--container-wide)',
+        text: 'var(--container-text)',
+      },
+      // Modular scale, ratio 1.25, floor at 12.8px. The two `display-*`
+      // steps are fluid so type scales continuously instead of stepping
+      // between breakpoints.
       fontSize: {
-        display:  ['clamp(2.4rem, 5.6vw, 6.5rem)',  { lineHeight: '0.88', letterSpacing: '-0.025em' }],
-        h1:       ['clamp(2.2rem, 5vw, 4.5rem)',    { lineHeight: '1.05', letterSpacing: '-0.02em' }],
-        h2:       ['clamp(1.9rem, 4vw, 3.6rem)',    { lineHeight: '1.08', letterSpacing: '-0.02em' }],
-        h3:       ['clamp(1.15rem, 2vw, 1.5rem)',   { lineHeight: '1.2' }],
-        'body-lg':['clamp(0.95rem, 1.1vw, 1.05rem)',{ lineHeight: '1.8' }],
-        body:     ['0.85rem',                        { lineHeight: '1.75' }],
-        label:    ['0.625rem',                       { lineHeight: '1', letterSpacing: '0.32em' }],
+        xs: 'var(--text-xs)',
+        sm: 'var(--text-sm)',
+        base: 'var(--text-base)',
+        md: 'var(--text-md)',
+        lg: 'var(--text-lg)',
+        xl: 'var(--text-xl)',
+        '2xl': 'var(--text-2xl)',
+        '3xl': 'var(--text-3xl)',
+        '4xl': 'var(--text-4xl)',
+        '5xl': 'var(--text-5xl)',
+        'display-hero': 'var(--display-hero)',
+        'display-section': 'var(--display-section)',
+      },
+      borderRadius: {
+        sm: 'var(--radius-sm)',
+        md: 'var(--radius-md)',
+        lg: 'var(--radius-lg)',
+        full: 'var(--radius-full)',
+      },
+      spacing: {
+        '2xs': 'var(--space-2xs)',
+        xs: 'var(--space-xs)',
+        sm: 'var(--space-sm)',
+        md: 'var(--space-md)',
+        lg: 'var(--space-lg)',
+        xl: 'var(--space-xl)',
+        '2xl': 'var(--space-2xl)',
+        '3xl': 'var(--space-3xl)',
+        '4xl': 'var(--space-4xl)',
+        gutter: 'var(--gutter)',
+        tap: 'var(--tap-min)',
+      },
+      transitionTimingFunction: {
+        'out-expo': 'var(--ease-out-expo)',
+      },
+      transitionDuration: {
+        fast: 'var(--dur-fast)',
+        base: 'var(--dur-base)',
+        reveal: 'var(--dur-reveal)',
       },
       colors: {
         studio: {

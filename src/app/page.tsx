@@ -13,7 +13,7 @@ import SectionDivider from '../components/SectionDivider'
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <main id="main-content" className="min-h-screen" tabIndex={-1}>
       {/* Animated shader — fixed, underlies full page */}
       <PageBackground />
 
@@ -42,6 +42,6 @@ export default function Home() {
         <SectionDivider />
         <Footer />
       </div>
-    </div>
+    </main>
   )
 }

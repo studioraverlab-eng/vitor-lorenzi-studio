@@ -22,7 +22,53 @@
   --border: rgba(255, 255, 255, 0.08);
   --input: rgba(255, 255, 255, 0.06);
   --ring: rgba(255, 255, 255, 0.18);
-  --radius: 0.5rem;
+
+  /* ---- ESPAÇAMENTO ---- */
+  --space-2xs: 0.5rem;    /*  8px */
+  --space-xs:  0.75rem;   /* 12px */
+  --space-sm:  1rem;      /* 16px */
+  --space-md:  1.5rem;    /* 24px */
+  --space-lg:  2.5rem;    /* 40px */
+  --space-xl:  4rem;      /* 64px */
+  --space-2xl: 6rem;      /* 96px */
+  --space-3xl: 8rem;      /* 128px */
+  --space-4xl: 10rem;     /* 160px */
+
+  /* ---- CONTAINERS: apenas dois ---- */
+  --container-wide: 1280px;  /* seções, grids, hero */
+  --container-text: 680px;   /* parágrafos longos, FAQ */
+  --gutter: clamp(1.5rem, 5vw, 6rem);
+
+  /* ---- ESCALA TIPOGRÁFICA: razão 1.25, piso 12px ---- */
+  --text-xs:   0.8rem;    /* 12.8px — PISO ABSOLUTO */
+  --text-sm:   1rem;      /* 16px */
+  --text-base: 1.25rem;   /* 20px */
+  --text-md:   1.5625rem; /* 25px */
+  --text-lg:   1.9375rem; /* 31px */
+  --text-xl:   2.4375rem; /* 39px */
+  --text-2xl:  3.0625rem; /* 49px */
+  --text-3xl:  3.8125rem; /* 61px */
+  --text-4xl:  4.75rem;   /* 76px */
+  --text-5xl:  5.9375rem; /* 95px */
+
+  /* ---- DISPLAY FLUIDO ---- */
+  --display-hero:    clamp(2.75rem, 7vw, 6.5rem);
+  --display-section: clamp(2rem, 4.5vw, 3.8125rem);
+
+  /* ---- RADIUS: apenas quatro ---- */
+  --radius-sm:   4px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-full: 999px;
+
+  /* ---- ALVOS DE TOQUE ---- */
+  --tap-min: 44px;
+
+  /* ---- MOVIMENTO ---- */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 200ms;
+  --dur-base: 320ms;
+  --dur-reveal: 520ms;
 }
 
 * {
@@ -33,6 +79,7 @@
 
 html {
   scroll-padding-top: 90px;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -40,7 +87,59 @@ body {
   color: var(--foreground);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+main:focus {
+  outline: none;
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 1000000;
+  transform: translateY(-160%);
+  border-radius: 999px;
+  background: #f5f5f7;
+  color: #050506;
+  padding: 10px 16px;
+  font: 600 14px/1 var(--font-inter), sans-serif;
+  transition: transform 180ms ease-out;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.scroll-progress {
+  transform: scaleX(0);
+  background: linear-gradient(90deg, rgba(37, 211, 102, 0.8), rgba(245, 245, 247, 0.65));
+}
+
+@keyframes scroll-progress-grow {
+  to { transform: scaleX(1); }
+}
+
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    animation: scroll-progress-grow linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
+.content-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+
+@keyframes shader-enter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.shader-enter {
+  animation: shader-enter 700ms ease-out both;
 }
 
 /* Hint browser to composite scroll layer on GPU */
@@ -54,6 +153,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
@@ -75,7 +175,12 @@ body {
 }
 
 .noise-grain {
-  animation: grain 0.45s steps(1) infinite;
+  animation: grain 0.9s steps(1) infinite;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .noise-grain { animation: none; }
+  .particle-field { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

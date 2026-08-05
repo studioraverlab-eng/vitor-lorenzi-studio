@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { useCinematicScroll } from '../context/CinematicScroll'
 
@@ -9,6 +9,10 @@ function ParticleField() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const touchDevice = window.matchMedia('(hover: none), (pointer: coarse)').matches
+    if (reduceMotion || touchDevice) return
+
     const canvas = canvasRef.current
     if (!canvas) return
     const ctx = canvas.getContext('2d')
@@ -36,8 +40,13 @@ function ParticleField() {
       opacity: Math.random() * 0.22 + 0.04,
     }))
 
-    let rafId: number
+    let rafId = 0
+    let active = true
     const draw = () => {
+      if (!active || document.hidden) {
+        rafId = 0
+        return
+      }
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       for (const p of particles) {
         p.x += p.vx
@@ -55,15 +64,39 @@ function ParticleField() {
     }
     draw()
 
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        active = entry.isIntersecting
+        if (active && !rafId && !document.hidden) draw()
+        if (!active && rafId) {
+          cancelAnimationFrame(rafId)
+          rafId = 0
+        }
+      },
+      { threshold: 0.05 },
+    )
+    observer.observe(canvas)
+
+    const onVisibility = () => {
+      if (!document.hidden && active && !rafId) draw()
+      if (document.hidden && rafId) {
+        cancelAnimationFrame(rafId)
+        rafId = 0
+      }
+    }
+
     const onResize = () => resize()
     window.addEventListener('resize', onResize)
+    document.addEventListener('visibilitychange', onVisibility)
     return () => {
       cancelAnimationFrame(rafId)
+      observer.disconnect()
       window.removeEventListener('resize', onResize)
+      document.removeEventListener('visibilitychange', onVisibility)
     }
   }, [])
 
-  return <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none" />
+  return <canvas ref={canvasRef} className="particle-field absolute inset-0 pointer-events-none" aria-hidden="true" />
 }
 
 const cinEase = [0.22, 1, 0.36, 1] as [number, number, number, number]
@@ -83,9 +116,6 @@ const stagger = {
 }
 
 export default function Hero() {
-  const { scrollY } = useScroll()
-  const y = useTransform(scrollY, [0, 700], [0, 70])
-  const opacity = useTransform(scrollY, [0, 420], [1, 0])
   const { navigateTo, navigateToPortfolio } = useCinematicScroll()
 
   return (
@@ -111,10 +141,7 @@ export default function Hero() {
       <ParticleField />
 
       {/* Content — pt-20 clears the floating navbar */}
-      <motion.div
-        style={{ y, opacity }}
-        className="relative z-10 w-full max-w-6xl mx-auto px-6 text-center pt-20"
-      >
+      <div className="relative z-10 w-full max-w-wide mx-auto px-6 text-center pt-20">
         {/* Label — the URL fragment is a quiet first note of the browser-chrome
             signature that pays off fully further down the page. */}
         <motion.div
@@ -129,7 +156,7 @@ export default function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-50" style={{ backgroundColor: 'rgba(37,211,102,0.6)' }} />
               <span className="relative inline-flex rounded-full h-1.5 w-1.5" style={{ backgroundColor: 'rgba(37,211,102,0.85)' }} />
             </span>
-            <span className="font-mono text-[10px] tracking-[0.28em] text-white/28 uppercase">
+            <span className="font-mono text-xs tracking-[0.28em] text-white/55 uppercase">
               vitorlorenzi.studio <span className="text-white/[0.14]">/</span> direção criativa &amp; experiências digitais
             </span>
           </span>
@@ -137,26 +164,24 @@ export default function Hero() {
         </motion.div>
 
         {/* Title — clamp keeps "Vitor Lorenzi" on one line */}
-        <motion.div variants={stagger} initial="hidden" animate="show">
+        <motion.h1 variants={stagger} initial="hidden" animate="show" className="font-syne font-extrabold leading-[0.95] tracking-[-0.025em] text-display-hero">
           <div className="overflow-hidden">
-            <motion.h1
+            <motion.span
               variants={textReveal}
-              className="font-syne font-extrabold leading-[0.88] tracking-[-0.025em] text-white/90 whitespace-nowrap"
-              style={{ fontSize: 'clamp(2.4rem, 5.6vw, 6.5rem)' }}
+              className="block text-white/95 whitespace-nowrap"
             >
               Vitor Lorenzi
-            </motion.h1>
+            </motion.span>
           </div>
           <div className="overflow-hidden">
-            <motion.h1
+            <motion.span
               variants={textReveal}
-              className="font-syne font-extrabold leading-[0.88] tracking-[-0.025em] text-white/[0.14] italic"
-              style={{ fontSize: 'clamp(2.4rem, 5.6vw, 6.5rem)' }}
+              className="block text-white/25 italic"
             >
               Studio
-            </motion.h1>
+            </motion.span>
           </div>
-        </motion.div>
+        </motion.h1>
 
         {/* Subtitle — one line carrying what/for whom/why different,
             instead of two paragraphs splitting the same weight */}
@@ -164,7 +189,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.9 }}
-          className="mt-8 font-inter font-light text-body-lg text-white/48 max-w-xl mx-auto leading-[1.75]"
+          className="mt-8 font-inter font-light text-base text-white/68 max-w-text mx-auto leading-[1.75]"
         >
           Sites, marcas e experiências digitais para quem não aceita ser mais um
           — do conceito ao código, sempre a mesma pessoa cuidando de tudo.
@@ -181,7 +206,7 @@ export default function Hero() {
             onClick={() => navigateTo('contato')}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.97 }}
-            className="focus-ring group flex items-center gap-2 px-7 py-3 bg-white/90 hover:bg-white text-[#050506] font-inter font-medium text-[13px] rounded-full transition-colors duration-300"
+            className="focus-ring group flex items-center gap-2 px-7 py-3 bg-white/90 hover:bg-white text-[#050506] font-inter font-medium text-sm rounded-full transition-colors duration-300"
           >
             Iniciar Projeto
             <ArrowRight
@@ -199,7 +224,7 @@ export default function Hero() {
             Acessar Portfólio
           </motion.button>
         </motion.div>
-      </motion.div>
+      </div>
 
       {/* Scroll indicator — absolute, never disturbs layout */}
       <motion.div
@@ -208,7 +233,7 @@ export default function Hero() {
         transition={{ duration: 1.2, delay: 2.1 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
       >
-        <span className="font-mono text-[9px] tracking-[0.3em] text-white/16 uppercase">
+        <span className="font-mono text-xs tracking-[0.3em] text-white/50 uppercase">
           Scroll
         </span>
         <motion.div

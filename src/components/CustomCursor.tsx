@@ -17,10 +17,16 @@ export default function CustomCursor() {
 
     let tx = -300, ty = -300
     let cx = -300, cy = -300
-    let raf: number
+    let raf = 0
+    let running = false
+    let cursorVisible = false
     const lerp = (a: number, b: number, n: number) => a + (b - a) * n
 
     const tick = () => {
+      if (!running || document.hidden) {
+        raf = 0
+        return
+      }
       cx = lerp(cx, tx, 0.11)
       cy = lerp(cy, ty, 0.11)
       if (ringWrapRef.current) {
@@ -29,12 +35,37 @@ export default function CustomCursor() {
       }
       raf = requestAnimationFrame(tick)
     }
-    raf = requestAnimationFrame(tick)
+
+    const start = () => {
+      if (running && raf) return
+      running = true
+      raf = requestAnimationFrame(tick)
+    }
+
+    const stop = () => {
+      running = false
+      if (raf) cancelAnimationFrame(raf)
+      raf = 0
+    }
+
+    const show = () => {
+      if (!cursorVisible) {
+        cursorVisible = true
+        setVisible(true)
+      }
+      start()
+    }
+
+    const hide = () => {
+      cursorVisible = false
+      setVisible(false)
+      stop()
+    }
 
     const onMove = (e: MouseEvent) => {
       tx = e.clientX
       ty = e.clientY
-      setVisible(true)
+      show()
       if (dotRef.current) {
         dotRef.current.style.transform =
           `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`
@@ -48,8 +79,9 @@ export default function CustomCursor() {
 
     const onDown = () => setClicked(true)
     const onUp   = () => setClicked(false)
-    const onLeave = () => setVisible(false)
-    const onEnter = () => setVisible(true)
+    const onLeave = () => hide()
+    const onEnter = () => show()
+    const onVisibility = () => document.hidden ? stop() : cursorVisible && start()
 
     window.addEventListener('mousemove', onMove)
     document.addEventListener('mouseover', onOver)
@@ -57,6 +89,7 @@ export default function CustomCursor() {
     document.addEventListener('mouseup',   onUp)
     document.documentElement.addEventListener('mouseleave', onLeave)
     document.documentElement.addEventListener('mouseenter', onEnter)
+    document.addEventListener('visibilitychange', onVisibility)
 
     return () => {
       cancelAnimationFrame(raf)
@@ -66,6 +99,7 @@ export default function CustomCursor() {
       document.removeEventListener('mouseup',   onUp)
       document.documentElement.removeEventListener('mouseleave', onLeave)
       document.documentElement.removeEventListener('mouseenter', onEnter)
+      document.removeEventListener('visibilitychange', onVisibility)
     }
   }, [])
 

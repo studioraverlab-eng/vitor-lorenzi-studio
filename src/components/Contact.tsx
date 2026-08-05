@@ -99,18 +99,18 @@ function SocialCard({ s, i }: { s: Social; i: number }) {
     >
       <span
         className="transition-colors duration-300"
-        style={{ color: hovered ? s.hoverIconColor : 'rgba(255,255,255,0.35)' }}
+        style={{ color: hovered ? s.hoverIconColor : 'rgba(255,255,255,0.65)' }}
       >
         <s.Icon />
       </span>
       <div className="text-left">
         <div
-          className="font-inter font-medium text-[13px] leading-tight transition-all duration-300"
+          className="font-inter font-medium text-sm leading-tight transition-all duration-300"
           style={hovered ? s.hoverTextStyle : { color: 'rgba(255,255,255,0.6)' }}
         >
           {s.label}
         </div>
-        <div className="font-mono text-[9px] text-white/22 tracking-[0.08em] mt-0.5 hidden sm:block">
+        <div className="font-mono text-xs text-white/55 tracking-[0.08em] mt-0.5 hidden sm:block">
           {s.desc}
         </div>
       </div>
@@ -120,7 +120,7 @@ function SocialCard({ s, i }: { s: Social; i: number }) {
 
 export default function Contact() {
   return (
-    <section id="contato" className="relative min-h-dvh flex items-center justify-center overflow-hidden py-20 md:py-32 lg:py-40">
+    <section id="contato" className="content-auto relative min-h-dvh flex items-center justify-center overflow-hidden py-20 md:py-32 lg:py-40">
       {/* Background atmosphere */}
       <motion.div
         className="absolute rounded-full pointer-events-none"
@@ -132,8 +132,7 @@ export default function Contact() {
           top: '50%',
           transform: 'translate(-50%, -50%)',
         }}
-        animate={{ scale: [1, 1.12, 1], opacity: [0.7, 1, 0.7] }}
-        transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
+        aria-hidden="true"
       />
 
       {/* Grid pattern */}
@@ -150,7 +149,7 @@ export default function Contact() {
         }}
       />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-wide mx-auto px-6 text-center">
         {/* Label */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -160,7 +159,7 @@ export default function Contact() {
           className="flex items-center justify-center gap-4 mb-12"
         >
           <span className="h-px w-10 bg-white/[0.09]" />
-          <span className="font-mono text-[10px] tracking-[0.35em] text-white/22 uppercase">Contact</span>
+          <span className="font-mono text-xs tracking-[0.35em] text-white/55 uppercase">Contato</span>
           <span className="h-px w-10 bg-white/[0.09]" />
         </motion.div>
 
@@ -170,8 +169,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1.1, ease }}
-          className="font-syne font-bold text-white/88 leading-[1.04] mb-8"
-          style={{ fontSize: 'clamp(2.4rem, 6vw, 5.5rem)' }}
+          className="font-syne font-bold text-white/88 leading-[1.04] mb-8 text-display-section"
         >
           Tem um projeto<br />
           <span className="text-white/25 italic">em mente?</span>
@@ -182,7 +180,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.25, ease }}
-          className="font-inter font-light text-[1rem] text-white/35 max-w-sm mx-auto leading-[1.8] mb-16"
+          className="font-inter font-light text-base text-white/65 max-w-text mx-auto leading-[1.8] mb-16"
         >
           Manda uma mensagem e conta o que você precisa. Vamos conversar.
         </motion.p>
@@ -200,7 +198,7 @@ export default function Contact() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, delay: 0.8 }}
-          className="mt-20 flex items-center justify-center gap-2 font-mono text-[10px] tracking-[0.25em] text-white/20 uppercase"
+          className="mt-20 flex items-center justify-center gap-2 font-mono text-xs tracking-[0.2em] text-white/55 uppercase"
         >
           <span className="relative flex h-1.5 w-1.5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-40" style={{ backgroundColor: 'rgba(37,211,102,0.7)' }} />

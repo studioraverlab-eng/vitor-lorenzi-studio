@@ -38,6 +38,17 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    if (!mobileOpen) return
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMobileOpen(false)
+    }
+
+    document.addEventListener('keydown', onKeyDown)
+    return () => document.removeEventListener('keydown', onKeyDown)
+  }, [mobileOpen])
+
   const handleNav = (id: string, offset?: number) => {
     setMobileOpen(false)
     navigateTo(id, offset)
@@ -50,28 +61,28 @@ export default function Navbar() {
         animate={{ y: visible ? 0 : -96, opacity: visible ? 1 : 0 }}
         transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
         className={`
-          w-full max-w-5xl flex items-center justify-between px-5 py-3 rounded-2xl
+          w-full max-w-wide grid grid-cols-[1fr_auto_1fr] items-center px-5 py-3 rounded-lg
           transition-all duration-500
           ${scrolled ? 'glass-nav-scrolled' : 'glass-nav'}
         `}
       >
         {/* Logo */}
-        <Link href="/" className="focus-ring flex items-center gap-3 group">
-          <div className="w-7 h-7 border border-white/[0.14] rounded-lg flex items-center justify-center bg-white/[0.04]">
-            <span className="font-syne font-bold text-[9px] text-white/70 tracking-[0.08em]">VL</span>
+        <Link href="/" className="focus-ring justify-self-start flex items-center gap-3 group">
+          <div className="w-7 h-7 border border-white/[0.14] rounded-md flex items-center justify-center bg-white/[0.04]">
+            <span className="font-syne font-bold text-xs text-white/70 tracking-[0.08em]">VL</span>
           </div>
-          <span className="font-syne font-semibold text-[13px] text-white/50 tracking-[0.18em] uppercase hidden sm:block group-hover:text-white/70 transition-colors duration-300">
+          <span className="font-syne font-semibold text-sm text-white/50 tracking-[0.18em] uppercase hidden sm:block group-hover:text-white/70 transition-colors duration-300">
             Studio
           </span>
         </Link>
 
         {/* Desktop nav */}
-        <ul className="hidden md:flex items-center gap-7">
+        <ul className="justify-self-center hidden md:flex items-center gap-7">
           {navItems.map((item) => (
             <li key={item.id}>
               <button
                 onClick={() => handleNav(item.id, item.offset)}
-                className="focus-ring relative font-inter text-[13px] text-white/40 hover:text-white/80 transition-colors duration-300 tracking-wide group"
+                className="focus-ring relative font-inter text-sm text-white/65 hover:text-white/90 transition-colors duration-300 tracking-wide group"
               >
                 {item.label}
                 <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-white/20 group-hover:w-full transition-all duration-300" />
@@ -83,7 +94,7 @@ export default function Navbar() {
         {/* CTA */}
         <button
           onClick={navigateToPortfolio}
-          className="focus-ring hidden md:flex items-center px-4 py-2 text-[12px] font-inter font-medium tracking-wide
+          className="focus-ring justify-self-end col-start-3 hidden md:flex items-center px-4 py-2 text-sm font-inter font-medium tracking-wide
             bg-white/[0.05] hover:bg-white/[0.09] border border-white/[0.09] hover:border-white/[0.18]
             rounded-full text-white/70 hover:text-white transition-all duration-300
             shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]"
@@ -93,10 +104,11 @@ export default function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className="focus-ring md:hidden flex flex-col gap-[5px] p-2"
+          className="focus-ring justify-self-end col-start-3 md:hidden flex flex-col gap-[5px] p-2"
           onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Menu"
+          aria-label={mobileOpen ? 'Fechar menu' : 'Abrir menu'}
           aria-expanded={mobileOpen}
+          aria-controls="mobile-navigation"
         >
           <motion.span
             animate={{ rotate: mobileOpen ? 45 : 0, y: mobileOpen ? 7 : 0 }}
@@ -117,17 +129,18 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
+            id="mobile-navigation"
             initial={{ opacity: 0, y: -8, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8, scale: 0.98 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-full left-4 right-4 mt-2 p-4 rounded-2xl glass-nav-scrolled"
+            className="absolute top-full left-4 right-4 mt-2 p-4 rounded-lg glass-nav-scrolled"
           >
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleNav(item.id, item.offset)}
-                className="focus-ring block w-full text-left py-3 px-3 text-white/50 hover:text-white/90 font-inter text-[14px] border-b border-white/[0.05] last:border-0 transition-colors"
+                className="focus-ring block w-full text-left py-3 px-3 text-white/50 hover:text-white/90 font-inter text-sm border-b border-white/[0.05] last:border-0 transition-colors"
               >
                 {item.label}
               </button>

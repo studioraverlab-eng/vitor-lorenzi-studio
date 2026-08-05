@@ -6,8 +6,19 @@ export interface PortfolioProject {
   created: string
   goal: string
   image: string
-  url: string
+  url?: string
+  status: "No ar" | "Projeto desenvolvido"
   rotation: number
+}
+
+export interface OrbitCard {
+  id: string
+  company: string
+  category: string
+  image?: string
+  url?: string
+  rotation: number
+  placeholder?: boolean
 }
 
 export const projects: PortfolioProject[] = [
@@ -18,8 +29,9 @@ export const projects: PortfolioProject[] = [
     description: "Marca conectada à cultura da música eletrônica, estética underground e moda autoral.",
     created: "Direção criativa, e-commerce, experiência Lab, narrativa de produto e estrutura digital.",
     goal: "Criar uma experiência que funcionasse como marca, loja e plataforma cultural ao mesmo tempo.",
-    image: "/portfolio/raver-lab.jpg",
+    image: "/portfolio/raver-lab.webp",
     url: "https://raverlab.com.br",
+    status: "No ar",
     rotation: -12,
   },
   {
@@ -29,61 +41,57 @@ export const projects: PortfolioProject[] = [
     description: "Projeto de presença digital para um profissional do mercado imobiliário premium.",
     created: "Landing page pessoal, hero institucional, estrutura de contato, apresentação de serviço e direção visual.",
     goal: "Transmitir confiança, sofisticação e facilitar a conversão de clientes interessados.",
-    image: "/portfolio/paulo-lorenzi.jpg",
-    url: "https://SEU-LINK-AQUI.com",
+    image: "/portfolio/paulo-lorenzi.webp",
+    status: "Projeto desenvolvido",
     rotation: 8,
   },
   {
-    id: "janaina-campos",
-    company: "Janaina Campos",
-    category: "Landing page / Social media / Marca pessoal",
-    description: "Página criada para apresentar uma profissional de social media com clareza, autoridade e proximidade.",
-    created: "Estrutura de landing page, copy, hierarquia visual, apresentação de diferenciais e CTA de contato.",
-    goal: "Conectar a profissional com o público certo e transformar interesse em conversa.",
-    image: "/portfolio/janaina-campos.jpg",
-    url: "https://SEU-LINK-AQUI.com",
+    id: "landing-base",
+    company: "Landing Base",
+    category: "Landing page / Beleza / Posicionamento",
+    description: "Landing page para Camilly Cardoso, construída para apresentar serviços, resultados e agendamento com uma narrativa mais pessoal.",
+    created: "Direção visual, copy, estrutura Astro, experiência responsiva e jornada de agendamento.",
+    goal: "Transformar técnica e atendimento individual em uma presença digital humana, clara e memorável.",
+    image: "/portfolio/landing-base.webp",
+    status: "Projeto desenvolvido",
     rotation: -6,
   },
   {
-    id: "portfolio-studio",
-    company: "Vitor Lorenzi Studio",
-    category: "Portfólio / Designer / Identidade digital",
-    description: "Landing page pessoal criada para apresentar serviços, visão criativa e projetos selecionados.",
-    created: "Direção visual, estrutura de apresentação, seções de serviços, portfólio e experiência responsiva.",
-    goal: "Criar uma presença digital premium para vender design, sites e direção criativa.",
-    image: "/portfolio/vitor-lorenzi-studio.jpg",
-    url: "https://SEU-LINK-AQUI.com",
+    id: "mart-clean",
+    company: "Mart Clean",
+    category: "Site institucional / Serviços / Orçamento guiado",
+    description: "Site para limpeza técnica de estofados, com comparação antes e depois, prova de confiança e montagem de pedido online.",
+    created: "Posicionamento, UX, catálogo de serviços, diagnóstico visual e fluxo guiado de orçamento.",
+    goal: "Organizar uma oferta ampla e transformar visitas em pedidos claros, rápidos e qualificados.",
+    image: "/portfolio/mart-clean.webp",
+    status: "Projeto desenvolvido",
     rotation: 14,
   },
+]
+
+export const orbitCards: OrbitCard[] = [
+  ...projects,
   {
-    id: "branding-project",
-    company: "Branding Project",
-    category: "Identidade visual / Sistema de marca",
-    description: "Projeto focado em transformar uma ideia de negócio em uma presença visual consistente.",
-    created: "Direção de logo, tipografia, paleta, linguagem visual e aplicação da identidade.",
-    goal: "Construir uma marca com personalidade, clareza e percepção profissional.",
-    image: "/portfolio/branding-project.jpg",
-    url: "https://SEU-LINK-AQUI.com",
+    id: "next-brand",
+    company: "Novo projeto",
+    category: "Identidade em construção",
     rotation: -15,
+    placeholder: true,
   },
   {
-    id: "experimental-interface",
-    company: "Experimental Interface",
-    category: "UI / Experiência digital / Direção criativa",
-    description: "Interface experimental criada para explorar atmosfera, movimento, tipografia e narrativa visual.",
-    created: "Conceito de interface, direção de movimento, composição visual e experiência interativa.",
-    goal: "Criar uma forma mais artística, marcante e memorável de apresentar conteúdo digital.",
-    image: "/portfolio/experimental-interface.jpg",
-    url: "https://SEU-LINK-AQUI.com",
+    id: "next-digital",
+    company: "Em breve",
+    category: "Experiência digital",
     rotation: 5,
+    placeholder: true,
   },
 ]
 
 export const projectGradients: Record<string, string> = {
   "raver-lab":              "linear-gradient(135deg, #1C0A3C 0%, #0A0814 100%)",
   "paulo-lorenzi":          "linear-gradient(135deg, #061428 0%, #080810 100%)",
-  "janaina-campos":         "linear-gradient(135deg, #061E16 0%, #060A08 100%)",
-  "portfolio-studio":       "linear-gradient(135deg, #16161E 0%, #090909 100%)",
-  "branding-project":       "linear-gradient(135deg, #1E130A 0%, #0E0804 100%)",
-  "experimental-interface": "linear-gradient(135deg, #1E080E 0%, #0E0406 100%)",
+  "landing-base":           "linear-gradient(135deg, #D7C4AE 0%, #6E4A38 100%)",
+  "mart-clean":             "linear-gradient(135deg, #0D6E9E 0%, #05213D 100%)",
+  "next-brand":             "linear-gradient(145deg, #171719 0%, #0A0A0B 55%, #18231D 100%)",
+  "next-digital":           "linear-gradient(145deg, #1A1510 0%, #090909 58%, #15151C 100%)",
 }

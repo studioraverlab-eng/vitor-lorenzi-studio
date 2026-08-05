@@ -35,6 +35,8 @@ function FaqItem({ item, index, isOpen, onToggle }: {
   isOpen: boolean
   onToggle: () => void
 }) {
+  const answerId = `faq-answer-${index}`
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -46,9 +48,10 @@ function FaqItem({ item, index, isOpen, onToggle }: {
       <button
         onClick={onToggle}
         aria-expanded={isOpen}
+        aria-controls={answerId}
         className="focus-ring group flex w-full items-center justify-between gap-6 py-6 text-left"
       >
-        <span className="font-syne font-semibold text-[1rem] sm:text-[1.05rem] text-white/75 group-hover:text-white/95 transition-colors duration-300">
+        <span className="font-syne font-semibold text-base sm:text-base text-white/75 group-hover:text-white/95 transition-colors duration-300">
           {item.q}
         </span>
         <ChevronDown
@@ -59,13 +62,16 @@ function FaqItem({ item, index, isOpen, onToggle }: {
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
+            id={answerId}
+            role="region"
+            aria-label={item.q}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.35, ease }}
             className="overflow-hidden"
           >
-            <p className="pb-6 pr-10 font-inter text-body text-white/40 leading-[1.85] max-w-2xl">
+            <p className="pb-6 pr-10 font-inter text-sm text-white/65 leading-[1.85] max-w-text">
               {item.a}
             </p>
           </motion.div>
@@ -79,8 +85,8 @@ export default function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
-    <section id="perguntas" className="py-20 md:py-36 lg:py-44">
-      <div className="max-w-3xl mx-auto px-6">
+    <section id="perguntas" className="content-auto py-20 md:py-36 lg:py-44">
+      <div className="max-w-wide mx-auto px-6">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -88,7 +94,7 @@ export default function Faq() {
           transition={{ duration: 0.7 }}
           className="flex items-center gap-4 mb-5"
         >
-          <span className="font-mono text-label text-white/22 uppercase">05 — Perguntas</span>
+          <span className="font-mono text-xs tracking-[0.35em] text-white/55 uppercase">05 — Perguntas</span>
           <span className="h-px w-12 bg-white/[0.07]" />
         </motion.div>
 
@@ -97,13 +103,13 @@ export default function Faq() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.85, ease }}
-          className="font-syne font-bold text-h2 text-white/85 mb-14 leading-[1.1]"
+          className="font-syne font-bold text-display-section text-white/85 mb-14 leading-[1.1]"
         >
           Antes de falar<br />
           <span className="text-white/25 italic">comigo.</span>
         </motion.h2>
 
-        <div>
+        <div className="max-w-text">
           {faqs.map((item, i) => (
             <FaqItem
               key={item.q}

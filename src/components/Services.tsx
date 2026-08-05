@@ -93,11 +93,11 @@ function ServiceCard({ service, index }: CardProps) {
         transform: `perspective(900px) rotateX(${tilt.y}deg) rotateY(${tilt.x}deg)`,
         transition: tilt.x === 0 ? 'transform 0.5s ease' : 'transform 0.1s ease',
       }}
-      className="group relative p-6 rounded-2xl glass-card hover:border-white/[0.11] transition-colors duration-300 overflow-hidden cursor-default"
+      className="group relative p-6 rounded-lg glass-card hover:border-white/[0.11] transition-colors duration-300 overflow-hidden cursor-default"
     >
       {/* Glow on hover */}
       <div
-        className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+        className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
         style={{
           background: `radial-gradient(280px circle at ${glow.x} ${glow.y}, rgba(255,255,255,0.04), transparent 50%)`,
         }}
@@ -106,15 +106,15 @@ function ServiceCard({ service, index }: CardProps) {
       {/* Oversized watermark numeral */}
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute -right-2 -top-5 font-syne font-extrabold text-white/[0.035] group-hover:text-white/[0.06] transition-colors duration-500 select-none"
-        style={{ fontSize: '5.5rem', lineHeight: 1, letterSpacing: '-0.1em' }}
+        className="pointer-events-none absolute -right-2 -top-5 font-syne font-extrabold text-4xl text-white/[0.035] group-hover:text-white/[0.06] transition-colors duration-500 select-none"
+        style={{ lineHeight: 1, letterSpacing: '-0.1em' }}
       >
         {service.n}
       </span>
 
       {/* Icon badge */}
       <div
-        className={`relative z-10 w-11 h-11 rounded-xl flex items-center justify-center mb-6 border transition-all duration-400 ${
+        className={`relative z-10 w-11 h-11 rounded-md flex items-center justify-center mb-6 border transition-all duration-400 ${
           index % 2 === 0
             ? 'border-emerald-400/[0.12] bg-emerald-400/[0.05] group-hover:border-emerald-400/25 group-hover:bg-emerald-400/[0.09]'
             : 'border-white/[0.08] bg-white/[0.03] group-hover:border-white/[0.16] group-hover:bg-white/[0.06]'
@@ -127,10 +127,10 @@ function ServiceCard({ service, index }: CardProps) {
         />
       </div>
 
-      <h3 className="relative z-10 font-syne font-semibold text-[1.05rem] text-white/72 mb-2 group-hover:text-white/88 transition-colors duration-300">
+      <h3 className="relative z-10 font-syne font-semibold text-base text-white/72 mb-2 group-hover:text-white/88 transition-colors duration-300">
         {service.title}
       </h3>
-      <p className="relative z-10 font-inter text-[0.83rem] text-white/30 leading-[1.6] group-hover:text-white/42 transition-colors duration-300">
+      <p className="relative z-10 font-inter text-sm text-white/60 leading-[1.6] group-hover:text-white/75 transition-colors duration-300">
         {service.desc}
       </p>
     </motion.div>
@@ -139,8 +139,8 @@ function ServiceCard({ service, index }: CardProps) {
 
 export default function Services() {
   return (
-    <section id="servicos" className="py-20 md:py-36 lg:py-52">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="servicos" className="content-auto py-20 md:py-36 lg:py-52">
+      <div className="max-w-wide mx-auto px-6">
         {/* Label */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -149,7 +149,7 @@ export default function Services() {
           transition={{ duration: 0.7 }}
           className="flex items-center gap-4 mb-5"
         >
-          <span className="font-mono text-[10px] tracking-[0.35em] text-white/22 uppercase">02 — Serviços</span>
+          <span className="font-mono text-xs tracking-[0.35em] text-white/55 uppercase">02 — Serviços</span>
           <span className="h-px w-12 bg-white/[0.07]" />
         </motion.div>
 
@@ -159,8 +159,7 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="font-syne font-bold text-white/82 leading-[1.1]"
-            style={{ fontSize: 'clamp(1.9rem, 3.8vw, 3rem)' }}
+            className="font-syne font-bold text-white/82 leading-[1.1] text-display-section"
           >
             O que o studio<br />
             <span className="text-white/28 italic">faz.</span>
@@ -171,7 +170,7 @@ export default function Services() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-inter text-[0.88rem] text-white/32 max-w-xs leading-[1.8]"
+            className="font-inter text-sm text-white/60 max-w-text leading-[1.8]"
           >
             Cada projeto é tratado com o mesmo cuidado, seja o primeiro ou o décimo.
           </motion.p>

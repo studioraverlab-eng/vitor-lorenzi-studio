@@ -3,11 +3,12 @@
 import type React from "react"
 import { useEffect, useRef, useCallback, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ArrowRight, ExternalLink, ArrowLeft } from "lucide-react"
+import { ArrowRight, ExternalLink, ArrowLeft, Sparkles } from "lucide-react"
+import Image from "next/image"
 import PageBackground from "./PageBackground"
 import SectionDivider from "./SectionDivider"
 import { useCinematicScroll } from "../context/CinematicScroll"
-import { projects, projectGradients } from "../data/projects"
+import { projects, orbitCards, projectGradients } from "../data/projects"
 
 // degrees per ms — same speed as before (3 deg/sec), now frame-perfect
 const ORBIT_SPEED = 0.003
@@ -59,7 +60,7 @@ function WhatsAppFillButton() {
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         className="focus-ring relative inline-flex items-center gap-3 rounded-full px-8 py-4
-          font-inter text-[14px] font-medium overflow-hidden cursor-pointer"
+          font-inter text-sm font-medium overflow-hidden cursor-pointer"
         style={{ border: "1px solid rgba(255,255,255,0.13)" }}
       >
         {/* Gray base */}
@@ -114,13 +115,14 @@ function WhatsAppFillButton() {
 
 export default function PortfolioView() {
   // ── All per-frame data lives in refs — zero React re-renders per frame ──
-  const anglesRef       = useRef<number[]>(projects.map((_, i) => i * (360 / projects.length)))
+  const anglesRef       = useRef<number[]>(orbitCards.map((_, i) => i * (360 / orbitCards.length)))
   const wrapperRefs     = useRef<(HTMLDivElement | null)[]>([])
   const isPausedRef     = useRef(false)
   const rafRef          = useRef<number>(0)
   const lastTimeRef     = useRef<number>(0)
   const mouseRef        = useRef({ x: 0.5, y: 0.5 })
   const radiusRef       = useRef(210)
+  const orbitStageRef   = useRef<HTMLDivElement>(null)
 
   // Scroll to top on mount
   useEffect(() => {
@@ -129,7 +131,7 @@ export default function PortfolioView() {
 
   // Responsive orbit radius — ref so no re-render
   useEffect(() => {
-    const sync = () => { radiusRef.current = window.innerWidth < 640 ? 150 : 210 }
+    const sync = () => { radiusRef.current = window.innerWidth < 640 ? 132 : 210 }
     sync()
     window.addEventListener("resize", sync)
     return () => window.removeEventListener("resize", sync)
@@ -137,35 +139,72 @@ export default function PortfolioView() {
 
   // ── RAF loop — updates DOM transforms directly, never touches React state ──
   useEffect(() => {
-    const animate = (time: number) => {
-      // Clamp delta so a background-tab resume doesn't cause a jump
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    const coarsePointer = window.matchMedia("(hover: none), (pointer: coarse)").matches
+    let inViewport = true
+    let disposed = false
+
+    const positionCards = (time: number, advance: boolean) => {
       const delta = lastTimeRef.current
         ? Math.min(time - lastTimeRef.current, 100)
         : 16.67
       lastTimeRef.current = time
 
-      if (!isPausedRef.current) {
-        const r  = radiusRef.current
-        const px = (mouseRef.current.x - 0.5) * 14
-        const py = (mouseRef.current.y - 0.5) * 14
+      const r = radiusRef.current
+      const px = coarsePointer ? 0 : (mouseRef.current.x - 0.5) * 14
+      const py = coarsePointer ? 0 : (mouseRef.current.y - 0.5) * 14
 
+      if (advance && !isPausedRef.current) {
         anglesRef.current = anglesRef.current.map(a => (a + ORBIT_SPEED * delta) % 360)
-
-        wrapperRefs.current.forEach((el, i) => {
-          if (!el) return
-          const rad = anglesRef.current[i] * (Math.PI / 180)
-          const tx  = Math.cos(rad) * r
-          const ty  = Math.sin(rad) * r
-          el.style.transform =
-            `translate(${tx}px, ${ty}px) rotateX(${py}deg) rotateY(${px}deg)`
-        })
       }
 
+      wrapperRefs.current.forEach((el, i) => {
+        if (!el) return
+        const rad = anglesRef.current[i] * (Math.PI / 180)
+        const tx = Math.cos(rad) * r
+        const ty = Math.sin(rad) * r
+        el.style.transform = `translate(${tx}px, ${ty}px) rotateX(${py}deg) rotateY(${px}deg)`
+      })
+    }
+
+    const animate = (time: number) => {
+      rafRef.current = 0
+      if (disposed || !inViewport || document.hidden) return
+      positionCards(time, true)
       rafRef.current = requestAnimationFrame(animate)
     }
 
-    rafRef.current = requestAnimationFrame(animate)
-    return () => cancelAnimationFrame(rafRef.current)
+    const start = () => {
+      if (!reducedMotion && !rafRef.current && inViewport && !document.hidden) {
+        lastTimeRef.current = 0
+        rafRef.current = requestAnimationFrame(animate)
+      }
+    }
+
+    const stop = () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current)
+      rafRef.current = 0
+    }
+
+    const observer = new IntersectionObserver(([entry]) => {
+      inViewport = entry.isIntersecting
+      if (inViewport) start()
+      else stop()
+    }, { threshold: 0.02 })
+
+    if (orbitStageRef.current) observer.observe(orbitStageRef.current)
+    positionCards(performance.now(), false)
+    start()
+
+    const onVisibilityChange = () => document.hidden ? stop() : start()
+    document.addEventListener("visibilitychange", onVisibilityChange)
+
+    return () => {
+      disposed = true
+      stop()
+      observer.disconnect()
+      document.removeEventListener("visibilitychange", onVisibilityChange)
+    }
   }, [])
 
   // Mouse move — writes to ref only, no re-render
@@ -187,7 +226,7 @@ export default function PortfolioView() {
   }, [])
 
   return (
-    <div className="min-h-screen">
+    <main id="main-content" className="min-h-screen" tabIndex={-1}>
 
       <PageBackground />
 
@@ -195,77 +234,108 @@ export default function PortfolioView() {
 
         {/* Back nav */}
         <header className="fixed inset-x-0 top-0 z-40 px-6 py-5">
-          <div className="mx-auto flex max-w-7xl items-center justify-between">
+          <div className="mx-auto flex max-w-wide items-center justify-between">
             <button
               onClick={navigateToHome}
-              className="focus-ring group flex items-center gap-2 font-inter text-[11px] uppercase tracking-[0.12em] text-white/28 hover:text-white/65 transition-colors duration-300"
+              className="focus-ring group flex min-h-tap items-center gap-2 font-inter text-xs uppercase tracking-[0.12em] text-white/65 hover:text-white/90 transition-colors duration-300"
             >
               <ArrowLeft size={11} className="group-hover:-translate-x-0.5 transition-transform duration-200" />
               Vitor Lorenzi Studio
             </button>
-            <span className="font-mono text-[10px] tracking-[0.28em] text-white/18 uppercase">
-              Portfolio
+            <span className="font-mono text-xs tracking-[0.28em] text-white/55 uppercase">
+              Portfólio
             </span>
           </div>
         </header>
 
         {/* ── Hero orbit section ── */}
-        <section className="relative min-h-dvh px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto flex min-h-dvh max-w-7xl flex-col items-center justify-center py-16 md:py-24">
+        <section className="relative min-h-dvh overflow-hidden px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto flex min-h-dvh max-w-wide flex-col items-center justify-center py-16 md:py-24">
 
             {/* Orbit stage */}
             <div
-              className="relative mb-16 md:mb-28 h-[460px] w-full max-w-6xl sm:h-[520px]"
+              ref={orbitStageRef}
+              className="relative mb-16 md:mb-28 h-[460px] w-full max-w-wide sm:h-[520px]"
               onMouseMove={handleMouseMove}
             >
               <div
                 className="absolute inset-0 flex items-center justify-center"
                 style={{ perspective: "1200px" }}
               >
-                {projects.map((project, index) => (
-                  <div
-                    key={project.id}
-                    ref={el => { wrapperRefs.current[index] = el }}
-                    className="absolute"
-                    style={{ transformStyle: "preserve-3d" }}
-                  >
-                    {/* rotateZ (card tilt) is CSS-only — separate from RAF orbital transform */}
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`Abrir site ${project.company}`}
-                      style={{ transform: `rotateZ(${project.rotation}deg)`, display: "block" }}
-                      className="focus-ring h-36 w-28 sm:h-56 sm:w-44"
-                      onMouseEnter={pauseCarousel}
-                      onMouseLeave={resumeCarousel}
+                {orbitCards.map((project, index) => {
+                  const card = (
+                    <div
+                      className="group relative h-full w-full overflow-hidden rounded-lg border border-white/[0.1] shadow-2xl transition-transform duration-300 hover:scale-105"
+                      style={{ background: projectGradients[project.id] }}
                     >
-                      <div
-                        className="group relative h-full w-full overflow-hidden rounded-2xl border border-white/[0.08] shadow-2xl transition-transform duration-300 hover:scale-110"
-                        style={{ background: projectGradients[project.id] }}
-                      >
-                        <img
+                      {project.image ? (
+                        <Image
                           src={project.image}
                           alt={project.company}
-                          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                          onError={e => { (e.target as HTMLImageElement).style.display = "none" }}
+                          fill
+                          priority={index < 4}
+                          sizes="(max-width: 639px) 112px, 176px"
+                          className="absolute inset-0 object-cover transition-transform duration-700 group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-                        <div className="absolute bottom-0 left-0 right-0 p-3">
-                          <p className="text-[9px] uppercase tracking-[0.18em] text-white/55 leading-tight truncate">
-                            {project.category.split("/")[0].trim()}
-                          </p>
-                          <div className="mt-1 flex items-center justify-between gap-1">
-                            <h3 className="font-syne text-[13px] font-semibold text-white leading-tight truncate">
-                              {project.company}
-                            </h3>
-                            <ExternalLink className="h-3 w-3 text-white/70 shrink-0" />
-                          </div>
+                      ) : (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="absolute inset-0 opacity-40 [background-image:radial-gradient(rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:18px_18px]" />
+                          <Sparkles className="relative h-5 w-5 text-white/35" aria-hidden="true" />
+                        </div>
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 p-3">
+                        <p className="truncate text-xs uppercase leading-tight tracking-[0.18em] text-white/60">
+                          {project.category.split("/")[0].trim()}
+                        </p>
+                        <div className="mt-1 flex items-center justify-between gap-1">
+                          <h3 className="truncate font-syne text-sm font-semibold leading-tight text-white">
+                            {project.company}
+                          </h3>
+                          {project.url ? (
+                            <ExternalLink className="h-3 w-3 shrink-0 text-white/70" aria-hidden="true" />
+                          ) : (
+                            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-white/35" aria-hidden="true" />
+                          )}
                         </div>
                       </div>
-                    </a>
-                  </div>
-                ))}
+                    </div>
+                  )
+
+                  return (
+                    <div
+                      key={project.id}
+                      ref={el => { wrapperRefs.current[index] = el }}
+                      className="absolute"
+                      style={{ transformStyle: "preserve-3d" }}
+                    >
+                      {project.url ? (
+                        <a
+                          href={project.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Abrir site ${project.company}`}
+                          style={{ transform: `rotateZ(${project.rotation}deg)`, display: "block" }}
+                          className="focus-ring h-36 w-28 sm:h-56 sm:w-44"
+                          onMouseEnter={pauseCarousel}
+                          onMouseLeave={resumeCarousel}
+                        >
+                          {card}
+                        </a>
+                      ) : (
+                        <div
+                          aria-label={`${project.company} — ${project.placeholder ? "em breve" : "projeto desenvolvido"}`}
+                          style={{ transform: `rotateZ(${project.rotation}deg)` }}
+                          className="h-36 w-28 sm:h-56 sm:w-44"
+                          onMouseEnter={pauseCarousel}
+                          onMouseLeave={resumeCarousel}
+                        >
+                          {card}
+                        </div>
+                      )}
+                    </div>
+                  )
+                })}
               </div>
             </div>
 
@@ -274,31 +344,30 @@ export default function PortfolioView() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
-              className="relative z-20 mx-auto max-w-3xl text-center"
+              className="relative z-20 mx-auto max-w-text text-center"
             >
               <div className="flex items-center justify-center gap-4 mb-5">
                 <span className="h-px w-8 bg-white/[0.1]" />
-                <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-white/22">
-                  Design, identity and digital experiences
+                <p className="font-mono text-xs uppercase tracking-[0.28em] text-white/55">
+                  Design, identidade e experiências digitais
                 </p>
                 <span className="h-px w-8 bg-white/[0.1]" />
               </div>
 
               <h1
-                className="mb-6 font-syne font-extrabold text-white/85 tracking-[-0.02em] leading-[1.04]"
-                style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)" }}
+                className="mb-6 font-syne font-extrabold text-white/85 tracking-[-0.02em] leading-[1.04] text-display-hero"
               >
-                Selected Works
+                Projetos selecionados
               </h1>
 
-              <p className="mx-auto mb-8 max-w-xl font-inter font-light text-[1rem] leading-[1.8] text-white/38 sm:text-[1.05rem]">
-                Uma seleção de sites, marcas, landing pages e experiências digitais criadas
-                com estratégia, atmosfera e precisão.
+              <p className="mx-auto mb-8 max-w-text font-inter font-light text-base leading-[1.8] text-white/65 sm:text-base">
+                Trabalhos reais criados do conceito ao código — com estratégia,
+                identidade e acabamento em cada detalhe.
               </p>
 
               <button
                 onClick={handleVerProjetos}
-                className="focus-ring inline-flex items-center gap-2 rounded-full border border-white/[0.12] hover:border-white/[0.24] px-7 py-3 font-inter text-[13px] font-medium text-white/50 hover:text-white/85 transition-all duration-300 hover:bg-white/[0.04] cursor-pointer"
+                className="focus-ring inline-flex items-center gap-2 rounded-full border border-white/[0.12] hover:border-white/[0.24] px-7 py-3 font-inter text-sm font-medium text-white/50 hover:text-white/85 transition-all duration-300 hover:bg-white/[0.04] cursor-pointer"
               >
                 Ver projetos
                 <ArrowRight className="h-4 w-4" />
@@ -311,7 +380,7 @@ export default function PortfolioView() {
 
         {/* ── Project list ── */}
         <section id="portfolio" className="relative px-4 py-28 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-6xl">
+          <div className="mx-auto max-w-wide">
 
             {/* Section header */}
             <motion.div
@@ -324,17 +393,16 @@ export default function PortfolioView() {
               <div>
                 <div className="flex items-center gap-3 mb-5">
                   <span className="h-px w-6 bg-white/[0.12]" />
-                  <span className="font-mono text-[10px] tracking-[0.38em] text-white/22 uppercase">Selected Works</span>
+                  <span className="font-mono text-xs tracking-[0.28em] text-white/55 uppercase">Trabalhos reais</span>
                 </div>
                 <h2
-                  className="font-syne font-bold text-white/82 tracking-[-0.025em] leading-[1.06]"
-                  style={{ fontSize: "clamp(2rem, 4.5vw, 3.2rem)" }}
+                  className="font-syne font-bold text-white/82 tracking-[-0.025em] leading-[1.06] text-display-section"
                 >
                   Projetos selecionados
                 </h2>
               </div>
-              <p className="font-inter font-light text-[0.88rem] leading-[1.85] text-white/30 max-w-xs sm:text-right">
-                Branding, landing pages, e-commerce e experiências digitais.
+              <p className="font-inter font-light text-sm leading-[1.85] text-white/60 max-w-text sm:text-right">
+                Landing pages, e-commerce e experiências digitais para negócios de universos diferentes.
               </p>
             </motion.div>
 
@@ -343,23 +411,26 @@ export default function PortfolioView() {
 
             {/* Editorial list */}
             {projects.map((project, i) => (
-              <motion.div
+              <motion.article
                 key={project.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.7, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
-                className="group relative"
+                className={`group relative ${project.url ? "cursor-pointer" : "cursor-default"}`}
               >
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Ver site ${project.company}`}
-                  className="focus-ring flex items-start gap-6 sm:gap-10 py-9 sm:py-11 cursor-pointer"
-                >
+                {project.url && (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Ver site ${project.company}`}
+                    className="focus-ring absolute inset-0 z-10"
+                  />
+                )}
+                <div className="flex items-start gap-6 py-9 sm:gap-10 sm:py-11">
                   {/* Index number */}
-                  <span className="font-mono text-[11px] tracking-[0.18em] text-white/18 pt-1.5 shrink-0 w-7 group-hover:text-white/40 transition-colors duration-400">
+                  <span className="font-mono text-xs tracking-[0.18em] text-white/50 pt-1.5 shrink-0 w-7 group-hover:text-white/70 transition-colors duration-400">
                     {String(i + 1).padStart(2, "0")}
                   </span>
 
@@ -368,20 +439,19 @@ export default function PortfolioView() {
                     <div className="flex items-start justify-between gap-8">
                       <div className="min-w-0 flex-1">
                         {/* Category */}
-                        <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-white/22 mb-3 group-hover:text-white/38 transition-colors duration-400">
+                        <p className="font-mono text-xs uppercase tracking-[0.3em] text-white/55 mb-3 group-hover:text-white/75 transition-colors duration-400">
                           {project.category.split("/")[0].trim()}
                         </p>
 
                         {/* Title */}
                         <h3
-                          className="font-syne font-bold text-white/68 tracking-[-0.015em] leading-[1.1] group-hover:text-white/90 transition-colors duration-400"
-                          style={{ fontSize: "clamp(1.45rem, 3vw, 2rem)" }}
+                          className="font-syne font-bold text-white/68 tracking-[-0.015em] leading-[1.1] group-hover:text-white/90 transition-colors duration-400 text-md"
                         >
                           {project.company}
                         </h3>
 
                         {/* Description */}
-                        <p className="mt-4 font-inter font-light text-[0.85rem] leading-[1.85] text-white/28 max-w-lg group-hover:text-white/40 transition-colors duration-400">
+                        <p className="mt-4 font-inter font-light text-sm leading-[1.85] text-white/65 max-w-text group-hover:text-white/80 transition-colors duration-400">
                           {project.description}
                         </p>
 
@@ -390,38 +460,44 @@ export default function PortfolioView() {
                           {project.category.split("/").map(tag => (
                             <span
                               key={tag}
-                              className="font-mono text-[8px] tracking-[0.18em] text-white/22 border border-white/[0.07] rounded-full px-3 py-1 group-hover:border-white/[0.13] group-hover:text-white/35 transition-all duration-400"
+                              className="font-mono text-xs tracking-[0.14em] text-white/55 border border-white/[0.12] rounded-full px-3 py-1 group-hover:border-white/[0.2] group-hover:text-white/75 transition-all duration-400"
                             >
                               {tag.trim()}
                             </span>
                           ))}
+                          <span className="rounded-full border border-emerald-400/20 bg-emerald-400/[0.06] px-3 py-1 font-mono text-xs tracking-[0.14em] text-emerald-300/70">
+                            {project.status}
+                          </span>
                         </div>
                       </div>
 
                       {/* Hover image — desktop only */}
                       <div
-                        className="hidden lg:block shrink-0 w-44 h-32 rounded-2xl overflow-hidden opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 ease-out shadow-2xl"
+                        className="hidden lg:block shrink-0 w-44 h-32 rounded-lg overflow-hidden opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 ease-out shadow-2xl"
                         style={{ background: projectGradients[project.id] }}
                       >
-                        <img
+                        <Image
                           src={project.image}
                           alt={project.company}
-                          className="w-full h-full object-cover"
-                          onError={e => { (e.target as HTMLImageElement).style.display = "none" }}
+                          fill
+                          sizes="176px"
+                          className="object-cover"
                         />
                       </div>
                     </div>
                   </div>
 
                   {/* Arrow — right side */}
-                  <div className="shrink-0 pt-1.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-                    <ExternalLink className="w-4 h-4 text-white/40" />
-                  </div>
-                </a>
+                  {project.url && (
+                    <div className="shrink-0 -translate-x-1 pt-1.5 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
+                      <ExternalLink className="h-4 w-4 text-white/60" aria-hidden="true" />
+                    </div>
+                  )}
+                </div>
 
                 {/* Bottom hairline */}
                 <div className="h-px w-full bg-white/[0.07] group-hover:bg-white/[0.12] transition-colors duration-500" />
-              </motion.div>
+              </motion.article>
             ))}
           </div>
         </section>
@@ -429,7 +505,7 @@ export default function PortfolioView() {
         <SectionDivider />
 
         {/* WhatsApp CTA */}
-        <section className="relative px-4 py-28 sm:px-6 lg:px-8 overflow-hidden">
+        <section id="portfolio-contact" className="relative px-4 py-28 sm:px-6 lg:px-8 overflow-hidden">
           {/* Background glow */}
           <div
             className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"
@@ -440,7 +516,7 @@ export default function PortfolioView() {
             }}
           />
 
-          <div className="relative mx-auto max-w-3xl text-center">
+          <div className="relative mx-auto max-w-text text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -449,19 +525,18 @@ export default function PortfolioView() {
             >
               <div className="flex items-center justify-center gap-4 mb-8">
                 <span className="h-px w-8 bg-white/[0.08]" />
-                <span className="font-mono text-[10px] tracking-[0.38em] text-white/22 uppercase">Contato</span>
+                <span className="font-mono text-xs tracking-[0.38em] text-white/55 uppercase">Contato</span>
                 <span className="h-px w-8 bg-white/[0.08]" />
               </div>
 
               <h2
-                className="font-syne font-bold text-white/82 tracking-[-0.025em] leading-[1.07] mb-6"
-                style={{ fontSize: "clamp(2rem, 5vw, 3.8rem)" }}
+                className="font-syne font-bold text-white/82 tracking-[-0.025em] leading-[1.07] mb-6 text-display-section"
               >
                 Vamos criar algo<br />
                 <span className="text-white/28 italic">juntos?</span>
               </h2>
 
-              <p className="font-inter font-light text-[0.95rem] leading-[1.85] text-white/32 max-w-md mx-auto mb-12">
+              <p className="font-inter font-light text-sm leading-[1.85] text-white/65 max-w-text mx-auto mb-12">
                 Entre em contato pelo WhatsApp e conte sobre o seu projeto. Responderei em breve.
               </p>
 
@@ -474,18 +549,18 @@ export default function PortfolioView() {
 
         {/* Footer */}
         <footer className="py-10 px-6">
-          <div className="mx-auto max-w-7xl flex flex-col sm:flex-row items-center justify-between gap-5">
+          <div className="mx-auto max-w-wide flex flex-col sm:flex-row items-center justify-between gap-5">
             <div className="flex items-center gap-3">
-              <div className="w-6 h-6 border border-white/[0.1] rounded flex items-center justify-center">
-                <span className="font-syne font-bold text-[8px] text-white/50 tracking-tight">VL</span>
+              <div className="w-6 h-6 border border-white/[0.1] rounded-sm flex items-center justify-center">
+                <span className="font-syne font-bold text-xs text-white/50 tracking-tight">VL</span>
               </div>
-              <span className="font-mono text-[10px] tracking-[0.2em] text-white/20 uppercase">
+              <span className="font-mono text-xs tracking-[0.2em] text-white/55 uppercase">
                 Vitor Lorenzi Studio
               </span>
             </div>
             <button
               onClick={navigateToHome}
-              className="focus-ring font-inter text-[11px] text-white/20 hover:text-white/50 transition-colors duration-200"
+              className="focus-ring min-h-tap font-inter text-xs text-white/55 hover:text-white/80 transition-colors duration-200"
             >
               ← Voltar ao início
             </button>
@@ -493,6 +568,6 @@ export default function PortfolioView() {
         </footer>
 
       </div>
-    </div>
+    </main>
   )
 }
