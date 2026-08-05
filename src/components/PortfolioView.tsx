@@ -344,7 +344,7 @@ export default function PortfolioView() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
-              className="relative z-20 mx-auto max-w-text text-center"
+              className="relative z-20 mx-auto max-w-wide px-6 text-center"
             >
               <div className="flex items-center justify-center gap-4 mb-5">
                 <span className="h-px w-8 bg-white/[0.1]" />
@@ -355,7 +355,7 @@ export default function PortfolioView() {
               </div>
 
               <h1
-                className="mb-6 font-syne font-extrabold text-white/85 tracking-[-0.02em] leading-[1.04] text-display-hero"
+                className="mb-6 font-syne font-extrabold text-white/85 tracking-[-0.02em] leading-[1.04] text-[clamp(1.6rem,7vw,6.5rem)]"
               >
                 Projetos selecionados
               </h1>
