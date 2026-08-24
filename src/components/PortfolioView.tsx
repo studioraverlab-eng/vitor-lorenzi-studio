@@ -348,13 +348,9 @@ export default function PortfolioView() {
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
               className="relative z-20 mx-auto max-w-wide px-6 text-center"
             >
-              <div className="flex items-center justify-center gap-4 mb-5">
-                <span className="h-px w-8 bg-white/[0.1]" />
-                <p className="font-mono text-xs uppercase tracking-[0.28em] text-white/62">
-                  O que já saiu daqui
-                </p>
-                <span className="h-px w-8 bg-white/[0.1]" />
-              </div>
+              <p className="mb-5 font-mono text-xs uppercase tracking-[0.28em] text-white/62">
+                O que já saiu daqui
+              </p>
 
               <h1
                 className="mb-6 font-syne font-extrabold text-white/85 tracking-[-0.02em] leading-[1.04] text-[clamp(1.6rem,7vw,6.5rem)]"
@@ -393,9 +389,14 @@ export default function PortfolioView() {
               className="mb-20 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6"
             >
               <div>
-                <div className="flex items-center gap-3 mb-5">
-                  <span className="h-px w-6 bg-white/[0.12]" />
-                  <span className="font-mono text-xs tracking-[0.28em] text-white/62 uppercase">Trabalhos reais</span>
+                {/* O fio virou contagem: diz quantos projetos vêm abaixo,
+                    que é uma informação que a página tem e não mostrava. */}
+                <div className="mb-5 flex items-baseline gap-3 font-mono text-xs uppercase">
+                  <span className="tabular-nums tracking-[0.18em] text-white/75">
+                    {String(projects.length).padStart(2, "0")}
+                    <span className="text-white/35">/{String(projects.length).padStart(2, "0")}</span>
+                  </span>
+                  <span className="tracking-[0.28em] text-white/62">Trabalhos reais</span>
                 </div>
                 <h2
                   className="font-syne font-bold text-white/82 tracking-[-0.025em] leading-[1.06] text-display-section"
@@ -525,11 +526,9 @@ export default function PortfolioView() {
               viewport={{ once: true }}
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="flex items-center justify-center gap-4 mb-8">
-                <span className="h-px w-8 bg-white/[0.08]" />
-                <span className="font-mono text-xs tracking-[0.38em] text-white/62 uppercase">Contato</span>
-                <span className="h-px w-8 bg-white/[0.08]" />
-              </div>
+              <p className="mb-8 font-mono text-xs uppercase tracking-[0.28em] text-white/62">
+                /contato
+              </p>
 
               <h2
                 className="font-syne font-bold text-white/82 tracking-[-0.025em] leading-[1.07] mb-6 text-display-section"

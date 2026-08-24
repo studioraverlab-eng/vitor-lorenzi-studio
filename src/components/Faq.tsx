@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import { springSnappy } from '../lib/motion'
+import SectionLabel from './SectionLabel'
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
@@ -92,16 +93,7 @@ export default function Faq() {
   return (
     <section id="perguntas" className="content-auto py-20 md:py-36 lg:py-44">
       <div className="max-w-wide mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="flex items-center gap-4 mb-5"
-        >
-          <span className="font-mono text-xs tracking-[0.35em] text-white/62 uppercase">05 / Perguntas</span>
-          <span className="h-px w-12 bg-white/[0.07]" />
-        </motion.div>
+        <SectionLabel n={5} total={5} path="perguntas" className="mb-5" />
 
         <motion.h2
           initial={{ opacity: 0, y: 24 }}

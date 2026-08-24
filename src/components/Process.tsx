@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import SectionLabel from './SectionLabel'
 
 const steps = [
   {
@@ -34,17 +35,7 @@ export default function Process() {
   return (
     <section id="processo" className="content-auto py-20 md:py-36 lg:py-52">
       <div className="max-w-wide mx-auto px-6">
-        {/* Label */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="flex items-center gap-4 mb-5"
-        >
-          <span className="font-mono text-xs tracking-[0.35em] text-white/62 uppercase">03 / Processo</span>
-          <span className="h-px w-12 bg-white/[0.07]" />
-        </motion.div>
+        <SectionLabel n={3} total={5} path="processo" className="mb-5" />
 
         <motion.h2
           initial={{ opacity: 0, y: 24 }}

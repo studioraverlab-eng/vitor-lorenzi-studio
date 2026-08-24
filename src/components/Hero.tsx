@@ -149,9 +149,8 @@ export default function Hero() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex items-center justify-center gap-4 mb-8"
+          className="flex items-center justify-center mb-8"
         >
-          <span className="h-px w-8 bg-white/[0.14]" />
           <span className="flex items-center gap-2">
             <span className="relative flex h-1.5 w-1.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-50" style={{ backgroundColor: 'rgba(37,211,102,0.6)' }} />
@@ -161,7 +160,6 @@ export default function Hero() {
               vitorlorenzi.studio <span className="text-white/[0.14]">/</span> aceitando projeto novo
             </span>
           </span>
-          <span className="h-px w-8 bg-white/[0.14]" />
         </motion.div>
 
         {/* Title: no desktop cabe em uma linha só. No celular quebra em duas

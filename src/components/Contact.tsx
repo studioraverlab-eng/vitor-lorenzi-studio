@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { MessageCircle, Mail } from 'lucide-react'
 import { springUI } from '../lib/motion'
+import SectionLabel from './SectionLabel'
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
@@ -151,18 +152,7 @@ export default function Contact() {
       />
 
       <div className="relative z-10 max-w-wide mx-auto px-6 text-center">
-        {/* Label */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="flex items-center justify-center gap-4 mb-12"
-        >
-          <span className="h-px w-10 bg-white/[0.09]" />
-          <span className="font-mono text-xs tracking-[0.35em] text-white/62 uppercase">Contato</span>
-          <span className="h-px w-10 bg-white/[0.09]" />
-        </motion.div>
+        <SectionLabel path="contato" center className="mb-12" />
 
         {/* Main headline */}
         <motion.h2

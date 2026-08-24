@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { useCinematicScroll } from '../context/CinematicScroll'
 import { projects, projectGradients } from '../data/projects'
 import { springUI } from '../lib/motion'
+import SectionLabel from './SectionLabel'
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
@@ -56,17 +57,7 @@ export default function PortfolioTeaser() {
   return (
     <section className="content-auto relative py-20 md:py-36 lg:py-52 overflow-hidden">
       <div className="relative max-w-wide mx-auto px-6">
-        {/* Label */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="flex items-center gap-4 mb-5"
-        >
-          <span className="font-mono text-xs tracking-[0.35em] text-white/62 uppercase">04 / Portfólio</span>
-          <span className="h-px w-12 bg-white/[0.07]" />
-        </motion.div>
+        <SectionLabel n={4} total={5} path="portfolio" href="/portfolio" className="mb-5" />
 
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <motion.h2

@@ -2,27 +2,19 @@
 
 import { motion } from 'framer-motion'
 import { Lock } from 'lucide-react'
+import SectionLabel from './SectionLabel'
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
 export default function BrowserChrome() {
   return (
-    <section className="content-auto py-20 md:py-36 lg:py-52 overflow-hidden">
+    <section id="metodo" className="content-auto py-20 md:py-36 lg:py-52 overflow-hidden">
       <div className="max-w-wide mx-auto px-6">
-        {/* Eyebrow — deliberately unnumbered: this isn't another item in the
-            01–04 sequence, it's an interstitial signature moment. */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="flex items-center gap-4 mb-14"
-        >
-          <span className="h-px w-8 bg-chrome-accent/40" />
-          <span className="font-mono text-xs text-chrome-accent/70 uppercase">
-            A marca registrada daqui
-          </span>
-        </motion.div>
+        {/* Sem número de propósito: não é mais um item da sequência 01 a 05,
+            é o intervalo de assinatura. O caminho aqui é o mesmo que aparece
+            na barra do navegador falso logo ao lado, então o rótulo e a peça
+            estão dizendo a mesma coisa. */}
+        <SectionLabel path="metodo" accent className="mb-14" />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
           {/* Copy */}

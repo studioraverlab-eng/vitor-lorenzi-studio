@@ -3,6 +3,7 @@
 import { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { Globe, Layout, Palette, Sparkles, Compass, Zap, Play, Layers } from 'lucide-react'
+import SectionLabel from './SectionLabel'
 
 const services = [
   {
@@ -143,17 +144,7 @@ export default function Services() {
   return (
     <section id="servicos" className="content-auto py-20 md:py-36 lg:py-52">
       <div className="max-w-wide mx-auto px-6">
-        {/* Label */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="flex items-center gap-4 mb-5"
-        >
-          <span className="font-mono text-xs tracking-[0.35em] text-white/62 uppercase">02 / Serviços</span>
-          <span className="h-px w-12 bg-white/[0.07]" />
-        </motion.div>
+        <SectionLabel n={2} total={5} path="servicos" className="mb-5" />
 
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
           <motion.h2

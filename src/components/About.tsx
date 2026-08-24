@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import SectionLabel from './SectionLabel'
 
 const pillars = [
   { title: 'Zero template', desc: 'Nada de tema pronto com a cor trocada.' },
@@ -16,17 +17,7 @@ export default function About() {
   return (
     <section id="sobre" className="content-auto py-20 md:py-36 lg:py-52">
       <div className="max-w-wide mx-auto px-6">
-        {/* Section label */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="flex items-center gap-4 mb-6"
-        >
-          <span className="font-mono text-xs tracking-[0.35em] text-white/62 uppercase">01 / Sobre</span>
-          <span className="h-px w-12 bg-white/[0.07]" />
-        </motion.div>
+        <SectionLabel n={1} total={5} path="sobre" className="mb-6" />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-28">
           {/* Left */}
