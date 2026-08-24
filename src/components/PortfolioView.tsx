@@ -7,6 +7,7 @@ import { ArrowRight, ExternalLink, ArrowLeft, Sparkles } from "lucide-react"
 import Image from "next/image"
 import PageBackground from "./PageBackground"
 import SectionDivider from "./SectionDivider"
+import { springUI } from "../lib/motion"
 import { useCinematicScroll } from "../context/CinematicScroll"
 import { projects, orbitCards, projectGradients } from "../data/projects"
 
@@ -56,7 +57,8 @@ function WhatsAppFillButton() {
         href="https://wa.me/5515991684097"
         target="_blank"
         rel="noopener noreferrer"
-        whileTap={{ scale: 0.97 }}
+        whileHover={{ scale: 1.02, transition: springUI }}
+        whileTap={{ scale: 0.97, transition: springUI }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         className="focus-ring relative inline-flex items-center gap-3 rounded-full px-8 py-4
@@ -242,7 +244,7 @@ export default function PortfolioView() {
               <ArrowLeft size={11} className="group-hover:-translate-x-0.5 transition-transform duration-200" />
               Vitor Lorenzi Studio
             </button>
-            <span className="font-mono text-xs tracking-[0.28em] text-white/55 uppercase">
+            <span className="font-mono text-xs tracking-[0.28em] text-white/62 uppercase">
               Portfólio
             </span>
           </div>
@@ -324,7 +326,7 @@ export default function PortfolioView() {
                         </a>
                       ) : (
                         <div
-                          aria-label={`${project.company} — ${project.placeholder ? "em breve" : "projeto desenvolvido"}`}
+                          aria-label={`${project.company}, ${project.placeholder ? "em breve" : "projeto desenvolvido"}`}
                           style={{ transform: `rotateZ(${project.rotation}deg)` }}
                           className="h-36 w-28 sm:h-56 sm:w-44"
                           onMouseEnter={pauseCarousel}
@@ -348,8 +350,8 @@ export default function PortfolioView() {
             >
               <div className="flex items-center justify-center gap-4 mb-5">
                 <span className="h-px w-8 bg-white/[0.1]" />
-                <p className="font-mono text-xs uppercase tracking-[0.28em] text-white/55">
-                  Design, identidade e experiências digitais
+                <p className="font-mono text-xs uppercase tracking-[0.28em] text-white/62">
+                  O que já saiu daqui
                 </p>
                 <span className="h-px w-8 bg-white/[0.1]" />
               </div>
@@ -361,13 +363,13 @@ export default function PortfolioView() {
               </h1>
 
               <p className="mx-auto mb-8 max-w-text font-inter font-light text-base leading-[1.8] text-white/65 sm:text-base">
-                Trabalhos reais criados do conceito ao código — com estratégia,
-                identidade e acabamento em cada detalhe.
+                Projeto de verdade, no ar, feito do conceito ao código. Pode clicar
+                e conferir de perto.
               </p>
 
               <button
                 onClick={handleVerProjetos}
-                className="focus-ring inline-flex items-center gap-2 rounded-full border border-white/[0.12] hover:border-white/[0.24] px-7 py-3 font-inter text-sm font-medium text-white/50 hover:text-white/85 transition-all duration-300 hover:bg-white/[0.04] cursor-pointer"
+                className="press-target focus-ring inline-flex items-center gap-2 rounded-full border border-white/[0.12] hover:border-white/[0.24] px-7 py-3 font-inter text-sm font-medium text-white/60 hover:text-white/85 transition-all duration-300 hover:bg-white/[0.04] cursor-pointer"
               >
                 Ver projetos
                 <ArrowRight className="h-4 w-4" />
@@ -393,7 +395,7 @@ export default function PortfolioView() {
               <div>
                 <div className="flex items-center gap-3 mb-5">
                   <span className="h-px w-6 bg-white/[0.12]" />
-                  <span className="font-mono text-xs tracking-[0.28em] text-white/55 uppercase">Trabalhos reais</span>
+                  <span className="font-mono text-xs tracking-[0.28em] text-white/62 uppercase">Trabalhos reais</span>
                 </div>
                 <h2
                   className="font-syne font-bold text-white/82 tracking-[-0.025em] leading-[1.06] text-display-section"
@@ -402,7 +404,7 @@ export default function PortfolioView() {
                 </h2>
               </div>
               <p className="font-inter font-light text-sm leading-[1.85] text-white/60 max-w-text sm:text-right">
-                Landing pages, e-commerce e experiências digitais para negócios de universos diferentes.
+                Landing page, e-commerce e site institucional. Cada um de um universo bem diferente.
               </p>
             </motion.div>
 
@@ -430,7 +432,7 @@ export default function PortfolioView() {
                 )}
                 <div className="flex items-start gap-6 py-9 sm:gap-10 sm:py-11">
                   {/* Index number */}
-                  <span className="font-mono text-xs tracking-[0.18em] text-white/50 pt-1.5 shrink-0 w-7 group-hover:text-white/70 transition-colors duration-400">
+                  <span className="font-mono text-xs tracking-[0.18em] text-white/60 pt-1.5 shrink-0 w-7 group-hover:text-white/70 transition-colors duration-400">
                     {String(i + 1).padStart(2, "0")}
                   </span>
 
@@ -439,7 +441,7 @@ export default function PortfolioView() {
                     <div className="flex items-start justify-between gap-8">
                       <div className="min-w-0 flex-1">
                         {/* Category */}
-                        <p className="font-mono text-xs uppercase tracking-[0.3em] text-white/55 mb-3 group-hover:text-white/75 transition-colors duration-400">
+                        <p className="font-mono text-xs uppercase tracking-[0.3em] text-white/62 mb-3 group-hover:text-white/75 transition-colors duration-400">
                           {project.category.split("/")[0].trim()}
                         </p>
 
@@ -460,7 +462,7 @@ export default function PortfolioView() {
                           {project.category.split("/").map(tag => (
                             <span
                               key={tag}
-                              className="font-mono text-xs tracking-[0.14em] text-white/55 border border-white/[0.12] rounded-full px-3 py-1 group-hover:border-white/[0.2] group-hover:text-white/75 transition-all duration-400"
+                              className="font-mono text-xs tracking-[0.14em] text-white/62 border border-white/[0.12] rounded-full px-3 py-1 group-hover:border-white/[0.2] group-hover:text-white/75 transition-all duration-400"
                             >
                               {tag.trim()}
                             </span>
@@ -525,7 +527,7 @@ export default function PortfolioView() {
             >
               <div className="flex items-center justify-center gap-4 mb-8">
                 <span className="h-px w-8 bg-white/[0.08]" />
-                <span className="font-mono text-xs tracking-[0.38em] text-white/55 uppercase">Contato</span>
+                <span className="font-mono text-xs tracking-[0.38em] text-white/62 uppercase">Contato</span>
                 <span className="h-px w-8 bg-white/[0.08]" />
               </div>
 
@@ -537,7 +539,7 @@ export default function PortfolioView() {
               </h2>
 
               <p className="font-inter font-light text-sm leading-[1.85] text-white/65 max-w-text mx-auto mb-12">
-                Entre em contato pelo WhatsApp e conte sobre o seu projeto. Responderei em breve.
+                Chama no WhatsApp e me conta a ideia. Respondo rápido, prometo.
               </p>
 
               <WhatsAppFillButton />
@@ -552,15 +554,15 @@ export default function PortfolioView() {
           <div className="mx-auto max-w-wide flex flex-col sm:flex-row items-center justify-between gap-5">
             <div className="flex items-center gap-3">
               <div className="w-6 h-6 border border-white/[0.1] rounded-sm flex items-center justify-center">
-                <span className="font-syne font-bold text-xs text-white/50 tracking-tight">VL</span>
+                <span className="font-syne font-bold text-xs text-white/60 tracking-tight">VL</span>
               </div>
-              <span className="font-mono text-xs tracking-[0.2em] text-white/55 uppercase">
+              <span className="font-mono text-xs tracking-[0.2em] text-white/62 uppercase">
                 Vitor Lorenzi Studio
               </span>
             </div>
             <button
               onClick={navigateToHome}
-              className="focus-ring min-h-tap font-inter text-xs text-white/55 hover:text-white/80 transition-colors duration-200"
+              className="press-target focus-ring min-h-tap font-inter text-xs text-white/60 hover:text-white/80 transition-colors duration-200"
             >
               ← Voltar ao início
             </button>

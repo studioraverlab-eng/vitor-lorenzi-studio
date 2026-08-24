@@ -7,7 +7,7 @@ export default function Footer() {
         {/* Logo + name */}
         <div className="flex items-center gap-3">
           <div className="w-6 h-6 border border-white/[0.1] rounded-sm flex items-center justify-center">
-            <span className="font-syne font-bold text-xs text-white/50 tracking-tight">VL</span>
+            <span className="font-syne font-bold text-xs text-white/60 tracking-tight">VL</span>
           </div>
           <span className="font-mono text-xs tracking-[0.22em] text-white/60 uppercase">
             Vitor Lorenzi Studio
@@ -15,8 +15,8 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <p className="font-mono text-xs tracking-[0.18em] text-white/50">
-          © {year} — Design, branding e experiências digitais.
+        <p className="font-mono text-xs tracking-[0.18em] text-white/60">
+          © {year}. Feito à mão, um pixel de cada vez.
         </p>
       </div>
     </footer>

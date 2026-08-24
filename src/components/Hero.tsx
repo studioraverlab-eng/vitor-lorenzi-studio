@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { useCinematicScroll } from '../context/CinematicScroll'
+import { springUI } from '../lib/motion'
 
 function ParticleField() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -156,19 +157,20 @@ export default function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-50" style={{ backgroundColor: 'rgba(37,211,102,0.6)' }} />
               <span className="relative inline-flex rounded-full h-1.5 w-1.5" style={{ backgroundColor: 'rgba(37,211,102,0.85)' }} />
             </span>
-            <span className="font-mono text-xs tracking-[0.28em] text-white/55 uppercase">
-              vitorlorenzi.studio <span className="text-white/[0.14]">/</span> direção criativa &amp; experiências digitais
+            <span className="font-mono text-xs tracking-[0.28em] text-white/62 uppercase">
+              vitorlorenzi.studio <span className="text-white/[0.14]">/</span> aceitando projeto novo
             </span>
           </span>
           <span className="h-px w-8 bg-white/[0.14]" />
         </motion.div>
 
-        {/* Title — clamp keeps "Vitor Lorenzi" on one line */}
+        {/* Title: no desktop cabe em uma linha só. No celular quebra em duas
+            em vez de encolher até virar legenda ou ser cortado na borda. */}
         <motion.h1 variants={stagger} initial="hidden" animate="show" className="font-syne font-extrabold leading-[0.95] tracking-[-0.025em] text-display-hero">
           <div className="overflow-hidden">
             <motion.span
               variants={textReveal}
-              className="block text-white/95 whitespace-nowrap"
+              className="block text-white/95 whitespace-normal sm:whitespace-nowrap"
             >
               Vitor Lorenzi
             </motion.span>
@@ -191,8 +193,8 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.9 }}
           className="mt-8 font-inter font-light text-base text-white/68 max-w-text mx-auto leading-[1.75]"
         >
-          Sites, marcas e experiências digitais para quem não aceita ser mais um
-          — do conceito ao código, sempre a mesma pessoa cuidando de tudo.
+          Faço sites e marcas pra quem cansou de parecer com todo mundo. Do
+          primeiro rabisco até o site no ar, é tudo eu.
         </motion.p>
 
         {/* CTAs */}
@@ -204,11 +206,11 @@ export default function Hero() {
         >
           <motion.button
             onClick={() => navigateTo('contato')}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.97 }}
+            whileHover={{ scale: 1.02, transition: springUI }}
+            whileTap={{ scale: 0.97, transition: springUI }}
             className="focus-ring group flex items-center gap-2 px-7 py-3 bg-white/90 hover:bg-white text-[#050506] font-inter font-medium text-sm rounded-full transition-colors duration-300"
           >
-            Iniciar Projeto
+            Bora começar
             <ArrowRight
               size={13}
               className="group-hover:translate-x-0.5 transition-transform duration-200"
@@ -217,11 +219,11 @@ export default function Hero() {
 
           <motion.button
             onClick={navigateToPortfolio}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.97 }}
+            whileHover={{ scale: 1.02, transition: springUI }}
+            whileTap={{ scale: 0.97, transition: springUI }}
             className="focus-ring inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-3 text-sm font-medium text-white transition-all duration-300 hover:bg-white hover:text-black font-inter"
           >
-            Acessar Portfólio
+            Ver o que eu já fiz
           </motion.button>
         </motion.div>
       </div>
@@ -233,8 +235,8 @@ export default function Hero() {
         transition={{ duration: 1.2, delay: 2.1 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
       >
-        <span className="font-mono text-xs tracking-[0.3em] text-white/50 uppercase">
-          Scroll
+        <span className="font-mono text-xs tracking-[0.3em] text-white/60 uppercase">
+          vem ver
         </span>
         <motion.div
           animate={{ scaleY: [1, 1.5, 1], opacity: [0.25, 0.5, 0.25] }}

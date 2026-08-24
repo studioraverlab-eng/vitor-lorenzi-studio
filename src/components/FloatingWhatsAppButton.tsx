@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { springUI, springSnappy } from '../lib/motion'
 
 const WHATSAPP_URL =
   'https://wa.me/5515991684097?text=' +
@@ -40,7 +41,7 @@ export default function FloatingWhatsAppButton() {
           initial={{ opacity: 0, y: 16, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 16, scale: 0.9 }}
-          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          transition={springUI}
           className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-4 sm:bottom-7 sm:right-7 z-40 flex items-center gap-2"
         >
           {/* Label — appears on hover, desktop only */}
@@ -50,7 +51,7 @@ export default function FloatingWhatsAppButton() {
                 initial={{ opacity: 0, x: 8 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 8 }}
-                transition={{ duration: 0.2 }}
+                transition={springSnappy}
                 className="hidden sm:block font-inter text-sm font-medium text-white/80 bg-black/70 backdrop-blur-sm border border-white/[0.08] rounded-full px-3.5 py-2 whitespace-nowrap"
               >
                 Falar no WhatsApp
@@ -65,8 +66,8 @@ export default function FloatingWhatsAppButton() {
             aria-label="Falar no WhatsApp"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            whileHover={{ scale: 1.06 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.06, transition: springUI }}
+            whileTap={{ scale: 0.95, transition: springUI }}
             className="focus-ring relative flex items-center justify-center w-11 h-11 sm:w-14 sm:h-14 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.45)]"
             style={{ background: '#25D366' }}
           >

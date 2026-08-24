@@ -52,8 +52,18 @@
   --text-5xl:  5.9375rem; /* 95px */
 
   /* ---- DISPLAY FLUIDO ---- */
-  --display-hero:    clamp(2.75rem, 7vw, 6.5rem);
+  --display-hero:    clamp(2.5rem, 7vw, 6.5rem);
   --display-section: clamp(2rem, 4.5vw, 3.8125rem);
+
+  /* ---- TRACKING POR TAMANHO ----
+     Tracking é específico do tamanho: quanto maior o texto, mais as letras
+     parecem soltas, então display aperta e texto pequeno abre. Um valor
+     único de letter-spacing sempre erra em algum lugar da escala. */
+  --track-display: -0.03em;
+  --track-section: -0.022em;
+  --track-title:   -0.012em;
+  --track-body:    0em;
+  --track-micro:   0.02em;
 
   /* ---- RADIUS: apenas quatro ---- */
   --radius-sm:   4px;
@@ -88,6 +98,35 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: clip;
+  font-optical-sizing: auto;
+  letter-spacing: var(--track-body);
+}
+
+/* Tracking e leading andam juntos com o tamanho: texto grande aperta,
+   texto pequeno abre. Fica em @layer base pra quem definir tracking na
+   própria classe continuar ganhando. */
+@layer base {
+  .text-display-hero {
+    letter-spacing: var(--track-display);
+    line-height: 0.95;
+  }
+  .text-display-section {
+    letter-spacing: var(--track-section);
+    line-height: 1.06;
+  }
+  .text-md,
+  .text-lg {
+    letter-spacing: var(--track-title);
+  }
+
+  /* Quebra de linha com cara de gente: título equilibrado, parágrafo sem
+     palavra órfã sozinha na última linha. */
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
 }
 
 main:focus {
@@ -152,12 +191,18 @@ main:focus {
   * { cursor: none !important; }
 }
 
+/* Reduzir movimento não é remover feedback: mantém as transições de cor e
+   opacidade (que ajudam a entender o que mudou) e corta o que desloca
+   coisas na tela. */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-property: opacity, color, background-color, border-color, box-shadow !important;
+    transition-duration: 200ms !important;
   }
+  .press-target:active { transform: none !important; }
 }
 
 /* Animated film grain */
@@ -209,6 +254,7 @@ main:focus {
     backdrop-filter: blur(24px) saturate(160%);
     -webkit-backdrop-filter: blur(24px) saturate(160%);
     border: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
   }
 
   .glass-nav-scrolled {
@@ -223,6 +269,17 @@ main:focus {
     background: rgba(255, 255, 255, 0.025);
     border: 1px solid rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  }
+
+  /* Resposta no toque, não na soltura: o feedback aparece no pointer-down
+     e é curto o bastante pra parecer instantâneo. */
+  .press-target {
+    transition: transform 100ms ease-out;
+  }
+  .press-target:active {
+    transform: scale(0.97);
   }
 
   .section-layer {
@@ -246,5 +303,37 @@ main:focus {
   .chrome-dot-grid {
     background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1.4px, transparent 1.4px);
     background-size: 28px 28px;
+  }
+}
+
+/* Menos transparência: o vidro vira superfície sólida em vez de sumir. */
+@media (prefers-reduced-transparency: reduce) {
+  .glass-nav,
+  .glass-nav-scrolled {
+    background: rgba(10, 10, 12, 0.97);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .glass-card {
+    background: rgba(20, 20, 23, 0.98);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+/* Mais contraste: fundo quase sólido e borda definida. */
+@media (prefers-contrast: more) {
+  :root {
+    --border: rgba(255, 255, 255, 0.28);
+  }
+  .glass-nav,
+  .glass-nav-scrolled,
+  .glass-card {
+    background: rgba(8, 8, 10, 0.98);
+    border-color: rgba(255, 255, 255, 0.28);
+  }
+  .focus-ring:focus-visible {
+    outline-color: #ffffff;
+    outline-width: 3px;
   }
 }

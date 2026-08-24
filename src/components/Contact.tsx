@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { MessageCircle, Mail } from 'lucide-react'
+import { springUI } from '../lib/motion'
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
@@ -40,7 +41,7 @@ const socials: Social[] = [
     label: 'WhatsApp',
     Icon: () => <MessageCircle size={15} strokeWidth={1.5} />,
     href: 'https://wa.me/5515991684097',
-    desc: 'Resposta rápida',
+    desc: 'respondo rápido',
     hoverIconColor: '#25D366',
     hoverTextStyle: { color: '#25D366' },
   },
@@ -61,7 +62,7 @@ const socials: Social[] = [
     label: 'LinkedIn',
     Icon: () => <IconLinkedin size={15} />,
     href: 'https://linkedin.com/in/vitorlorenzi',
-    desc: 'Conectar',
+    desc: 'bora conectar',
     hoverIconColor: '#0A66C2',
     hoverTextStyle: { color: '#0A66C2' },
   },
@@ -87,8 +88,8 @@ function SocialCard({ s, i }: { s: Social; i: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: 0.4 + i * 0.08, ease }}
-      whileHover={{ scale: 1.04, y: -2 }}
-      whileTap={{ scale: 0.97 }}
+      whileHover={{ scale: 1.04, y: -2, transition: springUI }}
+      whileTap={{ scale: 0.97, transition: springUI }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className="focus-ring flex items-center gap-3 px-6 py-3.5
@@ -110,7 +111,7 @@ function SocialCard({ s, i }: { s: Social; i: number }) {
         >
           {s.label}
         </div>
-        <div className="font-mono text-xs text-white/55 tracking-[0.08em] mt-0.5 hidden sm:block">
+        <div className="font-mono text-xs text-white/62 tracking-[0.08em] mt-0.5 hidden sm:block">
           {s.desc}
         </div>
       </div>
@@ -159,7 +160,7 @@ export default function Contact() {
           className="flex items-center justify-center gap-4 mb-12"
         >
           <span className="h-px w-10 bg-white/[0.09]" />
-          <span className="font-mono text-xs tracking-[0.35em] text-white/55 uppercase">Contato</span>
+          <span className="font-mono text-xs tracking-[0.35em] text-white/62 uppercase">Contato</span>
           <span className="h-px w-10 bg-white/[0.09]" />
         </motion.div>
 
@@ -182,7 +183,7 @@ export default function Contact() {
           transition={{ duration: 0.8, delay: 0.25, ease }}
           className="font-inter font-light text-base text-white/65 max-w-text mx-auto leading-[1.8] mb-16"
         >
-          Manda uma mensagem e conta o que você precisa. Vamos conversar.
+          Manda mensagem contando a sua ideia. Prometo responder como gente, não como robô.
         </motion.p>
 
         {/* Social buttons */}
@@ -198,13 +199,13 @@ export default function Contact() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, delay: 0.8 }}
-          className="mt-20 flex items-center justify-center gap-2 font-mono text-xs tracking-[0.2em] text-white/55 uppercase"
+          className="mt-20 flex items-center justify-center gap-2 font-mono text-xs tracking-[0.2em] text-white/62 uppercase"
         >
           <span className="relative flex h-1.5 w-1.5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-40" style={{ backgroundColor: 'rgba(37,211,102,0.7)' }} />
             <span className="relative inline-flex rounded-full h-1.5 w-1.5" style={{ backgroundColor: 'rgba(37,211,102,0.8)' }} />
           </span>
-          Disponível para novos projetos
+          Com agenda aberta pra projeto novo
         </motion.p>
       </div>
     </section>

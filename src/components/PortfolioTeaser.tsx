@@ -5,6 +5,7 @@ import { ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
 import { useCinematicScroll } from '../context/CinematicScroll'
 import { projects, projectGradients } from '../data/projects'
+import { springUI } from '../lib/motion'
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
@@ -20,7 +21,8 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.7, delay: index * 0.09, ease }}
-      whileHover={{ y: -4 }}
+      whileHover={{ y: -4, transition: springUI }}
+      whileTap={{ scale: 0.985, transition: springUI }}
       className="focus-ring group relative aspect-[3/4] w-full overflow-hidden rounded-lg border border-white/[0.08] text-left shadow-2xl transition-colors duration-300 hover:border-white/[0.16]"
       style={{ background: projectGradients[project.id] }}
     >
@@ -34,7 +36,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent" />
 
       <div className="absolute inset-x-0 bottom-0 p-4">
-        <p className="font-mono text-xs uppercase tracking-[0.18em] text-white/50 truncate">
+        <p className="font-mono text-xs uppercase tracking-[0.18em] text-white/60 truncate">
           {project.category.split('/')[0].trim()}
         </p>
         <div className="mt-1 flex items-center justify-between gap-2">
@@ -62,7 +64,7 @@ export default function PortfolioTeaser() {
           transition={{ duration: 0.7 }}
           className="flex items-center gap-4 mb-5"
         >
-          <span className="font-mono text-xs tracking-[0.35em] text-white/55 uppercase">04 — Portfólio</span>
+          <span className="font-mono text-xs tracking-[0.35em] text-white/62 uppercase">04 / Portfólio</span>
           <span className="h-px w-12 bg-white/[0.07]" />
         </motion.div>
 
@@ -84,8 +86,8 @@ export default function PortfolioTeaser() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
+            whileHover={{ scale: 1.03, transition: springUI }}
+            whileTap={{ scale: 0.97, transition: springUI }}
             className="focus-ring inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-2.5 text-sm font-medium text-white/80 transition-all duration-300 hover:bg-white hover:text-black font-inter self-start md:self-auto shrink-0"
           >
             Ver todos os projetos

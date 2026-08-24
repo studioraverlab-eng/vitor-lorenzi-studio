@@ -1,6 +1,7 @@
 'use client'
 
 import type { ReactNode } from 'react'
+import { MotionConfig } from 'framer-motion'
 import { CinematicScrollProvider } from '../context/CinematicScroll'
 import CustomCursor from './CustomCursor'
 import NoiseOverlay from './NoiseOverlay'
@@ -10,13 +11,18 @@ import FloatingWhatsAppButton from './FloatingWhatsAppButton'
 
 export default function AppShell({ children }: { children: ReactNode }) {
   return (
-    <CinematicScrollProvider>
-      <CustomCursor />
-      <NoiseOverlay />
-      <TransitionVeil />
-      <ScrollProgress />
-      {children}
-      <FloatingWhatsAppButton />
-    </CinematicScrollProvider>
+    /* reducedMotion="user" faz o Framer trocar sozinho todo transform por
+       cross-fade quando o sistema pede menos movimento. Sem isso, o CSS
+       de prefers-reduced-motion não alcança nada animado por JS. */
+    <MotionConfig reducedMotion="user">
+      <CinematicScrollProvider>
+        <CustomCursor />
+        <NoiseOverlay />
+        <TransitionVeil />
+        <ScrollProgress />
+        {children}
+        <FloatingWhatsAppButton />
+      </CinematicScrollProvider>
+    </MotionConfig>
   )
 }

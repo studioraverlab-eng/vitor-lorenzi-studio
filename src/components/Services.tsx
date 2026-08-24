@@ -9,49 +9,49 @@ const services = [
     n: '01',
     icon: Globe,
     title: 'Criação de Sites',
-    desc: 'Responsivos, rápidos, com acabamento de verdade.',
+    desc: 'Rápido, bonito no celular e sem gambiarra por baixo.',
   },
   {
     n: '02',
     icon: Layout,
     title: 'Landing Pages',
-    desc: 'Direto ao ponto — feitas pra converter.',
+    desc: 'Uma página, um objetivo: fazer a pessoa clicar.',
   },
   {
     n: '03',
     icon: Palette,
     title: 'Identidade Visual',
-    desc: 'Logo, cores e tipografia com propósito.',
+    desc: 'Logo, cor e tipografia que combinam de verdade.',
   },
   {
     n: '04',
     icon: Sparkles,
     title: 'Branding',
-    desc: 'Nome, posicionamento e linguagem visual.',
+    desc: 'Nome, jeito de falar e como a marca aparece no mundo.',
   },
   {
     n: '05',
     icon: Compass,
     title: 'Direção Criativa',
-    desc: 'Coerência em tudo que sua marca comunica.',
+    desc: 'Pra tudo que você posta parecer da mesma marca.',
   },
   {
     n: '06',
     icon: Zap,
     title: 'Experiências Digitais',
-    desc: 'Interfaces que fazem sentido de usar.',
+    desc: 'Interface que a pessoa entende sem precisar de tutorial.',
   },
   {
     n: '07',
     icon: Play,
     title: 'Motion & Visual Design',
-    desc: 'Movimento que complementa, sem exagerar.',
+    desc: 'Movimento na medida. Nada de site piscando feito fliperama.',
   },
   {
     n: '08',
     icon: Layers,
     title: 'Interfaces Premium',
-    desc: 'UI/UX com cuidado em cada detalhe.',
+    desc: 'Aquele acabamento que você não sabe explicar, mas sente.',
   },
 ]
 
@@ -91,7 +91,9 @@ function ServiceCard({ service, index }: CardProps) {
       onMouseLeave={onMouseLeave}
       style={{
         transform: `perspective(900px) rotateX(${tilt.y}deg) rotateY(${tilt.x}deg)`,
-        transition: tilt.x === 0 ? 'transform 0.5s ease' : 'transform 0.1s ease',
+        /* Enquanto o ponteiro está em cima, o card segue 1:1, sem atraso.
+           A suavização entra só quando o mouse sai e o card volta ao lugar. */
+        transition: tilt.x === 0 ? 'transform 520ms var(--ease-out-expo)' : 'transform 0s',
       }}
       className="group relative p-6 rounded-lg glass-card hover:border-white/[0.11] transition-colors duration-300 overflow-hidden cursor-default"
     >
@@ -149,7 +151,7 @@ export default function Services() {
           transition={{ duration: 0.7 }}
           className="flex items-center gap-4 mb-5"
         >
-          <span className="font-mono text-xs tracking-[0.35em] text-white/55 uppercase">02 — Serviços</span>
+          <span className="font-mono text-xs tracking-[0.35em] text-white/62 uppercase">02 / Serviços</span>
           <span className="h-px w-12 bg-white/[0.07]" />
         </motion.div>
 
@@ -172,7 +174,7 @@ export default function Services() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="font-inter text-sm text-white/60 max-w-text leading-[1.8]"
           >
-            Cada projeto é tratado com o mesmo cuidado, seja o primeiro ou o décimo.
+            Projeto grande ou pequeno, o cuidado é o mesmo. Não existe modo preguiça por aqui.
           </motion.p>
         </div>
 

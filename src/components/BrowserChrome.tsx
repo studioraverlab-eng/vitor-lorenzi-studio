@@ -20,7 +20,7 @@ export default function BrowserChrome() {
         >
           <span className="h-px w-8 bg-chrome-accent/40" />
           <span className="font-mono text-xs text-chrome-accent/70 uppercase">
-            A assinatura do studio
+            A marca registrada daqui
           </span>
         </motion.div>
 
@@ -37,9 +37,9 @@ export default function BrowserChrome() {
               <span className="text-white/30 italic">dentro do navegador.</span>
             </h2>
             <p className="mt-6 font-inter text-base text-white/65 max-w-text leading-[1.85]">
-              Sem Photoshop fingindo ser site. Penso, testo e refino direto onde o
-              resultado final vai viver — pixel, tipografia e interação de verdade,
-              desde o primeiro rascunho.
+              Nada de Photoshop fingindo ser site. Eu desenho direto no navegador,
+              onde a coisa vai viver de verdade. Você não recebe a foto de um site,
+              você clica no site.
             </p>
           </motion.div>
 
@@ -84,14 +84,14 @@ export default function BrowserChrome() {
                   className="absolute -top-7 left-0 font-mono text-xs font-semibold px-2 py-1 rounded-sm whitespace-nowrap"
                   style={{ background: '#C2793E', color: '#050505' }}
                 >
-                  responsável — 100%
+                  responsável: 100%
                 </span>
                 <p className="relative font-syne font-bold text-white/90 text-md leading-[1.15]">
                   Do conceito<br />ao código.
                 </p>
               </div>
               <p className="mt-7 font-inter text-sm text-white/60 max-w-text leading-[1.8]">
-                Uma pessoa só, do início ao fim — sem repasse, sem telefone sem fio.
+                Uma pessoa só, do início ao fim. Sem repasse, sem telefone sem fio.
               </p>
             </div>
 

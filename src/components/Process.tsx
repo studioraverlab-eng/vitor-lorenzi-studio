@@ -6,27 +6,27 @@ const steps = [
   {
     n: '01',
     title: 'Escuta',
-    desc: 'Ouço antes de propor qualquer coisa.',
+    desc: 'Você fala, eu anoto tudo. Sem briefing engessado.',
   },
   {
     n: '02',
     title: 'Estratégia',
-    desc: 'Entendo o mercado e traço o caminho visual.',
+    desc: 'Olho o seu mercado e acho onde dá pra ser diferente.',
   },
   {
     n: '03',
     title: 'Direção Criativa',
-    desc: 'Desenvolvo o conceito que guia tudo depois.',
+    desc: 'Nasce o conceito que segura o projeto inteiro em pé.',
   },
   {
     n: '04',
     title: 'Execução',
-    desc: 'Código limpo, acabamento de verdade.',
+    desc: 'Aqui eu sento e faço. Código limpo, acabamento de verdade.',
   },
   {
     n: '05',
     title: 'Entrega',
-    desc: 'Lançamento, ajustes e suporte contínuo.',
+    desc: 'Site no ar, ajustes feitos e eu continuo por perto.',
   },
 ]
 
@@ -42,7 +42,7 @@ export default function Process() {
           transition={{ duration: 0.7 }}
           className="flex items-center gap-4 mb-5"
         >
-          <span className="font-mono text-xs tracking-[0.35em] text-white/55 uppercase">03 — Processo</span>
+          <span className="font-mono text-xs tracking-[0.35em] text-white/62 uppercase">03 / Processo</span>
           <span className="h-px w-12 bg-white/[0.07]" />
         </motion.div>
 
@@ -83,7 +83,7 @@ export default function Process() {
                 <div className="relative w-[42px] h-[42px] flex items-center justify-center">
                   <div className="absolute inset-0 rounded-full border border-white/[0.07] group-hover:border-white/[0.16] transition-colors duration-400" />
                   <div className="absolute inset-[8px] rounded-full bg-white/[0.04] group-hover:bg-white/[0.08] transition-colors duration-400" />
-                  <span className="font-mono text-xs tracking-[0.1em] text-white/55 group-hover:text-white/75 transition-colors duration-400 relative z-10">{step.n}</span>
+                  <span className="font-mono text-xs tracking-[0.1em] text-white/62 group-hover:text-white/75 transition-colors duration-400 relative z-10">{step.n}</span>
                   {/* Green dot */}
                   <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full" style={{ backgroundColor: 'rgba(37,211,102,0.85)' }} />
                 </div>

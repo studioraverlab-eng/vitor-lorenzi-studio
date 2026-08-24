@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useCinematicScroll } from '../context/CinematicScroll'
+import { springUI, springSnappy } from '../lib/motion'
 
 
 const navItems = [
@@ -59,7 +60,7 @@ export default function Navbar() {
       <motion.nav
         initial={{ y: -24, opacity: 0 }}
         animate={{ y: visible ? 0 : -96, opacity: visible ? 1 : 0 }}
-        transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+        transition={springUI}
         className={`
           w-full max-w-wide grid grid-cols-[1fr_auto_1fr] items-center px-5 py-3 rounded-lg
           transition-all duration-500
@@ -71,7 +72,7 @@ export default function Navbar() {
           <div className="w-7 h-7 border border-white/[0.14] rounded-md flex items-center justify-center bg-white/[0.04]">
             <span className="font-syne font-bold text-xs text-white/70 tracking-[0.08em]">VL</span>
           </div>
-          <span className="font-syne font-semibold text-sm text-white/50 tracking-[0.18em] uppercase hidden sm:block group-hover:text-white/70 transition-colors duration-300">
+          <span className="font-syne font-semibold text-sm text-white/60 tracking-[0.18em] uppercase hidden sm:block group-hover:text-white/70 transition-colors duration-300">
             Studio
           </span>
         </Link>
@@ -82,7 +83,7 @@ export default function Navbar() {
             <li key={item.id}>
               <button
                 onClick={() => handleNav(item.id, item.offset)}
-                className="focus-ring relative font-inter text-sm text-white/65 hover:text-white/90 transition-colors duration-300 tracking-wide group"
+                className="press-target focus-ring relative font-inter text-sm text-white/65 hover:text-white/90 transition-colors duration-300 tracking-wide group"
               >
                 {item.label}
                 <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-white/20 group-hover:w-full transition-all duration-300" />
@@ -94,17 +95,17 @@ export default function Navbar() {
         {/* CTA */}
         <button
           onClick={navigateToPortfolio}
-          className="focus-ring justify-self-end col-start-3 hidden md:flex items-center px-4 py-2 text-sm font-inter font-medium tracking-wide
+          className="press-target focus-ring justify-self-end col-start-3 hidden md:flex items-center px-4 py-2 text-sm font-inter font-medium tracking-wide
             bg-white/[0.05] hover:bg-white/[0.09] border border-white/[0.09] hover:border-white/[0.18]
             rounded-full text-white/70 hover:text-white transition-all duration-300
             shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]"
         >
-          Acessar Portfólios
+          Ver projetos
         </button>
 
         {/* Mobile hamburger */}
         <button
-          className="focus-ring justify-self-end col-start-3 md:hidden flex flex-col gap-[5px] p-2"
+          className="press-target focus-ring justify-self-end col-start-3 md:hidden flex flex-col gap-[5px] p-2"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? 'Fechar menu' : 'Abrir menu'}
           aria-expanded={mobileOpen}
@@ -130,26 +131,29 @@ export default function Navbar() {
         {mobileOpen && (
           <motion.div
             id="mobile-navigation"
-            initial={{ opacity: 0, y: -8, scale: 0.98 }}
+            initial={{ opacity: 0, y: -8, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -8, scale: 0.98 }}
-            transition={{ duration: 0.2 }}
+            exit={{ opacity: 0, y: -8, scale: 0.96 }}
+            transition={springSnappy}
+            /* Nasce do canto onde fica o hambúrguer e volta pra lá: entrar e
+               sair pelo mesmo caminho deixa claro de onde a coisa veio. */
+            style={{ transformOrigin: 'top right' }}
             className="absolute top-full left-4 right-4 mt-2 p-4 rounded-lg glass-nav-scrolled"
           >
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleNav(item.id, item.offset)}
-                className="focus-ring block w-full text-left py-3 px-3 text-white/50 hover:text-white/90 font-inter text-sm border-b border-white/[0.05] last:border-0 transition-colors"
+                className="press-target focus-ring block w-full text-left py-3 px-3 text-white/60 hover:text-white/90 font-inter text-sm border-b border-white/[0.05] last:border-0 transition-colors"
               >
                 {item.label}
               </button>
             ))}
             <button
               onClick={() => { setMobileOpen(false); navigateToPortfolio() }}
-              className="focus-ring block w-full mt-3 text-center py-2.5 rounded-full bg-white/[0.06] text-white/70 text-sm font-inter border border-white/[0.09]"
+              className="press-target focus-ring block w-full mt-3 text-center py-2.5 rounded-full bg-white/[0.06] text-white/70 text-sm font-inter border border-white/[0.09]"
             >
-              Acessar Portfólios
+              Ver projetos
             </button>
           </motion.div>
         )}

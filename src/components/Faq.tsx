@@ -3,29 +3,34 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
+import { springSnappy } from '../lib/motion'
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
 const faqs = [
   {
     q: 'Como funciona o processo?',
-    a: 'Começa pela escuta: entendo o que você já tem, sem briefing engessado. Depois vem estratégia, direção criativa, execução e entrega — sempre com o mesmo responsável do início ao fim.',
+    a: 'Começa com a gente conversando, sem formulário chato. Depois vem estratégia, conceito, execução e entrega. Sempre comigo, do primeiro papo até o site no ar.',
+  },
+  {
+    q: 'Quanto custa?',
+    a: 'Depende do tamanho da encrenca. Prefiro te dar um número honesto a um número chutado, então me conta o projeto que eu monto o orçamento em cima do que você precisa de verdade.',
   },
   {
     q: 'Quanto tempo leva um projeto?',
-    a: 'Varia com o escopo — um site institucional anda mais rápido que uma identidade de marca completa. Isso é definido junto, na fase de escuta, antes de qualquer estimativa.',
+    a: 'Depende do escopo. Um site institucional sai bem mais rápido que uma marca inteira do zero. A gente fecha o prazo junto, antes de qualquer coisa começar.',
   },
   {
-    q: 'Vocês criam só sites, ou também cuidam da marca?',
-    a: 'Os dois. Identidade visual, branding, direção criativa e o site em si — pode contratar só uma parte ou o pacote completo, do conceito ao código.',
+    q: 'Você faz só site ou cuida da marca também?',
+    a: 'Os dois. Identidade visual, branding, direção criativa e o site em si. Dá pra pegar só um pedaço ou o pacote inteiro, do conceito ao código.',
   },
   {
     q: 'Com quem eu vou falar durante o projeto?',
-    a: 'Só comigo, o Vitor. Sem repasse pra outro time — quem apresenta o conceito é quem entrega o resultado.',
+    a: 'Comigo. Só comigo. Quem te mostra o conceito é a mesma pessoa que escreve o código.',
   },
   {
     q: 'Como eu começo?',
-    a: 'Manda uma mensagem pelo WhatsApp contando o que você precisa. A partir daí a gente conversa e desenha os próximos passos juntos.',
+    a: 'Chama no WhatsApp e conta o que você tem em mente. Pode ser uma ideia meio solta, a gente organiza junto.',
   },
 ]
 
@@ -49,7 +54,7 @@ function FaqItem({ item, index, isOpen, onToggle }: {
         onClick={onToggle}
         aria-expanded={isOpen}
         aria-controls={answerId}
-        className="focus-ring group flex w-full items-center justify-between gap-6 py-6 text-left"
+        className="press-target focus-ring group flex w-full items-center justify-between gap-6 py-6 text-left"
       >
         <span className="font-syne font-semibold text-base sm:text-base text-white/75 group-hover:text-white/95 transition-colors duration-300">
           {item.q}
@@ -68,7 +73,7 @@ function FaqItem({ item, index, isOpen, onToggle }: {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.35, ease }}
+            transition={springSnappy}
             className="overflow-hidden"
           >
             <p className="pb-6 pr-10 font-inter text-sm text-white/65 leading-[1.85] max-w-text">
@@ -94,7 +99,7 @@ export default function Faq() {
           transition={{ duration: 0.7 }}
           className="flex items-center gap-4 mb-5"
         >
-          <span className="font-mono text-xs tracking-[0.35em] text-white/55 uppercase">05 — Perguntas</span>
+          <span className="font-mono text-xs tracking-[0.35em] text-white/62 uppercase">05 / Perguntas</span>
           <span className="h-px w-12 bg-white/[0.07]" />
         </motion.div>
 

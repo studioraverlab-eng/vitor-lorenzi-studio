@@ -3,9 +3,9 @@
 import { motion } from 'framer-motion'
 
 const pillars = [
-  { title: 'Zero templates', desc: 'Cada projeto parte do zero.' },
-  { title: 'Nada é colocado à toa', desc: 'Cada escolha visual tem uma razão.' },
-  { title: 'Do começo ao fim', desc: 'Um responsável pelo projeto inteiro.' },
+  { title: 'Zero template', desc: 'Nada de tema pronto com a cor trocada.' },
+  { title: 'Nada no chute', desc: 'Se está ali, tem motivo. Pode perguntar de qualquer pixel.' },
+  { title: 'Uma pessoa só', desc: 'A mesma cara do primeiro papo até o site no ar.' },
 ]
 
 const tags = ['Identidade Visual', 'Branding', 'UX/UI', 'Web Design', 'Direção Criativa', 'Motion Design']
@@ -24,7 +24,7 @@ export default function About() {
           transition={{ duration: 0.7 }}
           className="flex items-center gap-4 mb-6"
         >
-          <span className="font-mono text-xs tracking-[0.35em] text-white/55 uppercase">01 — Sobre</span>
+          <span className="font-mono text-xs tracking-[0.35em] text-white/62 uppercase">01 / Sobre</span>
           <span className="h-px w-12 bg-white/[0.07]" />
         </motion.div>
 
@@ -38,7 +38,7 @@ export default function About() {
               transition={{ duration: 0.85, ease }}
               className="font-syne font-bold text-white/88 leading-[1.06] text-display-section"
             >
-              Design não é só visual. É o que faz uma marca ser lembrada.
+              Design bonito é fácil. Difícil é ser lembrado depois que a pessoa fecha a aba.
             </motion.h2>
 
             {/* Pillars */}
@@ -67,8 +67,8 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.85, delay: 0.15, ease }}
             >
-              <p className="font-inter font-light text-base text-white/52 leading-[1.85]">
-                Sou Vitor Lorenzi. Minhas melhores referências vêm de fora da tela — festivais, viagens, música — e é isso que trago pro trabalho: identidade visual e experiências digitais pensadas pra fazer sentido pra quem vê, não só pra quem cria.
+              <p className="font-inter font-light text-base text-white/68 leading-[1.85]">
+                Sou o Vitor. Minhas melhores ideias não vêm do Behance, vêm de festival, viagem e playlist boa. É isso que eu trago pro trabalho: marca e site pensados pra fazer sentido pra quem usa, não só pra ficar bonito no meu portfólio.
               </p>
             </motion.div>
 
@@ -94,12 +94,12 @@ export default function About() {
               <div className="min-w-0">
                 <div className="flex items-baseline gap-3 mb-1.5">
                   <span className="font-syne font-semibold text-sm text-white/65 group-hover:text-white/85 transition-colors duration-300">Raver Lab</span>
-                  <span className="font-mono text-xs tracking-[0.18em] text-white/50 uppercase">projeto paralelo</span>
+                  <span className="font-mono text-xs tracking-[0.18em] text-white/60 uppercase">projeto pessoal</span>
                 </div>
                 <p className="font-inter text-sm text-white/60 leading-[1.7] group-hover:text-white/75 transition-colors duration-300">
-                  Marca autoral da cultura eletrônica — branding, e-commerce e direção criativa construídos do zero.
+                  Minha marca de roupa da cena eletrônica. Branding, loja e direção criativa, tudo feito por mim do zero.
                 </p>
-                <span className="mt-1.5 inline-flex items-center gap-1.5 font-mono text-xs tracking-[0.14em] text-white/55 group-hover:text-white/75 transition-colors duration-300">
+                <span className="mt-1.5 inline-flex items-center gap-1.5 font-mono text-xs tracking-[0.14em] text-white/62 group-hover:text-white/75 transition-colors duration-300">
                   raverlab.com.br
                   <svg width="9" height="9" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <path d="M2 10L10 2M10 2H4M10 2v6" />
@@ -118,7 +118,7 @@ export default function About() {
               {tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-4 py-1.5 text-xs font-mono tracking-[0.16em] uppercase text-white/55
+                  className="px-4 py-1.5 text-xs font-mono tracking-[0.16em] uppercase text-white/62
                     border border-white/[0.07] rounded-full hover:border-white/[0.14] hover:text-white/45
                     transition-all duration-300 cursor-default"
                 >
