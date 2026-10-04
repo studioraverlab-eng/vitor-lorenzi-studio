@@ -2,9 +2,10 @@
 
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, MessageCircle } from 'lucide-react'
 import { useCinematicScroll } from '../context/CinematicScroll'
 import { springUI } from '../lib/motion'
+import Link from 'next/link'
 
 function ParticleField() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -100,6 +101,10 @@ function ParticleField() {
   return <canvas ref={canvasRef} className="particle-field absolute inset-0 pointer-events-none" aria-hidden="true" />
 }
 
+const WHATSAPP_URL =
+  'https://wa.me/5515991375380?text=' +
+  encodeURIComponent('Olá, Vitor! Vi seu site e quero falar sobre um projeto.')
+
 const cinEase = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
 const textReveal = {
@@ -117,7 +122,7 @@ const stagger = {
 }
 
 export default function Hero() {
-  const { navigateTo, navigateToPortfolio } = useCinematicScroll()
+  const { navigateToPortfolio } = useCinematicScroll()
 
   return (
     <section
@@ -202,18 +207,26 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 1.15 }}
           className="mt-10 flex items-center justify-center gap-3 flex-wrap"
         >
-          <motion.button
-            onClick={() => navigateTo('contato')}
-            whileHover={{ scale: 1.02, transition: springUI }}
-            whileTap={{ scale: 0.97, transition: springUI }}
+          <Link
+            href="/criar-site?utm_source=site&utm_medium=internal&utm_campaign=studio_inbound&utm_content=home_hero"
             className="focus-ring group flex items-center gap-2 px-7 py-3 bg-white/90 hover:bg-white text-[#050506] font-inter font-medium text-sm rounded-full transition-colors duration-300"
           >
-            Bora começar
+            Pedir orçamento
             <ArrowRight
               size={13}
               className="group-hover:translate-x-0.5 transition-transform duration-200"
             />
-          </motion.button>
+          </Link>
+
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="focus-ring inline-flex items-center gap-2 rounded-full border border-[#25D366]/40 px-7 py-3 text-sm font-medium text-[#25D366] transition-all duration-300 hover:bg-[#25D366] hover:text-[#050506] font-inter"
+          >
+            <MessageCircle size={15} strokeWidth={1.75} />
+            Chamar no WhatsApp
+          </a>
 
           <motion.button
             onClick={navigateToPortfolio}

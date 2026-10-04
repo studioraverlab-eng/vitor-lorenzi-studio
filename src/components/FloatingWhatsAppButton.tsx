@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { springUI, springSnappy } from '../lib/motion'
 
 const WHATSAPP_URL =
-  'https://wa.me/5515991684097?text=' +
+  'https://wa.me/5515991375380?text=' +
   encodeURIComponent('Olá! Vi seu site e quero falar sobre um projeto.')
 
 export default function FloatingWhatsAppButton() {

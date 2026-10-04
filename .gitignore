@@ -26,3 +26,8 @@ dist-ssr
 .env*
 .next/
 next-env.d.ts
+
+# estampas e renders, fora do site
+output/
+outputs/
+scripts/

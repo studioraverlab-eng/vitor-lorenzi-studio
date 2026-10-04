@@ -5,6 +5,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
+      url: 'https://vitor-lorenzi-studio.vercel.app/criar-site',
+      lastModified: new Date('2026-10-03T19:00:00Z'),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: 'https://vitor-lorenzi-studio.vercel.app',
       lastModified,
       changeFrequency: 'monthly',

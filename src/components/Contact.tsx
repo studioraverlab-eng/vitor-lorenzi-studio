@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { MessageCircle, Mail } from 'lucide-react'
 import { springUI } from '../lib/motion'
 import SectionLabel from './SectionLabel'
+import Link from 'next/link'
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
@@ -41,7 +42,7 @@ const socials: Social[] = [
   {
     label: 'WhatsApp',
     Icon: () => <MessageCircle size={15} strokeWidth={1.5} />,
-    href: 'https://wa.me/5515991684097',
+    href: 'https://wa.me/5515991375380',
     desc: 'respondo rápido',
     hoverIconColor: '#25D366',
     hoverTextStyle: { color: '#25D366' },
@@ -177,6 +178,7 @@ export default function Contact() {
         </motion.p>
 
         {/* Social buttons */}
+        <Link href="/criar-site?utm_source=site&utm_medium=internal&utm_campaign=studio_inbound&utm_content=home_contato#conversar" className="focus-ring inline-flex px-7 py-3 mb-8 bg-white text-black rounded-full font-inter text-sm font-medium">Montar meu pedido de orçamento</Link>
         <div className="flex flex-wrap items-center justify-center gap-3">
           {socials.map((s, i) => (
             <SocialCard key={s.label} s={s} i={i} />
