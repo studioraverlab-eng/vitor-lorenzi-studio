@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { MessageCircle } from 'lucide-react'
 import SectionLabel from './SectionLabel'
-import { PLANOS, DESCONTO, comDesconto, brl } from '../lib/planos'
+import { PLANOS, brl } from '../lib/planos'
 import { whatsappUrl } from '../lib/acquisition'
 
 export default function Pricing() {
@@ -14,7 +14,7 @@ export default function Pricing() {
         <div className="mt-6 flex flex-wrap items-center gap-4">
           <h2 className="font-syne font-extrabold text-3xl sm:text-4xl tracking-[-0.02em] text-white/95">Valores</h2>
           <span className="rounded-full border border-[#25D366]/40 px-3 py-1 font-mono text-xs uppercase tracking-[0.18em] text-[#25D366]">
-            {DESCONTO}% off no primeiro projeto
+            Desconto no primeiro projeto
           </span>
         </div>
         <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-3">
@@ -32,7 +32,7 @@ export default function Pricing() {
               <div className="mt-8 font-inter">
                 <span className="block font-mono text-xs uppercase tracking-[0.18em] text-white/55">a partir de</span>
                 <span className="block text-base text-white/50 line-through">R$ {brl(p.price)}</span>
-                <span className="block text-4xl font-semibold text-white">R$ {brl(comDesconto(p.price))}</span>
+                <span className="block text-4xl font-semibold text-white">R$ {brl(p.promo)}</span>
               </div>
               <a
                 href={whatsappUrl(p.message, 'home_valores')}
