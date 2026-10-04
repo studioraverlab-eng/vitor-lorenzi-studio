@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   twitter: { card: 'summary', title: 'Criação de sites | Vitor Lorenzi Studio', images: [] },
 }
 
-const selected = ['mart-clean', 'camilly-cardoso', 'speed-car'].map(id => projects.find(project => project.id === id)!)
+const selected = ['mart-clean', 'raver-lab', 'speed-car'].map(id => projects.find(project => project.id === id)!)
 
 export default function AcquisitionPage() {
   return <div className="acq">
