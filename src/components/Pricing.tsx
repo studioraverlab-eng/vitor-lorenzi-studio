@@ -21,17 +21,18 @@ export default function Pricing() {
           {PLANOS.map((p, i) => (
             <motion.article
               key={p.name}
+              id={p.slug}
               initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: i * 0.08 }}
-              className="flex flex-col bg-[#08080a] p-8"
+              className="flex flex-col bg-[#08080a] p-8 scroll-mt-24 md:row-span-4 md:grid md:grid-rows-subgrid"
             >
               <h3 className="font-syne text-xl font-bold text-white/95">{p.name}</h3>
               <p className="mt-3 min-h-[3.5rem] font-inter text-sm font-light leading-relaxed text-white/65">{p.desc}</p>
               <div className="mt-8 font-inter">
                 <span className="block font-mono text-xs uppercase tracking-[0.18em] text-white/55">a partir de</span>
-                {p.price > p.promo && <span className="block text-base text-white/50 line-through">R$ {brl(p.price)}</span>}
+                {p.price > p.promo ? <span className="block text-base text-white/50 line-through">R$ {brl(p.price)}</span> : <span aria-hidden="true" className="hidden h-6 md:block" />}
                 <span className="block text-4xl font-semibold text-white">R$ {brl(p.promo)}</span>
               </div>
               <a
