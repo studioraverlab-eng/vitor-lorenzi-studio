@@ -12,7 +12,7 @@ import FloatingWhatsAppButton from './FloatingWhatsAppButton'
 
 export default function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname()
-  if (pathname === '/criar-site') return <>{children}</>
+  if (pathname === '/criar-site' || pathname.startsWith('/site-para/')) return <>{children}</>
   return (
     /* reducedMotion="user" faz o Framer trocar sozinho todo transform por
        cross-fade quando o sistema pede menos movimento. Sem isso, o CSS

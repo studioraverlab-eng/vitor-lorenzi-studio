@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { projects } from '../../data/projects'
+import { nichos } from '../../data/nichos'
 import { brl, PLANOS } from '../../lib/planos'
 import { ContactFlow, SiteCheck, WhatsAppLink } from './ContactFlow'
 import './acquisition.css'
@@ -29,7 +30,7 @@ export default function AcquisitionPage() {
       <section id="nichos" className="acq-section acq-wrap"><div className="acq-section-head"><h2>Sites para clínicas<br />e imobiliárias.</h2><p>Dois tipos de negócio em que o site decide quem recebe a mensagem.</p></div><div className="acq-services acq-niches">{[
         { name: 'Clínicas e consultórios', desc: 'Para o paciente confiar antes da primeira consulta e marcar sem complicação.', items: ['Agendamento pelo WhatsApp', 'Autoridade do profissional em destaque', 'Uma página para cada procedimento'], message: 'Olá, Vitor! Quero um site para minha clínica ou consultório.' },
         { name: 'Imobiliárias e corretores', desc: 'Para os imóveis aparecerem bem e cada interessado virar contato.', items: ['Vitrine de imóveis', 'Captação de leads pelo WhatsApp'], message: 'Olá, Vitor! Quero um site para minha imobiliária ou para meu trabalho como corretor.' },
-      ].map(niche => <article key={niche.name}><h3>{niche.name}</h3><p>{niche.desc}</p><ul>{niche.items.map(item => <li key={item}>{item}</li>)}</ul><WhatsAppLink className="acq-button acq-outline" message={niche.message}>Quero um site assim</WhatsAppLink></article>)}</div></section>
+      ].map(niche => <article key={niche.name}><h3>{niche.name}</h3><p>{niche.desc}</p><ul>{niche.items.map(item => <li key={item}>{item}</li>)}</ul><WhatsAppLink className="acq-button acq-outline" message={niche.message}>Quero um site assim</WhatsAppLink></article>)}</div> <p className="acq-fine">Outros segmentos: {nichos.map((n, i) => <span key={n.slug}>{i > 0 && ' · '}<Link className="acq-underlined" href={`/site-para/${n.slug}`}>{n.nome}</Link></span>)}</p></section>
       <section id="investimento" className="acq-section acq-wrap"><div className="acq-section-head"><h2>Qual é o seu<br />próximo passo?</h2><p>Escolhemos o formato pelo que seu negócio precisa comunicar e vender.</p></div><div className="acq-services">{[
         { name: 'Landing page', price: 800, promo: 400, desc: 'Uma página focada em um serviço, uma oferta ou uma campanha.', items: ['Apresentação da oferta', 'Layout para celular e desktop', 'Chamada para o WhatsApp'], message: 'Olá, Vitor! Quero um orçamento de landing page.' },
         { name: 'Site institucional', price: 1000, promo: 700, desc: 'Uma presença completa para apresentar sua empresa e seus serviços.', items: ['Estrutura de páginas por escopo', 'Serviços e portfólio organizados', 'Caminho claro para pedir orçamento'], message: 'Olá, Vitor! Quero um orçamento de site institucional.' },
