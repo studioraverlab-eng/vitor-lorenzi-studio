@@ -82,6 +82,18 @@ export const projects: PortfolioProject[] = [
     status: "No ar",
     rotation: -10,
   },
+  {
+    id: "mima",
+    company: "Mima Make e Cosméticos",
+    category: "E-commerce / Maquiagem e skincare / Painel próprio",
+    description: "Loja de maquiagem e skincare com marcas como Vizzela, Boca Rosa e Sallve, Pix na hora e um painel pra Mima cuidar de tudo.",
+    created: "Identidade visual, fotos de campanha, loja com sacola e checkout, Pix com QR, cartela de tons, varal de novidades e painel de pedidos, produtos e estoque.",
+    goal: "Ajudar a cliente a acertar o tom antes de comprar e tirar a venda do improviso no direct.",
+    image: "/portfolio/mima.webp",
+    url: "https://mima-make-cosmeticos.vercel.app",
+    status: "No ar",
+    rotation: 6,
+  },
 ]
 
 export const orbitCards: OrbitCard[] = [
@@ -108,6 +120,7 @@ export const projectGradients: Record<string, string> = {
   "camilly-cardoso":        "linear-gradient(135deg, #D7C4AE 0%, #6E4A38 100%)",
   "mart-clean":             "linear-gradient(135deg, #0D6E9E 0%, #05213D 100%)",
   "speed-car":              "linear-gradient(135deg, #1D2741 0%, #0E1424 100%)",
+  "mima":                   "linear-gradient(135deg, #E9E2D8 0%, #4B3429 100%)",
   "next-brand":             "linear-gradient(145deg, #171719 0%, #0A0A0B 55%, #18231D 100%)",
   "next-digital":           "linear-gradient(145deg, #1A1510 0%, #090909 58%, #15151C 100%)",
 }
