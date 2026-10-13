@@ -8,11 +8,11 @@ import './globals.css'
 export const metadata: Metadata = {
   metadataBase: new URL('https://vitor-lorenzi-studio.vercel.app'),
   title: {
-    default: 'Vitor Lorenzi Studio | Sites, branding e direção criativa',
+    default: 'Vitor Lorenzi Studio | Sites, sistemas e branding',
     template: '%s | Vitor Lorenzi Studio',
   },
   description:
-    'Sites e marcas feitos do zero, sem template. Direção criativa e código na mesma pessoa, do conceito ao lançamento.',
+    'Sites, sistemas e marcas feitos do zero, sem template. Direção criativa e código na mesma pessoa, do conceito ao lançamento.',
   keywords: [
     'criação de sites',
     'web design',
@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     locale: 'pt_BR',
     url: '/',
     siteName: 'Vitor Lorenzi Studio',
-    title: 'Vitor Lorenzi Studio | Sites, branding e direção criativa',
-    description: 'Sites e marcas feitos do zero, do conceito ao código.',
+    title: 'Vitor Lorenzi Studio | Sites, sistemas e branding',
+    description: 'Sites, sistemas e marcas feitos do zero, do conceito ao código.',
     images: [{ url: '/og-cover.jpg', width: 1200, height: 630, alt: 'Vitor Lorenzi Studio' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Vitor Lorenzi Studio | Sites, branding e direção criativa',
-    description: 'Sites e marcas feitos do zero, do conceito ao código.',
+    title: 'Vitor Lorenzi Studio | Sites, sistemas e branding',
+    description: 'Sites, sistemas e marcas feitos do zero, do conceito ao código.',
     images: ['/og-cover.jpg'],
   },
   robots: { index: true, follow: true },
@@ -65,8 +65,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               areaServed: 'Brasil',
               serviceType: ['Criação de sites', 'Branding', 'Identidade visual', 'Direção criativa'],
               sameAs: [
-                'https://instagram.com/vitorlorenzi',
-                'https://linkedin.com/in/vitorlorenzi',
+                'https://instagram.com/vitorlorenzistudio',
+                'https://www.linkedin.com/in/v%C3%ADtor-lorenzi-6b0079284/',
               ],
             }),
           }}

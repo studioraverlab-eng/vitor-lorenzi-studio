@@ -1,8 +1,9 @@
 'use client'
 
 import { useState, useRef } from 'react'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Globe, Layout, Palette, Sparkles, Compass, Zap, Play, Layers } from 'lucide-react'
+import { Globe, Layout, Palette, Sparkles, Compass, Zap, Play, Database } from 'lucide-react'
 import SectionLabel from './SectionLabel'
 
 const services = [
@@ -50,9 +51,10 @@ const services = [
   },
   {
     n: '08',
-    icon: Layers,
-    title: 'Interfaces Premium',
-    desc: 'Aquele acabamento que você não sabe explicar, mas sente.',
+    icon: Database,
+    title: 'Sistemas sob medida',
+    desc: 'CRM, agenda, pedidos e estoque. A planilha vira ferramenta.',
+    href: '/sistemas',
   },
 ]
 
@@ -96,7 +98,7 @@ function ServiceCard({ service, index }: CardProps) {
            A suavização entra só quando o mouse sai e o card volta ao lugar. */
         transition: tilt.x === 0 ? 'transform 520ms var(--ease-out-expo)' : 'transform 0s',
       }}
-      className="group relative p-6 rounded-lg glass-card hover:border-white/[0.11] transition-colors duration-300 overflow-hidden cursor-default"
+      className="group relative p-6 rounded-lg glass-card hover:border-white/[0.11] transition-colors duration-300 overflow-hidden cursor-default has-[a]:cursor-pointer"
     >
       {/* Glow on hover */}
       <div
@@ -105,6 +107,10 @@ function ServiceCard({ service, index }: CardProps) {
           background: `radial-gradient(280px circle at ${glow.x} ${glow.y}, rgba(255,255,255,0.04), transparent 50%)`,
         }}
       />
+
+      {'href' in service && service.href && (
+        <Link href={service.href} aria-label={`Ver ${service.title}`} className="focus-ring absolute inset-0 z-20 rounded-lg" />
+      )}
 
       {/* Oversized watermark numeral */}
       <span

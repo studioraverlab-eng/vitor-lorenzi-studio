@@ -50,8 +50,8 @@ const socials: Social[] = [
   {
     label: 'Instagram',
     Icon: () => <IconInstagram size={15} />,
-    href: 'https://instagram.com/vitorlorenzi',
-    desc: '@vitorlorenzi',
+    href: 'https://instagram.com/vitorlorenzistudio',
+    desc: '@vitorlorenzistudio',
     hoverIconColor: '#F77737',
     hoverTextStyle: {
       background: 'linear-gradient(90deg, #C13584 0%, #E1306C 30%, #FD5949 60%, #FCAF45 100%)',
@@ -63,7 +63,7 @@ const socials: Social[] = [
   {
     label: 'LinkedIn',
     Icon: () => <IconLinkedin size={15} />,
-    href: 'https://linkedin.com/in/vitorlorenzi',
+    href: 'https://www.linkedin.com/in/v%C3%ADtor-lorenzi-6b0079284/',
     desc: 'bora conectar',
     hoverIconColor: '#0A66C2',
     hoverTextStyle: { color: '#0A66C2' },
@@ -71,8 +71,8 @@ const socials: Social[] = [
   {
     label: 'Email',
     Icon: () => <Mail size={15} strokeWidth={1.5} />,
-    href: 'mailto:contato@vitorlorenzi.studio',
-    desc: 'contato@vitorlorenzi.studio',
+    href: 'mailto:studiovitorlorenzi@gmail.com',
+    desc: 'studiovitorlorenzi@gmail.com',
     hoverIconColor: '#EA4335',
     hoverTextStyle: { color: '#EA4335' },
   },

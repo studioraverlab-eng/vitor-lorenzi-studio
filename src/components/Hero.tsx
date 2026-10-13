@@ -236,6 +236,14 @@ export default function Hero() {
           >
             Ver o que eu já fiz
           </motion.button>
+
+          <Link
+            href="/sistemas"
+            className="focus-ring group inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-3 text-sm font-medium text-white transition-all duration-300 hover:bg-white hover:text-black font-inter"
+          >
+            Sistemas sob medida
+            <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform duration-200" />
+          </Link>
         </motion.div>
       </div>
 
@@ -244,7 +252,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2, delay: 2.1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2 z-10"
       >
         <span className="font-mono text-xs tracking-[0.3em] text-white/60 uppercase">
           vem ver

@@ -286,6 +286,13 @@ export default function PortfolioView() {
                         </div>
                       )}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
+                      {project.status === "Em desenvolvimento" && (
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/45 backdrop-blur-[6px]">
+                          <span className="rounded-full border border-amber-300/30 bg-black/50 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-amber-200/90 sm:text-xs">
+                            Em desenvolvimento
+                          </span>
+                        </div>
+                      )}
                       <div className="absolute bottom-0 left-0 right-0 p-3">
                         <p className="truncate text-xs uppercase leading-tight tracking-[0.18em] text-white/60">
                           {project.category.split("/")[0].trim()}
@@ -326,7 +333,7 @@ export default function PortfolioView() {
                         </a>
                       ) : (
                         <div
-                          aria-label={`${project.company}, ${project.placeholder ? "em breve" : "projeto desenvolvido"}`}
+                          aria-label={`${project.company}, ${project.status === "Em desenvolvimento" ? "em desenvolvimento" : "projeto desenvolvido"}`}
                           style={{ transform: `rotateZ(${project.rotation}deg)` }}
                           className="h-36 w-28 sm:h-56 sm:w-44"
                           onMouseEnter={pauseCarousel}
@@ -363,13 +370,29 @@ export default function PortfolioView() {
                 e conferir de perto.
               </p>
 
-              <button
-                onClick={handleVerProjetos}
-                className="press-target focus-ring inline-flex items-center gap-2 rounded-full border border-white/[0.12] hover:border-white/[0.24] px-7 py-3 font-inter text-sm font-medium text-white/60 hover:text-white/85 transition-all duration-300 hover:bg-white/[0.04] cursor-pointer"
-              >
-                Ver projetos
-                <ArrowRight className="h-4 w-4" />
-              </button>
+              <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+                <button
+                  onClick={handleVerProjetos}
+                  className="press-target focus-ring inline-flex items-center gap-2 rounded-full border border-white/[0.12] hover:border-white/[0.24] px-7 py-3 font-inter text-sm font-medium text-white/60 hover:text-white/85 transition-all duration-300 hover:bg-white/[0.04] cursor-pointer"
+                >
+                  Ver projetos
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+                <a
+                  href="/portfolio/posts"
+                  className="press-target focus-ring inline-flex items-center gap-2 rounded-full px-7 py-3 font-inter text-sm font-semibold text-white shadow-[0_10px_30px_-10px_rgba(214,41,118,0.6)] transition-all duration-300 hover:brightness-110"
+                  style={{ background: "linear-gradient(45deg, #feda75 0%, #fa7e1e 22%, #d62976 50%, #962fbf 75%, #4f5bd5 100%)" }}
+                >
+                  {/* ícone do Instagram */}
+                  <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                  </svg>
+                  Ver posts para Instagram
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
             </motion.div>
           </div>
         </section>
@@ -404,9 +427,18 @@ export default function PortfolioView() {
                   Projetos selecionados
                 </h2>
               </div>
-              <p className="font-inter font-light text-sm leading-[1.85] text-white/60 max-w-text sm:text-right">
-                Landing page, e-commerce e site institucional. Cada um de um universo bem diferente.
-              </p>
+              <div className="flex flex-col gap-4 sm:items-end">
+                <p className="font-inter font-light text-sm leading-[1.85] text-white/60 max-w-text sm:text-right">
+                  Landing page, e-commerce e site institucional. Cada um de um universo bem diferente.
+                </p>
+                <a
+                  href="/portfolio/posts"
+                  className="focus-ring group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-white/70 hover:text-white transition-colors duration-300"
+                >
+                  Ver posts para Instagram
+                  <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform duration-200" />
+                </a>
+              </div>
             </motion.div>
 
             {/* Top hairline */}
@@ -468,7 +500,7 @@ export default function PortfolioView() {
                               {tag.trim()}
                             </span>
                           ))}
-                          <span className="rounded-full border border-emerald-400/20 bg-emerald-400/[0.06] px-3 py-1 font-mono text-xs tracking-[0.14em] text-emerald-300/70">
+                          <span className={`rounded-full px-3 py-1 font-mono text-xs tracking-[0.14em] ${project.status === "Em desenvolvimento" ? "border border-amber-300/25 bg-amber-300/[0.06] text-amber-200/80" : "border border-emerald-400/20 bg-emerald-400/[0.06] text-emerald-300/70"}`}>
                             {project.status}
                           </span>
                         </div>
@@ -484,7 +516,7 @@ export default function PortfolioView() {
                           alt={project.company}
                           fill
                           sizes="176px"
-                          className="object-cover"
+                          className={`object-cover ${project.status === "Em desenvolvimento" ? "blur-md scale-110" : ""}`}
                         />
                       </div>
                     </div>

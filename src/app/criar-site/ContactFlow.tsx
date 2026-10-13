@@ -8,7 +8,8 @@ const subscribeToSource = () => () => {}
 const getSource = () => sourceLabel(window.location.search, document.referrer)
 const getServerSource = () => 'site-direto'
 
-const needs = ['Criar meu primeiro site', 'Melhorar meu site atual', 'Criar uma landing page', 'Criar uma loja virtual']
+const OUTRA = 'Outra opção'
+const needs = ['Criar meu primeiro site', 'Melhorar meu site atual', 'Criar uma landing page', 'Criar uma loja virtual', OUTRA]
 const checks = [
   ['clareza', 'Fica claro o que você oferece logo na primeira tela?', 'Explicar o serviço e quem você atende antes de pedir qualquer ação.'],
   ['celular', 'É fácil ler e navegar pelo celular?', 'Revisar tamanho dos textos, navegação e disposição do conteúdo no celular.'],
@@ -23,6 +24,7 @@ export function WhatsAppLink({ children, className = '', message = 'Olá, Vitor!
 
 export function ContactFlow() {
   const [error, setError] = useState('')
+  const [need, setNeed] = useState(needs[0])
   const submitting = useRef(false)
   function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -32,8 +34,10 @@ export function ContactFlow() {
     const data = new FormData(form)
     const business = String(data.get('business') || '').trim()
     if (!business) { setError('Conte qual é a sua empresa ou atividade.'); return }
+    const outra = String(data.get('outra') || '').trim()
+    if (need === OUTRA && !outra) { setError('Conte o que você precisa.'); return }
     setError('')
-    const message = `Olá, Vitor! Quero conversar sobre meu projeto.\n\nEmpresa ou atividade: ${business}\nPreciso de: ${data.get('need')}\nPrazo desejado: ${data.get('timing')}\nSite ou Instagram: ${String(data.get('site') || '').trim() || 'Ainda não tenho'}`
+    const message = `Olá, Vitor! Quero conversar sobre meu projeto.\n\nEmpresa ou atividade: ${business}\nPreciso de: ${need === OUTRA ? outra : need}\nPrazo desejado: ${data.get('timing')}\nSite ou Instagram: ${String(data.get('site') || '').trim() || 'Ainda não tenho'}`
     submitting.current = true
     trackWhatsAppConversion(() => {
       submitting.current = false
@@ -42,7 +46,8 @@ export function ContactFlow() {
   }
   return <form onSubmit={submit} className="acq-form">
     <label>Empresa ou atividade<input name="business" required maxLength={100} autoComplete="organization" placeholder="Ex.: consultório, escritório, loja…" /></label>
-    <label>O que você precisa?<select name="need" defaultValue={needs[0]}>{needs.map(need => <option key={need}>{need}</option>)}</select></label>
+    <label>O que você precisa?<select name="need" value={need} onChange={e => setNeed(e.target.value)}>{needs.map(n => <option key={n}>{n}</option>)}</select></label>
+    {need === OUTRA && <label>Conta o que você precisa<input name="outra" required maxLength={160} autoFocus placeholder="Ex.: cardápio digital, sistema de agenda, posts…" /></label>}
     <label>Quando pretende começar?<select name="timing"><option>Assim que possível</option><option>Nos próximos 30 dias</option><option>Estou planejando</option></select></label>
     <label>Site ou Instagram <span>(opcional)</span><input name="site" maxLength={180} placeholder="Seu endereço ou @perfil" autoComplete="url" /></label>
     {error && <p role="alert">{error}</p>}

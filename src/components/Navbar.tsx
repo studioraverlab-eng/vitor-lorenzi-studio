@@ -80,7 +80,7 @@ export default function Navbar() {
         {/* Desktop nav */}
         <ul className="justify-self-center hidden md:flex items-center gap-7">
           {navItems.map((item) => (
-            <li key={item.id}>
+            <li key={item.id} className="contents">
               <button
                 onClick={() => handleNav(item.id, item.offset)}
                 className="press-target focus-ring relative font-inter text-sm text-white/65 hover:text-white/90 transition-colors duration-300 tracking-wide group"
@@ -88,6 +88,15 @@ export default function Navbar() {
                 {item.label}
                 <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-white/20 group-hover:w-full transition-all duration-300" />
               </button>
+              {item.id === 'servicos' && (
+                <Link
+                  href="/sistemas"
+                  className="press-target focus-ring relative font-inter text-sm text-white/65 hover:text-white/90 transition-colors duration-300 tracking-wide group"
+                >
+                  Sistemas
+                  <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-white/20 group-hover:w-full transition-all duration-300" />
+                </Link>
+              )}
             </li>
           ))}
         </ul>
@@ -149,6 +158,13 @@ export default function Navbar() {
                 {item.label}
               </button>
             ))}
+            <Link
+              href="/sistemas"
+              onClick={() => setMobileOpen(false)}
+              className="press-target focus-ring block w-full text-left py-3 px-3 text-white/60 hover:text-white/90 font-inter text-sm transition-colors"
+            >
+              Sistemas
+            </Link>
             <button
               onClick={() => { setMobileOpen(false); navigateToPortfolio() }}
               className="press-target focus-ring block w-full mt-3 text-center py-2.5 rounded-full bg-white/[0.06] text-white/70 text-sm font-inter border border-white/[0.09]"

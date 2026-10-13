@@ -7,7 +7,7 @@ export interface PortfolioProject {
   goal: string
   image: string
   url?: string
-  status: "No ar" | "Projeto desenvolvido"
+  status: "No ar" | "Projeto desenvolvido" | "Em desenvolvimento"
   rotation: number
 }
 
@@ -19,6 +19,7 @@ export interface OrbitCard {
   url?: string
   rotation: number
   placeholder?: boolean
+  status?: string
 }
 
 export const projects: PortfolioProject[] = [
@@ -60,12 +61,12 @@ export const projects: PortfolioProject[] = [
   },
   {
     id: "paulo-lorenzi",
-    company: "RECONecta",
+    company: "Caminho Imóveis",
     category: "Site de imóveis / Casas em condomínio / Painel próprio",
     description: "Vitrine de imóveis do corretor Paulo César Lorenzi, em Sorocaba e região, com painel onde ele mesmo publica cada casa.",
     created: "Identidade digital, estrutura de catálogo, página de imóvel, painel de publicação e direção visual.",
     goal: "Transmitir confiança em um mercado de alto valor e tirar o corretor da dependência de portal de terceiro.",
-    image: "/portfolio/reconecta.webp",
+    image: "/portfolio/caminho.webp",
     url: "https://reconecta-imoveis.vercel.app",
     status: "No ar",
     rotation: 8,
@@ -78,8 +79,7 @@ export const projects: PortfolioProject[] = [
     created: "Direção visual, recorte e tratamento dos carros, showroom animado, simulador de ganhos, contato com mensagem pronta no WhatsApp e SEO técnico.",
     goal: "Mostrar ao motorista quanto sobra na semana antes de alugar e transformar essa conta numa conversa no WhatsApp.",
     image: "/portfolio/speed-car.webp",
-    url: "https://speedcar-aluguel.vercel.app",
-    status: "No ar",
+    status: "Em desenvolvimento",
     rotation: -10,
   },
   {
@@ -96,23 +96,7 @@ export const projects: PortfolioProject[] = [
   },
 ]
 
-export const orbitCards: OrbitCard[] = [
-  ...projects,
-  {
-    id: "next-brand",
-    company: "Novo projeto",
-    category: "Identidade em construção",
-    rotation: -15,
-    placeholder: true,
-  },
-  {
-    id: "next-digital",
-    company: "Em breve",
-    category: "Experiência digital",
-    rotation: 5,
-    placeholder: true,
-  },
-]
+export const orbitCards: OrbitCard[] = [...projects]
 
 export const projectGradients: Record<string, string> = {
   "raver-lab":              "linear-gradient(135deg, #1C0A3C 0%, #0A0814 100%)",
