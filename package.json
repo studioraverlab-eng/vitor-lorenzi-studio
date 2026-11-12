@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "seed:painel": "node --no-warnings scripts/seed-painel.mts"
   },
   "dependencies": {
     "@paper-design/shaders-react": "^0.0.76",

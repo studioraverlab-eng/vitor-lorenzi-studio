@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { projects } from '../../data/projects'
-import { nichos } from '../../data/nichos'
-import { brl, PLANOS } from '../../lib/planos'
+import { projects } from '../../../data/projects'
+import { nichos } from '../../../data/nichos'
+import { brl, PLANOS } from '../../../lib/planos'
 import { ContactFlow, SiteCheck, WhatsAppLink } from './ContactFlow'
 import './acquisition.css'
 

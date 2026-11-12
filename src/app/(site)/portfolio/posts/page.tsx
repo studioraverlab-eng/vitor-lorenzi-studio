@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
-import PageBackground from '../../../components/PageBackground'
-import SectionDivider from '../../../components/SectionDivider'
-import { postSeries } from '../../../data/posts'
+import PageBackground from '../../../../components/PageBackground'
+import SectionDivider from '../../../../components/SectionDivider'
+import { postSeries } from '../../../../data/posts'
 
 export const metadata: Metadata = {
   title: 'Posts para Instagram',

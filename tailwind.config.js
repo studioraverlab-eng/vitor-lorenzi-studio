@@ -80,6 +80,15 @@ export default {
           pill: '#232326',
           accent: '#C2793E',
         },
+        // Paleta do Painel de Envios (/painel).
+        marca: {
+          50: 'rgb(238 251 244 / <alpha-value>)',
+          100: 'rgb(214 245 227 / <alpha-value>)',
+          500: 'rgb(31 157 99 / <alpha-value>)',
+          600: 'rgb(23 128 79 / <alpha-value>)',
+          700: 'rgb(19 102 65 / <alpha-value>)',
+          900: 'rgb(13 59 39 / <alpha-value>)',
+        },
       },
     },
   },

@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import { syne, inter, dmMono } from './fonts'
-import AppShell from '../components/AppShell'
-import GoogleAdsTag from '../components/GoogleAdsTag'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -49,31 +47,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR" className={`${syne.variable} ${inter.variable} ${dmMono.variable}`}>
-      <body>
-        <a href="#main-content" className="skip-link">
-          Pular para o conteúdo
-        </a>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'ProfessionalService',
-              name: 'Vitor Lorenzi Studio',
-              url: 'https://vitor-lorenzi-studio.vercel.app',
-              founder: { '@type': 'Person', name: 'Vitor Lorenzi' },
-              areaServed: 'Brasil',
-              serviceType: ['Criação de sites', 'Branding', 'Identidade visual', 'Direção criativa'],
-              sameAs: [
-                'https://instagram.com/vitorlorenzistudio',
-                'https://www.linkedin.com/in/v%C3%ADtor-lorenzi-6b0079284/',
-              ],
-            }),
-          }}
-        />
-        <GoogleAdsTag />
-        <AppShell>{children}</AppShell>
-      </body>
+      <body>{children}</body>
     </html>
   )
 }

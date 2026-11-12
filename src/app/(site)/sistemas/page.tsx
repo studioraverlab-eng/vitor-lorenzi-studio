@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import SistemasView from '../../components/sistemas/SistemasView'
+import SistemasView from '../../../components/sistemas/SistemasView'
 
 export const metadata: Metadata = {
   title: 'Sistemas sob medida para empresas',
