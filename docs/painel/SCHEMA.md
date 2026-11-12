@@ -66,6 +66,7 @@ create table campanhas (
   nome                  text not null,
   texto_base            text not null,          -- cópia do texto usado (modelo pode mudar depois)
   agendamento_inicio    timestamptz not null,
+  por_dia               integer not null default 30,  -- cota diária da campanha (manhã + tarde)
   status                status_campanha not null default 'rascunho',
   total_destinatarios   integer not null default 0,
   ignorados_bloqueados  integer not null default 0,
@@ -152,7 +153,7 @@ create index fila_campanha_idx  on fila_envios (campanha_id);
 | `db.usuarios`               | `usuarios`          | `senhaDemo` **não** vai para o banco: a senha fica no Supabase Auth (`auth.users`). |
 | `db.numeros`                | `numeros_whatsapp`  | `conectadoEm` → `conectado_em` (base do `tetoDiario`). |
 | `db.modelos`                | `modelos_mensagem`  | `atualizadoEm` → `atualizado_em` (atualizar via trigger ou na aplicação). |
-| `db.campanhas`              | `campanhas`         | `textoBase`, `agendamentoInicio`, `totalDestinatarios`, `ignoradosBloqueados` → snake_case. |
+| `db.campanhas`              | `campanhas`         | `textoBase`, `agendamentoInicio`, `porDia`, `totalDestinatarios`, `ignoradosBloqueados` → snake_case. |
 | `db.destinatarios`          | `destinatarios`     | `camposExtras` (objeto) → `campos_extras jsonb`. Dedup garantido por `unique (campanha_id, telefone)`. |
 | `db.envios`                 | `envios`            | `mensagemRenderizada` → `mensagem_renderizada`; datas `null` → `NULL`. |
 | `db.respostas`              | `respostas`         | `textoOriginal`, `virouAgendamento`, `recebidaEm` → snake_case. |

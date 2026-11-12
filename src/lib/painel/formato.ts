@@ -1,5 +1,5 @@
 // Formatação e rótulos em pt-BR usados nas telas.
-import type { Classificacao, StatusCampanha, StatusDestinatario, StatusNumero } from "./types";
+import type { Classificacao, SituacaoCampanha, StatusCampanha, StatusDestinatario, StatusNumero } from "./types";
 
 const FUSO = "America/Sao_Paulo";
 
@@ -38,6 +38,20 @@ export const COR_CLASSIFICACAO: Record<Classificacao, string> = {
   duvida: "bg-sky-100 text-sky-800 ring-sky-200",
   ja_resolveu: "bg-slate-100 text-slate-700 ring-slate-200",
   pediu_parar: "bg-rose-100 text-rose-800 ring-rose-200",
+};
+
+export const ROTULO_SITUACAO_CAMPANHA: Record<SituacaoCampanha, string> = {
+  na_fila: "Na fila",
+  enviando: "Enviando",
+  concluida: "Concluída",
+  pausada: "Pausada",
+};
+
+export const COR_SITUACAO_CAMPANHA: Record<SituacaoCampanha, string> = {
+  na_fila: "bg-amber-100 text-amber-800 ring-amber-200",
+  enviando: "bg-sky-100 text-sky-800 ring-sky-200",
+  concluida: "bg-emerald-100 text-emerald-800 ring-emerald-200",
+  pausada: "bg-rose-100 text-rose-800 ring-rose-200",
 };
 
 export const ROTULO_STATUS_CAMPANHA: Record<StatusCampanha, string> = {

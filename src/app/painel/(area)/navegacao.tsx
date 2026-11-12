@@ -5,10 +5,8 @@ import { usePathname } from "next/navigation";
 
 const ITENS = [
   { href: "/painel", rotulo: "Início" },
-  { href: "/painel/nova-campanha", rotulo: "Nova Campanha" },
-  { href: "/painel/relatorios", rotulo: "Relatórios" },
-  { href: "/painel/respostas", rotulo: "Respostas" },
-  { href: "/painel/configuracoes", rotulo: "Configurações" },
+  { href: "/painel/agendar", rotulo: "Agendar envio" },
+  { href: "/painel/campanhas", rotulo: "Campanhas" },
 ] as const;
 
 export function Navegacao() {

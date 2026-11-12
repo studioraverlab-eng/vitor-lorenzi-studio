@@ -23,13 +23,15 @@ O painel fica em `src/app/painel/`:
 | Arquivo | Rota |
 | --- | --- |
 | `src/app/painel/login/` | `/painel/login` |
-| `src/app/painel/(area)/page.tsx` | `/painel` |
-| `src/app/painel/(area)/nova-campanha/` | `/painel/nova-campanha` |
-| `src/app/painel/(area)/relatorios/` | `/painel/relatorios`, `/painel/relatorios/[id]` |
-| `src/app/painel/(area)/respostas/` | `/painel/respostas` |
-| `src/app/painel/(area)/configuracoes/` | `/painel/configuracoes` |
+| `src/app/painel/(area)/page.tsx` | `/painel` (Início) |
+| `src/app/painel/(area)/agendar/` | `/painel/agendar` (Agendar envio) |
+| `src/app/painel/(area)/campanhas/` | `/painel/campanhas` (Campanhas) |
 | `src/app/painel/actions.ts` | Server Actions do painel |
-| `src/app/painel/not-found.tsx` | 404 do painel (ex.: relatório inexistente) |
+| `src/app/painel/not-found.tsx` | 404 do painel |
+
+A interface tem só essas três telas. As respostas dos destinatários continuam
+gravadas em `data/db.json` (`respostas`), mas não têm tela — ficam para a
+operação interna.
 
 ### Layouts
 

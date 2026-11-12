@@ -62,6 +62,7 @@
       "nome": "Lembrete de retorno — pacientes de outubro",
       "textoBase": "Olá, {{nome}}! Aqui é da {{empresa}}. Já faz um tempinho desde a sua última consulta de {{procedimento}} e está na hora do retorno. Quer que a gente reserve um horário para você esta semana?",
       "agendamentoInicio": "2026-11-03T09:00:00-03:00",
+      "porDia": 30,
       "status": "concluida",
       "totalDestinatarios": 18,
       "ignoradosBloqueados": 0,
@@ -74,11 +75,12 @@
       "modeloId": "mod_reativacao",
       "nome": "Reativação — pacientes sem consulta há 6 meses",
       "textoBase": "Olá, {{nome}}! Sentimos sua falta aqui na {{empresa}}. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
-      "agendamentoInicio": "2026-11-09T09:00:00-03:00",
-      "status": "concluida",
-      "totalDestinatarios": 27,
+      "agendamentoInicio": "2026-11-11T09:00:00-03:00",
+      "porDia": 30,
+      "status": "em_envio",
+      "totalDestinatarios": 92,
       "ignoradosBloqueados": 2,
-      "criadoEm": "2026-11-08T07:00:00-03:00"
+      "criadoEm": "2026-11-10T07:00:00-03:00"
     },
     {
       "id": "cmp_confirmacao",
@@ -88,8 +90,9 @@
       "nome": "Confirmação de consultas — próxima semana",
       "textoBase": "Oi, {{nome}}, tudo bem? Passando para confirmar sua consulta na {{empresa}} em {{data_consulta}}. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
       "agendamentoInicio": "2026-11-13T09:00:00-03:00",
+      "porDia": 30,
       "status": "agendada",
-      "totalDestinatarios": 13,
+      "totalDestinatarios": 46,
       "ignoradosBloqueados": 1,
       "criadoEm": "2026-11-12T07:00:00-03:00"
     }
@@ -363,7 +366,7 @@
       "telefone": "5511900001026",
       "empresa": "Clínica Vitta",
       "camposExtras": {},
-      "status": "respondido"
+      "status": "entregue"
     },
     {
       "id": "dst_0078",
@@ -390,7 +393,7 @@
       "telefone": "5511900001029",
       "empresa": "Clínica Vitta",
       "camposExtras": {},
-      "status": "respondido"
+      "status": "entregue"
     },
     {
       "id": "dst_0084",
@@ -435,7 +438,7 @@
       "telefone": "5511900001034",
       "empresa": "Clínica Vitta",
       "camposExtras": {},
-      "status": "respondido"
+      "status": "entregue"
     },
     {
       "id": "dst_0094",
@@ -462,7 +465,7 @@
       "telefone": "5511900001037",
       "empresa": "Clínica Vitta",
       "camposExtras": {},
-      "status": "respondido"
+      "status": "entregue"
     },
     {
       "id": "dst_0100",
@@ -480,7 +483,7 @@
       "telefone": "5511900001039",
       "empresa": "Clínica Vitta",
       "camposExtras": {},
-      "status": "falhou"
+      "status": "respondido"
     },
     {
       "id": "dst_0104",
@@ -498,7 +501,7 @@
       "telefone": "5511900001041",
       "empresa": "Clínica Vitta",
       "camposExtras": {},
-      "status": "respondido"
+      "status": "entregue"
     },
     {
       "id": "dst_0108",
@@ -521,6 +524,591 @@
     {
       "id": "dst_0112",
       "campanhaId": "cmp_reativacao",
+      "nome": "Débora Farias",
+      "telefone": "5511900001044",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0114",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Juliana Dias",
+      "telefone": "5511900001045",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0116",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Mônica Santana",
+      "telefone": "5511900001046",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0118",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Roberta Cunha",
+      "telefone": "5511900001047",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0120",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Tiago Andrade",
+      "telefone": "5511900001048",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0122",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Gustavo Lacerda",
+      "telefone": "5511900001049",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0124",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Bruno Carvalho",
+      "telefone": "5511900001050",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0126",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Daniel Souza",
+      "telefone": "5511900001051",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0128",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Felipe Araújo",
+      "telefone": "5511900001052",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "respondido"
+    },
+    {
+      "id": "dst_0130",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Henrique Alves",
+      "telefone": "5511900001053",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0132",
+      "campanhaId": "cmp_reativacao",
+      "nome": "João Pedro Costa",
+      "telefone": "5511900001054",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0134",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Marcos Oliveira",
+      "telefone": "5511900001055",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0136",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Otávio Barbosa",
+      "telefone": "5511900001056",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0138",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Rafael Teixeira",
+      "telefone": "5511900001057",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0140",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Thiago Moreira",
+      "telefone": "5511900001058",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0142",
+      "campanhaId": "cmp_reativacao",
+      "nome": "William Pires",
+      "telefone": "5511900001059",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0144",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Lucas Nogueira",
+      "telefone": "5511900001060",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "falhou"
+    },
+    {
+      "id": "dst_0146",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Renata Vieira",
+      "telefone": "5511900001061",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0148",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Tatiane Ramos",
+      "telefone": "5511900001062",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0150",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Beatriz Monteiro",
+      "telefone": "5511900001063",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0152",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Débora Farias",
+      "telefone": "5511900001064",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0154",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Juliana Dias",
+      "telefone": "5511900001065",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0156",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Mônica Santana",
+      "telefone": "5511900001066",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0158",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Roberta Cunha",
+      "telefone": "5511900001067",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0160",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Tiago Andrade",
+      "telefone": "5511900001068",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0162",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Gustavo Lacerda",
+      "telefone": "5511900001069",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0164",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Bruno Carvalho",
+      "telefone": "5511900001070",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0166",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Daniel Souza",
+      "telefone": "5511900001071",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0168",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Felipe Araújo",
+      "telefone": "5511900001072",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0170",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Henrique Alves",
+      "telefone": "5511900001073",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0172",
+      "campanhaId": "cmp_reativacao",
+      "nome": "João Pedro Costa",
+      "telefone": "5511900001074",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0174",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Marcos Oliveira",
+      "telefone": "5511900001075",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0176",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Otávio Barbosa",
+      "telefone": "5511900001076",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0178",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Rafael Teixeira",
+      "telefone": "5511900001077",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0180",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Thiago Moreira",
+      "telefone": "5511900001078",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "entregue"
+    },
+    {
+      "id": "dst_0182",
+      "campanhaId": "cmp_reativacao",
+      "nome": "William Pires",
+      "telefone": "5511900001079",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0184",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Lucas Nogueira",
+      "telefone": "5511900001080",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0186",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Renata Vieira",
+      "telefone": "5511900001081",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0188",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Tatiane Ramos",
+      "telefone": "5511900001082",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0190",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Beatriz Monteiro",
+      "telefone": "5511900001083",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0192",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Débora Farias",
+      "telefone": "5511900001084",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0194",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Juliana Dias",
+      "telefone": "5511900001085",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0196",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Mônica Santana",
+      "telefone": "5511900001086",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0198",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Roberta Cunha",
+      "telefone": "5511900001087",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0200",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Tiago Andrade",
+      "telefone": "5511900001088",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0202",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Gustavo Lacerda",
+      "telefone": "5511900001089",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0204",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Bruno Carvalho",
+      "telefone": "5511900001090",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0206",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Daniel Souza",
+      "telefone": "5511900001091",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0208",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Felipe Araújo",
+      "telefone": "5511900001092",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0210",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Henrique Alves",
+      "telefone": "5511900001093",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0212",
+      "campanhaId": "cmp_reativacao",
+      "nome": "João Pedro Costa",
+      "telefone": "5511900001094",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0214",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Marcos Oliveira",
+      "telefone": "5511900001095",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0216",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Otávio Barbosa",
+      "telefone": "5511900001096",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0218",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Rafael Teixeira",
+      "telefone": "5511900001097",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0220",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Thiago Moreira",
+      "telefone": "5511900001098",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0222",
+      "campanhaId": "cmp_reativacao",
+      "nome": "William Pires",
+      "telefone": "5511900001099",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0224",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Lucas Nogueira",
+      "telefone": "5511900001100",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0226",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Renata Vieira",
+      "telefone": "5511900001101",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0228",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Tatiane Ramos",
+      "telefone": "5511900001102",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0230",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Beatriz Monteiro",
+      "telefone": "5511900001103",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0232",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Débora Farias",
+      "telefone": "5511900001104",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0234",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Juliana Dias",
+      "telefone": "5511900001105",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0236",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Mônica Santana",
+      "telefone": "5511900001106",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0238",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Roberta Cunha",
+      "telefone": "5511900001107",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0240",
+      "campanhaId": "cmp_reativacao",
+      "nome": "Tiago Andrade",
+      "telefone": "5511900001108",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {},
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0242",
+      "campanhaId": "cmp_reativacao",
       "nome": "Daniel Souza",
       "telefone": "5511910000001",
       "empresa": "Clínica Vitta",
@@ -528,7 +1116,7 @@
       "status": "bloqueado"
     },
     {
-      "id": "dst_0113",
+      "id": "dst_0243",
       "campanhaId": "cmp_reativacao",
       "nome": "Larissa Gomes",
       "telefone": "5511910000002",
@@ -537,10 +1125,10 @@
       "status": "bloqueado"
     },
     {
-      "id": "dst_0148",
+      "id": "dst_0340",
       "campanhaId": "cmp_confirmacao",
-      "nome": "Eduarda Lima",
-      "telefone": "5511900001044",
+      "nome": "Débora Farias",
+      "telefone": "5511900001109",
       "empresa": "Clínica Vitta",
       "camposExtras": {
         "data_consulta": "segunda-feira às 9h"
@@ -548,10 +1136,10 @@
       "status": "na_fila"
     },
     {
-      "id": "dst_0150",
+      "id": "dst_0342",
       "campanhaId": "cmp_confirmacao",
-      "nome": "Gabriela Rocha",
-      "telefone": "5511900001045",
+      "nome": "Juliana Dias",
+      "telefone": "5511900001110",
       "empresa": "Clínica Vitta",
       "camposExtras": {
         "data_consulta": "terça-feira às 10h"
@@ -559,10 +1147,10 @@
       "status": "na_fila"
     },
     {
-      "id": "dst_0152",
+      "id": "dst_0344",
       "campanhaId": "cmp_confirmacao",
-      "nome": "Isabela Martins",
-      "telefone": "5511900001046",
+      "nome": "Mônica Santana",
+      "telefone": "5511900001111",
       "empresa": "Clínica Vitta",
       "camposExtras": {
         "data_consulta": "quarta-feira às 11h"
@@ -570,10 +1158,10 @@
       "status": "na_fila"
     },
     {
-      "id": "dst_0154",
+      "id": "dst_0346",
       "campanhaId": "cmp_confirmacao",
-      "nome": "Larissa Gomes",
-      "telefone": "5511900001047",
+      "nome": "Roberta Cunha",
+      "telefone": "5511900001112",
       "empresa": "Clínica Vitta",
       "camposExtras": {
         "data_consulta": "quinta-feira às 12h"
@@ -581,10 +1169,10 @@
       "status": "na_fila"
     },
     {
-      "id": "dst_0156",
+      "id": "dst_0348",
       "campanhaId": "cmp_confirmacao",
-      "nome": "Natália Fernandes",
-      "telefone": "5511900001048",
+      "nome": "Tiago Andrade",
+      "telefone": "5511900001113",
       "empresa": "Clínica Vitta",
       "camposExtras": {
         "data_consulta": "sexta-feira às 13h"
@@ -592,10 +1180,10 @@
       "status": "na_fila"
     },
     {
-      "id": "dst_0158",
+      "id": "dst_0350",
       "campanhaId": "cmp_confirmacao",
-      "nome": "Patrícia Duarte",
-      "telefone": "5511900001049",
+      "nome": "Gustavo Lacerda",
+      "telefone": "5511900001114",
       "empresa": "Clínica Vitta",
       "camposExtras": {
         "data_consulta": "segunda-feira às 14h"
@@ -603,10 +1191,10 @@
       "status": "na_fila"
     },
     {
-      "id": "dst_0160",
+      "id": "dst_0352",
       "campanhaId": "cmp_confirmacao",
-      "nome": "Sabrina Lopes",
-      "telefone": "5511900001050",
+      "nome": "Bruno Carvalho",
+      "telefone": "5511900001115",
       "empresa": "Clínica Vitta",
       "camposExtras": {
         "data_consulta": "terça-feira às 15h"
@@ -614,10 +1202,10 @@
       "status": "na_fila"
     },
     {
-      "id": "dst_0162",
+      "id": "dst_0354",
       "campanhaId": "cmp_confirmacao",
-      "nome": "Vanessa Cardoso",
-      "telefone": "5511900001051",
+      "nome": "Daniel Souza",
+      "telefone": "5511900001116",
       "empresa": "Clínica Vitta",
       "camposExtras": {
         "data_consulta": "quarta-feira às 16h"
@@ -625,10 +1213,10 @@
       "status": "na_fila"
     },
     {
-      "id": "dst_0164",
+      "id": "dst_0356",
       "campanhaId": "cmp_confirmacao",
-      "nome": "Yasmin Freitas",
-      "telefone": "5511900001052",
+      "nome": "Felipe Araújo",
+      "telefone": "5511900001117",
       "empresa": "Clínica Vitta",
       "camposExtras": {
         "data_consulta": "quinta-feira às 9h"
@@ -636,10 +1224,10 @@
       "status": "na_fila"
     },
     {
-      "id": "dst_0166",
+      "id": "dst_0358",
       "campanhaId": "cmp_confirmacao",
-      "nome": "Mariana Castro",
-      "telefone": "5511900001053",
+      "nome": "Henrique Alves",
+      "telefone": "5511900001118",
       "empresa": "Clínica Vitta",
       "camposExtras": {
         "data_consulta": "sexta-feira às 10h"
@@ -647,10 +1235,10 @@
       "status": "na_fila"
     },
     {
-      "id": "dst_0168",
+      "id": "dst_0360",
       "campanhaId": "cmp_confirmacao",
-      "nome": "Sérgio Campos",
-      "telefone": "5511900001054",
+      "nome": "João Pedro Costa",
+      "telefone": "5511900001119",
       "empresa": "Clínica Vitta",
       "camposExtras": {
         "data_consulta": "segunda-feira às 11h"
@@ -658,10 +1246,10 @@
       "status": "na_fila"
     },
     {
-      "id": "dst_0170",
+      "id": "dst_0362",
       "campanhaId": "cmp_confirmacao",
-      "nome": "Vinícius Correia",
-      "telefone": "5511900001055",
+      "nome": "Marcos Oliveira",
+      "telefone": "5511900001120",
       "empresa": "Clínica Vitta",
       "camposExtras": {
         "data_consulta": "terça-feira às 12h"
@@ -669,7 +1257,370 @@
       "status": "na_fila"
     },
     {
-      "id": "dst_0172",
+      "id": "dst_0364",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Otávio Barbosa",
+      "telefone": "5511900001121",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "quarta-feira às 13h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0366",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Rafael Teixeira",
+      "telefone": "5511900001122",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "quinta-feira às 14h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0368",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Thiago Moreira",
+      "telefone": "5511900001123",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "sexta-feira às 15h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0370",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "William Pires",
+      "telefone": "5511900001124",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "segunda-feira às 16h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0372",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Lucas Nogueira",
+      "telefone": "5511900001125",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "terça-feira às 9h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0374",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Renata Vieira",
+      "telefone": "5511900001126",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "quarta-feira às 10h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0376",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Tatiane Ramos",
+      "telefone": "5511900001127",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "quinta-feira às 11h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0378",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Beatriz Monteiro",
+      "telefone": "5511900001128",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "sexta-feira às 12h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0380",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Débora Farias",
+      "telefone": "5511900001129",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "segunda-feira às 13h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0382",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Juliana Dias",
+      "telefone": "5511900001130",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "terça-feira às 14h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0384",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Mônica Santana",
+      "telefone": "5511900001131",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "quarta-feira às 15h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0386",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Roberta Cunha",
+      "telefone": "5511900001132",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "quinta-feira às 16h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0388",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Tiago Andrade",
+      "telefone": "5511900001133",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "sexta-feira às 9h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0390",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Gustavo Lacerda",
+      "telefone": "5511900001134",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "segunda-feira às 10h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0392",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Bruno Carvalho",
+      "telefone": "5511900001135",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "terça-feira às 11h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0394",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Daniel Souza",
+      "telefone": "5511900001136",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "quarta-feira às 12h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0396",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Felipe Araújo",
+      "telefone": "5511900001137",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "quinta-feira às 13h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0398",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Henrique Alves",
+      "telefone": "5511900001138",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "sexta-feira às 14h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0400",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "João Pedro Costa",
+      "telefone": "5511900001139",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "segunda-feira às 15h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0402",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Marcos Oliveira",
+      "telefone": "5511900001140",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "terça-feira às 16h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0404",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Otávio Barbosa",
+      "telefone": "5511900001141",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "quarta-feira às 9h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0406",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Rafael Teixeira",
+      "telefone": "5511900001142",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "quinta-feira às 10h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0408",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Thiago Moreira",
+      "telefone": "5511900001143",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "sexta-feira às 11h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0410",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "William Pires",
+      "telefone": "5511900001144",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "segunda-feira às 12h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0412",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Lucas Nogueira",
+      "telefone": "5511900001145",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "terça-feira às 13h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0414",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Renata Vieira",
+      "telefone": "5511900001146",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "quarta-feira às 14h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0416",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Tatiane Ramos",
+      "telefone": "5511900001147",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "quinta-feira às 15h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0418",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Beatriz Monteiro",
+      "telefone": "5511900001148",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "sexta-feira às 16h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0420",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Débora Farias",
+      "telefone": "5511900001149",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "segunda-feira às 9h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0422",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Juliana Dias",
+      "telefone": "5511900001150",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "terça-feira às 10h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0424",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Mônica Santana",
+      "telefone": "5511900001151",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "quarta-feira às 11h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0426",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Roberta Cunha",
+      "telefone": "5511900001152",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "quinta-feira às 12h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0428",
+      "campanhaId": "cmp_confirmacao",
+      "nome": "Tiago Andrade",
+      "telefone": "5511900001153",
+      "empresa": "Clínica Vitta",
+      "camposExtras": {
+        "data_consulta": "sexta-feira às 13h"
+      },
+      "status": "na_fila"
+    },
+    {
+      "id": "dst_0430",
       "campanhaId": "cmp_confirmacao",
       "nome": "Daniel Souza",
       "telefone": "5511910000003",
@@ -698,9 +1649,9 @@
       "destinatarioId": "dst_0003",
       "telefone": "5511900001002",
       "mensagemRenderizada": "Olá, Daniel Souza! Aqui é da Clínica Vitta. Já faz um tempinho desde a sua última consulta de fisioterapia e está na hora do retorno. Quer que a gente reserve um horário para você esta semana?",
-      "agendadoPara": "2026-11-03T09:04:33-03:00",
-      "enviadoEm": "2026-11-03T09:04:33-03:00",
-      "entregueEm": "2026-11-03T09:05:33-03:00",
+      "agendadoPara": "2026-11-03T09:03:51-03:00",
+      "enviadoEm": "2026-11-03T09:03:51-03:00",
+      "entregueEm": "2026-11-03T09:04:51-03:00",
       "status": "entregue"
     },
     {
@@ -709,9 +1660,9 @@
       "destinatarioId": "dst_0005",
       "telefone": "5511900001003",
       "mensagemRenderizada": "Olá, Felipe Araújo! Aqui é da Clínica Vitta. Já faz um tempinho desde a sua última consulta de nutrição e está na hora do retorno. Quer que a gente reserve um horário para você esta semana?",
-      "agendadoPara": "2026-11-03T09:06:50-03:00",
-      "enviadoEm": "2026-11-03T09:06:50-03:00",
-      "entregueEm": "2026-11-03T09:07:50-03:00",
+      "agendadoPara": "2026-11-03T09:08:47-03:00",
+      "enviadoEm": "2026-11-03T09:08:47-03:00",
+      "entregueEm": "2026-11-03T09:09:47-03:00",
       "status": "entregue"
     },
     {
@@ -720,9 +1671,9 @@
       "destinatarioId": "dst_0007",
       "telefone": "5511900001004",
       "mensagemRenderizada": "Olá, Henrique Alves! Aqui é da Clínica Vitta. Já faz um tempinho desde a sua última consulta de dermatologia e está na hora do retorno. Quer que a gente reserve um horário para você esta semana?",
-      "agendadoPara": "2026-11-03T09:11:32-03:00",
-      "enviadoEm": "2026-11-03T09:11:32-03:00",
-      "entregueEm": "2026-11-03T09:12:32-03:00",
+      "agendadoPara": "2026-11-03T09:12:21-03:00",
+      "enviadoEm": "2026-11-03T09:12:21-03:00",
+      "entregueEm": "2026-11-03T09:13:21-03:00",
       "status": "entregue"
     },
     {
@@ -731,9 +1682,9 @@
       "destinatarioId": "dst_0009",
       "telefone": "5511900001005",
       "mensagemRenderizada": "Olá, João Pedro Costa! Aqui é da Clínica Vitta. Já faz um tempinho desde a sua última consulta de check-up e está na hora do retorno. Quer que a gente reserve um horário para você esta semana?",
-      "agendadoPara": "2026-11-03T10:30:36-03:00",
-      "enviadoEm": "2026-11-03T10:30:36-03:00",
-      "entregueEm": "2026-11-03T10:31:36-03:00",
+      "agendadoPara": "2026-11-03T09:16:55-03:00",
+      "enviadoEm": "2026-11-03T09:16:55-03:00",
+      "entregueEm": "2026-11-03T09:17:55-03:00",
       "status": "entregue"
     },
     {
@@ -742,9 +1693,9 @@
       "destinatarioId": "dst_0011",
       "telefone": "5511900001006",
       "mensagemRenderizada": "Olá, Marcos Oliveira! Aqui é da Clínica Vitta. Já faz um tempinho desde a sua última consulta de limpeza de pele e está na hora do retorno. Quer que a gente reserve um horário para você esta semana?",
-      "agendadoPara": "2026-11-03T10:33:41-03:00",
-      "enviadoEm": "2026-11-03T10:33:41-03:00",
-      "entregueEm": "2026-11-03T10:34:41-03:00",
+      "agendadoPara": "2026-11-03T09:21:51-03:00",
+      "enviadoEm": "2026-11-03T09:21:51-03:00",
+      "entregueEm": "2026-11-03T09:22:51-03:00",
       "status": "entregue"
     },
     {
@@ -753,9 +1704,9 @@
       "destinatarioId": "dst_0013",
       "telefone": "5511900001007",
       "mensagemRenderizada": "Olá, Otávio Barbosa! Aqui é da Clínica Vitta. Já faz um tempinho desde a sua última consulta de fisioterapia e está na hora do retorno. Quer que a gente reserve um horário para você esta semana?",
-      "agendadoPara": "2026-11-03T10:38:19-03:00",
-      "enviadoEm": "2026-11-03T10:38:19-03:00",
-      "entregueEm": "2026-11-03T10:39:19-03:00",
+      "agendadoPara": "2026-11-03T09:25:36-03:00",
+      "enviadoEm": "2026-11-03T09:25:36-03:00",
+      "entregueEm": "2026-11-03T09:26:36-03:00",
       "status": "entregue"
     },
     {
@@ -764,9 +1715,9 @@
       "destinatarioId": "dst_0015",
       "telefone": "5511900001008",
       "mensagemRenderizada": "Olá, Rafael Teixeira! Aqui é da Clínica Vitta. Já faz um tempinho desde a sua última consulta de nutrição e está na hora do retorno. Quer que a gente reserve um horário para você esta semana?",
-      "agendadoPara": "2026-11-03T10:40:24-03:00",
-      "enviadoEm": "2026-11-03T10:40:24-03:00",
-      "entregueEm": "2026-11-03T10:41:24-03:00",
+      "agendadoPara": "2026-11-03T09:27:48-03:00",
+      "enviadoEm": "2026-11-03T09:27:48-03:00",
+      "entregueEm": "2026-11-03T09:28:48-03:00",
       "status": "entregue"
     },
     {
@@ -775,9 +1726,9 @@
       "destinatarioId": "dst_0017",
       "telefone": "5511900001009",
       "mensagemRenderizada": "Olá, Thiago Moreira! Aqui é da Clínica Vitta. Já faz um tempinho desde a sua última consulta de dermatologia e está na hora do retorno. Quer que a gente reserve um horário para você esta semana?",
-      "agendadoPara": "2026-11-03T12:01:26-03:00",
-      "enviadoEm": "2026-11-03T12:01:26-03:00",
-      "entregueEm": "2026-11-03T12:02:26-03:00",
+      "agendadoPara": "2026-11-03T09:30:56-03:00",
+      "enviadoEm": "2026-11-03T09:30:56-03:00",
+      "entregueEm": "2026-11-03T09:31:56-03:00",
       "status": "entregue"
     },
     {
@@ -786,9 +1737,9 @@
       "destinatarioId": "dst_0019",
       "telefone": "5511900001010",
       "mensagemRenderizada": "Olá, William Pires! Aqui é da Clínica Vitta. Já faz um tempinho desde a sua última consulta de check-up e está na hora do retorno. Quer que a gente reserve um horário para você esta semana?",
-      "agendadoPara": "2026-11-03T12:05:40-03:00",
-      "enviadoEm": "2026-11-03T12:05:40-03:00",
-      "entregueEm": "2026-11-03T12:06:40-03:00",
+      "agendadoPara": "2026-11-03T09:33:12-03:00",
+      "enviadoEm": "2026-11-03T09:33:12-03:00",
+      "entregueEm": "2026-11-03T09:34:12-03:00",
       "status": "entregue"
     },
     {
@@ -797,9 +1748,9 @@
       "destinatarioId": "dst_0021",
       "telefone": "5511900001011",
       "mensagemRenderizada": "Olá, Lucas Nogueira! Aqui é da Clínica Vitta. Já faz um tempinho desde a sua última consulta de limpeza de pele e está na hora do retorno. Quer que a gente reserve um horário para você esta semana?",
-      "agendadoPara": "2026-11-03T12:09:02-03:00",
-      "enviadoEm": "2026-11-03T12:09:02-03:00",
-      "entregueEm": "2026-11-03T12:10:02-03:00",
+      "agendadoPara": "2026-11-03T13:30:23-03:00",
+      "enviadoEm": "2026-11-03T13:30:23-03:00",
+      "entregueEm": "2026-11-03T13:31:23-03:00",
       "status": "entregue"
     },
     {
@@ -808,7 +1759,7 @@
       "destinatarioId": "dst_0023",
       "telefone": "5511900001012",
       "mensagemRenderizada": "Olá, Renata Vieira! Aqui é da Clínica Vitta. Já faz um tempinho desde a sua última consulta de fisioterapia e está na hora do retorno. Quer que a gente reserve um horário para você esta semana?",
-      "agendadoPara": "2026-11-03T12:12:14-03:00",
+      "agendadoPara": "2026-11-03T13:35:15-03:00",
       "enviadoEm": null,
       "entregueEm": null,
       "status": "falhou"
@@ -819,9 +1770,9 @@
       "destinatarioId": "dst_0025",
       "telefone": "5511900001013",
       "mensagemRenderizada": "Olá, Tatiane Ramos! Aqui é da Clínica Vitta. Já faz um tempinho desde a sua última consulta de nutrição e está na hora do retorno. Quer que a gente reserve um horário para você esta semana?",
-      "agendadoPara": "2026-11-03T13:31:18-03:00",
-      "enviadoEm": "2026-11-03T13:31:18-03:00",
-      "entregueEm": "2026-11-03T13:32:18-03:00",
+      "agendadoPara": "2026-11-03T13:37:38-03:00",
+      "enviadoEm": "2026-11-03T13:37:38-03:00",
+      "entregueEm": "2026-11-03T13:38:38-03:00",
       "status": "entregue"
     },
     {
@@ -830,9 +1781,9 @@
       "destinatarioId": "dst_0027",
       "telefone": "5511900001014",
       "mensagemRenderizada": "Olá, Beatriz Monteiro! Aqui é da Clínica Vitta. Já faz um tempinho desde a sua última consulta de dermatologia e está na hora do retorno. Quer que a gente reserve um horário para você esta semana?",
-      "agendadoPara": "2026-11-03T13:34:57-03:00",
-      "enviadoEm": "2026-11-03T13:34:57-03:00",
-      "entregueEm": "2026-11-03T13:35:57-03:00",
+      "agendadoPara": "2026-11-03T13:42:09-03:00",
+      "enviadoEm": "2026-11-03T13:42:09-03:00",
+      "entregueEm": "2026-11-03T13:43:09-03:00",
       "status": "entregue"
     },
     {
@@ -841,9 +1792,9 @@
       "destinatarioId": "dst_0029",
       "telefone": "5511900001015",
       "mensagemRenderizada": "Olá, Débora Farias! Aqui é da Clínica Vitta. Já faz um tempinho desde a sua última consulta de check-up e está na hora do retorno. Quer que a gente reserve um horário para você esta semana?",
-      "agendadoPara": "2026-11-03T13:39:01-03:00",
-      "enviadoEm": "2026-11-03T13:39:01-03:00",
-      "entregueEm": "2026-11-03T13:40:01-03:00",
+      "agendadoPara": "2026-11-03T13:46:18-03:00",
+      "enviadoEm": "2026-11-03T13:46:18-03:00",
+      "entregueEm": "2026-11-03T13:47:18-03:00",
       "status": "entregue"
     },
     {
@@ -852,9 +1803,9 @@
       "destinatarioId": "dst_0031",
       "telefone": "5511900001016",
       "mensagemRenderizada": "Olá, Juliana Dias! Aqui é da Clínica Vitta. Já faz um tempinho desde a sua última consulta de limpeza de pele e está na hora do retorno. Quer que a gente reserve um horário para você esta semana?",
-      "agendadoPara": "2026-11-03T13:41:12-03:00",
-      "enviadoEm": "2026-11-03T13:41:12-03:00",
-      "entregueEm": "2026-11-03T13:42:12-03:00",
+      "agendadoPara": "2026-11-03T13:50:16-03:00",
+      "enviadoEm": "2026-11-03T13:50:16-03:00",
+      "entregueEm": "2026-11-03T13:51:16-03:00",
       "status": "entregue"
     },
     {
@@ -863,9 +1814,9 @@
       "destinatarioId": "dst_0033",
       "telefone": "5511900001017",
       "mensagemRenderizada": "Olá, Mônica Santana! Aqui é da Clínica Vitta. Já faz um tempinho desde a sua última consulta de fisioterapia e está na hora do retorno. Quer que a gente reserve um horário para você esta semana?",
-      "agendadoPara": "2026-11-03T15:00:35-03:00",
-      "enviadoEm": "2026-11-03T15:00:35-03:00",
-      "entregueEm": "2026-11-03T15:01:35-03:00",
+      "agendadoPara": "2026-11-03T13:52:37-03:00",
+      "enviadoEm": "2026-11-03T13:52:37-03:00",
+      "entregueEm": "2026-11-03T13:53:37-03:00",
       "status": "entregue"
     },
     {
@@ -874,9 +1825,9 @@
       "destinatarioId": "dst_0035",
       "telefone": "5511900001018",
       "mensagemRenderizada": "Olá, Roberta Cunha! Aqui é da Clínica Vitta. Já faz um tempinho desde a sua última consulta de nutrição e está na hora do retorno. Quer que a gente reserve um horário para você esta semana?",
-      "agendadoPara": "2026-11-03T15:03:52-03:00",
-      "enviadoEm": "2026-11-03T15:03:52-03:00",
-      "entregueEm": "2026-11-03T15:04:52-03:00",
+      "agendadoPara": "2026-11-03T13:57:00-03:00",
+      "enviadoEm": "2026-11-03T13:57:00-03:00",
+      "entregueEm": "2026-11-03T13:58:00-03:00",
       "status": "entregue"
     },
     {
@@ -885,9 +1836,9 @@
       "destinatarioId": "dst_0062",
       "telefone": "5511900001019",
       "mensagemRenderizada": "Olá, William Pires! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
-      "agendadoPara": "2026-11-09T09:00:00-03:00",
-      "enviadoEm": "2026-11-09T09:00:00-03:00",
-      "entregueEm": "2026-11-09T09:01:00-03:00",
+      "agendadoPara": "2026-11-11T09:00:00-03:00",
+      "enviadoEm": "2026-11-11T09:00:00-03:00",
+      "entregueEm": "2026-11-11T09:01:00-03:00",
       "status": "entregue"
     },
     {
@@ -896,9 +1847,9 @@
       "destinatarioId": "dst_0064",
       "telefone": "5511900001020",
       "mensagemRenderizada": "Olá, Lucas Nogueira! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
-      "agendadoPara": "2026-11-09T09:03:58-03:00",
-      "enviadoEm": "2026-11-09T09:03:58-03:00",
-      "entregueEm": "2026-11-09T09:04:58-03:00",
+      "agendadoPara": "2026-11-11T09:03:51-03:00",
+      "enviadoEm": "2026-11-11T09:03:51-03:00",
+      "entregueEm": "2026-11-11T09:04:51-03:00",
       "status": "entregue"
     },
     {
@@ -907,9 +1858,9 @@
       "destinatarioId": "dst_0066",
       "telefone": "5511900001021",
       "mensagemRenderizada": "Olá, Renata Vieira! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
-      "agendadoPara": "2026-11-09T09:07:45-03:00",
-      "enviadoEm": "2026-11-09T09:07:45-03:00",
-      "entregueEm": "2026-11-09T09:08:45-03:00",
+      "agendadoPara": "2026-11-11T09:06:37-03:00",
+      "enviadoEm": "2026-11-11T09:06:37-03:00",
+      "entregueEm": "2026-11-11T09:07:37-03:00",
       "status": "entregue"
     },
     {
@@ -918,7 +1869,7 @@
       "destinatarioId": "dst_0068",
       "telefone": "5511900001022",
       "mensagemRenderizada": "Olá, Tatiane Ramos! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
-      "agendadoPara": "2026-11-09T09:10:02-03:00",
+      "agendadoPara": "2026-11-11T09:11:13-03:00",
       "enviadoEm": null,
       "entregueEm": null,
       "status": "falhou"
@@ -929,9 +1880,9 @@
       "destinatarioId": "dst_0070",
       "telefone": "5511900001023",
       "mensagemRenderizada": "Olá, Beatriz Monteiro! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
-      "agendadoPara": "2026-11-09T09:14:36-03:00",
-      "enviadoEm": "2026-11-09T09:14:36-03:00",
-      "entregueEm": "2026-11-09T09:15:36-03:00",
+      "agendadoPara": "2026-11-11T09:13:54-03:00",
+      "enviadoEm": "2026-11-11T09:13:54-03:00",
+      "entregueEm": "2026-11-11T09:14:54-03:00",
       "status": "entregue"
     },
     {
@@ -940,9 +1891,9 @@
       "destinatarioId": "dst_0072",
       "telefone": "5511900001024",
       "mensagemRenderizada": "Olá, Débora Farias! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
-      "agendadoPara": "2026-11-09T10:30:48-03:00",
-      "enviadoEm": "2026-11-09T10:30:48-03:00",
-      "entregueEm": "2026-11-09T10:31:48-03:00",
+      "agendadoPara": "2026-11-11T09:18:28-03:00",
+      "enviadoEm": "2026-11-11T09:18:28-03:00",
+      "entregueEm": "2026-11-11T09:19:28-03:00",
       "status": "entregue"
     },
     {
@@ -951,9 +1902,9 @@
       "destinatarioId": "dst_0074",
       "telefone": "5511900001025",
       "mensagemRenderizada": "Olá, Juliana Dias! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
-      "agendadoPara": "2026-11-09T10:34:26-03:00",
-      "enviadoEm": "2026-11-09T10:34:26-03:00",
-      "entregueEm": "2026-11-09T10:35:26-03:00",
+      "agendadoPara": "2026-11-11T09:20:48-03:00",
+      "enviadoEm": "2026-11-11T09:20:48-03:00",
+      "entregueEm": "2026-11-11T09:21:48-03:00",
       "status": "entregue"
     },
     {
@@ -962,9 +1913,9 @@
       "destinatarioId": "dst_0076",
       "telefone": "5511900001026",
       "mensagemRenderizada": "Olá, Mônica Santana! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
-      "agendadoPara": "2026-11-09T10:37:31-03:00",
-      "enviadoEm": "2026-11-09T10:37:31-03:00",
-      "entregueEm": "2026-11-09T10:38:31-03:00",
+      "agendadoPara": "2026-11-11T09:25:16-03:00",
+      "enviadoEm": "2026-11-11T09:25:16-03:00",
+      "entregueEm": "2026-11-11T09:26:16-03:00",
       "status": "entregue"
     },
     {
@@ -973,9 +1924,9 @@
       "destinatarioId": "dst_0078",
       "telefone": "5511900001027",
       "mensagemRenderizada": "Olá, Roberta Cunha! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
-      "agendadoPara": "2026-11-09T10:41:07-03:00",
-      "enviadoEm": "2026-11-09T10:41:07-03:00",
-      "entregueEm": "2026-11-09T10:42:07-03:00",
+      "agendadoPara": "2026-11-11T09:28:41-03:00",
+      "enviadoEm": "2026-11-11T09:28:41-03:00",
+      "entregueEm": "2026-11-11T09:29:41-03:00",
       "status": "entregue"
     },
     {
@@ -984,9 +1935,9 @@
       "destinatarioId": "dst_0080",
       "telefone": "5511900001028",
       "mensagemRenderizada": "Olá, Tiago Andrade! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
-      "agendadoPara": "2026-11-09T10:44:33-03:00",
-      "enviadoEm": "2026-11-09T10:44:33-03:00",
-      "entregueEm": "2026-11-09T10:45:33-03:00",
+      "agendadoPara": "2026-11-11T09:32:17-03:00",
+      "enviadoEm": "2026-11-11T09:32:17-03:00",
+      "entregueEm": "2026-11-11T09:33:17-03:00",
       "status": "entregue"
     },
     {
@@ -995,9 +1946,9 @@
       "destinatarioId": "dst_0082",
       "telefone": "5511900001029",
       "mensagemRenderizada": "Olá, Gustavo Lacerda! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
-      "agendadoPara": "2026-11-09T12:01:21-03:00",
-      "enviadoEm": "2026-11-09T12:01:21-03:00",
-      "entregueEm": "2026-11-09T12:02:21-03:00",
+      "agendadoPara": "2026-11-11T09:36:59-03:00",
+      "enviadoEm": "2026-11-11T09:36:59-03:00",
+      "entregueEm": "2026-11-11T09:37:59-03:00",
       "status": "entregue"
     },
     {
@@ -1006,9 +1957,9 @@
       "destinatarioId": "dst_0084",
       "telefone": "5511900001030",
       "mensagemRenderizada": "Olá, Bruno Carvalho! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
-      "agendadoPara": "2026-11-09T12:06:04-03:00",
-      "enviadoEm": "2026-11-09T12:06:04-03:00",
-      "entregueEm": "2026-11-09T12:07:04-03:00",
+      "agendadoPara": "2026-11-11T09:41:36-03:00",
+      "enviadoEm": "2026-11-11T09:41:36-03:00",
+      "entregueEm": "2026-11-11T09:42:36-03:00",
       "status": "entregue"
     },
     {
@@ -1017,9 +1968,9 @@
       "destinatarioId": "dst_0086",
       "telefone": "5511900001031",
       "mensagemRenderizada": "Olá, Daniel Souza! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
-      "agendadoPara": "2026-11-09T12:10:31-03:00",
-      "enviadoEm": "2026-11-09T12:10:31-03:00",
-      "entregueEm": "2026-11-09T12:11:31-03:00",
+      "agendadoPara": "2026-11-11T09:45:12-03:00",
+      "enviadoEm": "2026-11-11T09:45:12-03:00",
+      "entregueEm": "2026-11-11T09:46:12-03:00",
       "status": "entregue"
     },
     {
@@ -1028,9 +1979,9 @@
       "destinatarioId": "dst_0088",
       "telefone": "5511900001032",
       "mensagemRenderizada": "Olá, Felipe Araújo! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
-      "agendadoPara": "2026-11-09T12:13:53-03:00",
-      "enviadoEm": "2026-11-09T12:13:53-03:00",
-      "entregueEm": "2026-11-09T12:14:53-03:00",
+      "agendadoPara": "2026-11-11T09:48:44-03:00",
+      "enviadoEm": "2026-11-11T09:48:44-03:00",
+      "entregueEm": "2026-11-11T09:49:44-03:00",
       "status": "entregue"
     },
     {
@@ -1039,9 +1990,9 @@
       "destinatarioId": "dst_0090",
       "telefone": "5511900001033",
       "mensagemRenderizada": "Olá, Henrique Alves! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
-      "agendadoPara": "2026-11-09T12:17:14-03:00",
-      "enviadoEm": "2026-11-09T12:17:14-03:00",
-      "entregueEm": "2026-11-09T12:18:14-03:00",
+      "agendadoPara": "2026-11-11T09:52:55-03:00",
+      "enviadoEm": "2026-11-11T09:52:55-03:00",
+      "entregueEm": "2026-11-11T09:53:55-03:00",
       "status": "entregue"
     },
     {
@@ -1050,9 +2001,9 @@
       "destinatarioId": "dst_0092",
       "telefone": "5511900001034",
       "mensagemRenderizada": "Olá, João Pedro Costa! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
-      "agendadoPara": "2026-11-09T13:30:54-03:00",
-      "enviadoEm": "2026-11-09T13:30:54-03:00",
-      "entregueEm": "2026-11-09T13:31:54-03:00",
+      "agendadoPara": "2026-11-11T13:30:17-03:00",
+      "enviadoEm": "2026-11-11T13:30:17-03:00",
+      "entregueEm": "2026-11-11T13:31:17-03:00",
       "status": "entregue"
     },
     {
@@ -1061,9 +2012,9 @@
       "destinatarioId": "dst_0094",
       "telefone": "5511900001035",
       "mensagemRenderizada": "Olá, Marcos Oliveira! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
-      "agendadoPara": "2026-11-09T13:35:12-03:00",
-      "enviadoEm": "2026-11-09T13:35:12-03:00",
-      "entregueEm": "2026-11-09T13:36:12-03:00",
+      "agendadoPara": "2026-11-11T13:34:42-03:00",
+      "enviadoEm": "2026-11-11T13:34:42-03:00",
+      "entregueEm": "2026-11-11T13:35:42-03:00",
       "status": "entregue"
     },
     {
@@ -1072,9 +2023,9 @@
       "destinatarioId": "dst_0096",
       "telefone": "5511900001036",
       "mensagemRenderizada": "Olá, Otávio Barbosa! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
-      "agendadoPara": "2026-11-09T13:38:03-03:00",
-      "enviadoEm": "2026-11-09T13:38:03-03:00",
-      "entregueEm": "2026-11-09T13:39:03-03:00",
+      "agendadoPara": "2026-11-11T13:38:12-03:00",
+      "enviadoEm": "2026-11-11T13:38:12-03:00",
+      "entregueEm": "2026-11-11T13:39:12-03:00",
       "status": "entregue"
     },
     {
@@ -1083,9 +2034,9 @@
       "destinatarioId": "dst_0098",
       "telefone": "5511900001037",
       "mensagemRenderizada": "Olá, Rafael Teixeira! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
-      "agendadoPara": "2026-11-09T13:42:32-03:00",
-      "enviadoEm": "2026-11-09T13:42:32-03:00",
-      "entregueEm": "2026-11-09T13:43:32-03:00",
+      "agendadoPara": "2026-11-11T13:42:03-03:00",
+      "enviadoEm": "2026-11-11T13:42:03-03:00",
+      "entregueEm": "2026-11-11T13:43:03-03:00",
       "status": "entregue"
     },
     {
@@ -1094,9 +2045,9 @@
       "destinatarioId": "dst_0100",
       "telefone": "5511900001038",
       "mensagemRenderizada": "Olá, Thiago Moreira! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
-      "agendadoPara": "2026-11-09T13:45:31-03:00",
-      "enviadoEm": "2026-11-09T13:45:31-03:00",
-      "entregueEm": "2026-11-09T13:46:31-03:00",
+      "agendadoPara": "2026-11-11T13:46:10-03:00",
+      "enviadoEm": "2026-11-11T13:46:10-03:00",
+      "entregueEm": "2026-11-11T13:47:10-03:00",
       "status": "entregue"
     },
     {
@@ -1105,10 +2056,10 @@
       "destinatarioId": "dst_0102",
       "telefone": "5511900001039",
       "mensagemRenderizada": "Olá, William Pires! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
-      "agendadoPara": "2026-11-09T15:01:25-03:00",
-      "enviadoEm": null,
-      "entregueEm": null,
-      "status": "falhou"
+      "agendadoPara": "2026-11-11T13:48:20-03:00",
+      "enviadoEm": "2026-11-11T13:48:20-03:00",
+      "entregueEm": "2026-11-11T13:49:20-03:00",
+      "status": "entregue"
     },
     {
       "id": "env_0105",
@@ -1116,9 +2067,9 @@
       "destinatarioId": "dst_0104",
       "telefone": "5511900001040",
       "mensagemRenderizada": "Olá, Lucas Nogueira! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
-      "agendadoPara": "2026-11-09T15:04:01-03:00",
-      "enviadoEm": "2026-11-09T15:04:01-03:00",
-      "entregueEm": "2026-11-09T15:05:01-03:00",
+      "agendadoPara": "2026-11-11T13:51:11-03:00",
+      "enviadoEm": "2026-11-11T13:51:11-03:00",
+      "entregueEm": "2026-11-11T13:52:11-03:00",
       "status": "entregue"
     },
     {
@@ -1127,9 +2078,9 @@
       "destinatarioId": "dst_0106",
       "telefone": "5511900001041",
       "mensagemRenderizada": "Olá, Renata Vieira! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
-      "agendadoPara": "2026-11-09T15:06:49-03:00",
-      "enviadoEm": "2026-11-09T15:06:49-03:00",
-      "entregueEm": "2026-11-09T15:07:49-03:00",
+      "agendadoPara": "2026-11-11T13:54:09-03:00",
+      "enviadoEm": "2026-11-11T13:54:09-03:00",
+      "entregueEm": "2026-11-11T13:55:09-03:00",
       "status": "entregue"
     },
     {
@@ -1138,9 +2089,9 @@
       "destinatarioId": "dst_0108",
       "telefone": "5511900001042",
       "mensagemRenderizada": "Olá, Tatiane Ramos! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
-      "agendadoPara": "2026-11-09T15:09:14-03:00",
-      "enviadoEm": "2026-11-09T15:09:14-03:00",
-      "entregueEm": "2026-11-09T15:10:14-03:00",
+      "agendadoPara": "2026-11-11T13:58:51-03:00",
+      "enviadoEm": "2026-11-11T13:58:51-03:00",
+      "entregueEm": "2026-11-11T13:59:51-03:00",
       "status": "entregue"
     },
     {
@@ -1149,139 +2100,1217 @@
       "destinatarioId": "dst_0110",
       "telefone": "5511900001043",
       "mensagemRenderizada": "Olá, Beatriz Monteiro! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
-      "agendadoPara": "2026-11-09T15:11:41-03:00",
-      "enviadoEm": "2026-11-09T15:11:41-03:00",
-      "entregueEm": "2026-11-09T15:12:41-03:00",
+      "agendadoPara": "2026-11-11T14:01:40-03:00",
+      "enviadoEm": "2026-11-11T14:01:40-03:00",
+      "entregueEm": "2026-11-11T14:02:40-03:00",
+      "status": "entregue"
+    },
+    {
+      "id": "env_0113",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0112",
+      "telefone": "5511900001044",
+      "mensagemRenderizada": "Olá, Débora Farias! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-11T14:05:21-03:00",
+      "enviadoEm": "2026-11-11T14:05:21-03:00",
+      "entregueEm": "2026-11-11T14:06:21-03:00",
+      "status": "entregue"
+    },
+    {
+      "id": "env_0115",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0114",
+      "telefone": "5511900001045",
+      "mensagemRenderizada": "Olá, Juliana Dias! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-11T14:09:14-03:00",
+      "enviadoEm": "2026-11-11T14:09:14-03:00",
+      "entregueEm": "2026-11-11T14:10:14-03:00",
+      "status": "entregue"
+    },
+    {
+      "id": "env_0117",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0116",
+      "telefone": "5511900001046",
+      "mensagemRenderizada": "Olá, Mônica Santana! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-11T14:11:58-03:00",
+      "enviadoEm": "2026-11-11T14:11:58-03:00",
+      "entregueEm": "2026-11-11T14:12:58-03:00",
+      "status": "entregue"
+    },
+    {
+      "id": "env_0119",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0118",
+      "telefone": "5511900001047",
+      "mensagemRenderizada": "Olá, Roberta Cunha! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-11T14:15:33-03:00",
+      "enviadoEm": "2026-11-11T14:15:33-03:00",
+      "entregueEm": "2026-11-11T14:16:33-03:00",
+      "status": "entregue"
+    },
+    {
+      "id": "env_0121",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0120",
+      "telefone": "5511900001048",
+      "mensagemRenderizada": "Olá, Tiago Andrade! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-11T14:19:51-03:00",
+      "enviadoEm": "2026-11-11T14:19:51-03:00",
+      "entregueEm": "2026-11-11T14:20:51-03:00",
+      "status": "entregue"
+    },
+    {
+      "id": "env_0123",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0122",
+      "telefone": "5511900001049",
+      "mensagemRenderizada": "Olá, Gustavo Lacerda! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T09:01:03-03:00",
+      "enviadoEm": "2026-11-12T09:01:03-03:00",
+      "entregueEm": "2026-11-12T09:02:03-03:00",
+      "status": "entregue"
+    },
+    {
+      "id": "env_0125",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0124",
+      "telefone": "5511900001050",
+      "mensagemRenderizada": "Olá, Bruno Carvalho! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T09:03:11-03:00",
+      "enviadoEm": "2026-11-12T09:03:11-03:00",
+      "entregueEm": "2026-11-12T09:04:11-03:00",
+      "status": "entregue"
+    },
+    {
+      "id": "env_0127",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0126",
+      "telefone": "5511900001051",
+      "mensagemRenderizada": "Olá, Daniel Souza! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T09:06:39-03:00",
+      "enviadoEm": "2026-11-12T09:06:39-03:00",
+      "entregueEm": "2026-11-12T09:07:39-03:00",
+      "status": "entregue"
+    },
+    {
+      "id": "env_0129",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0128",
+      "telefone": "5511900001052",
+      "mensagemRenderizada": "Olá, Felipe Araújo! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T09:08:55-03:00",
+      "enviadoEm": "2026-11-12T09:08:55-03:00",
+      "entregueEm": "2026-11-12T09:09:55-03:00",
+      "status": "entregue"
+    },
+    {
+      "id": "env_0131",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0130",
+      "telefone": "5511900001053",
+      "mensagemRenderizada": "Olá, Henrique Alves! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T09:11:46-03:00",
+      "enviadoEm": "2026-11-12T09:11:46-03:00",
+      "entregueEm": "2026-11-12T09:12:46-03:00",
+      "status": "entregue"
+    },
+    {
+      "id": "env_0133",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0132",
+      "telefone": "5511900001054",
+      "mensagemRenderizada": "Olá, João Pedro Costa! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T09:15:33-03:00",
+      "enviadoEm": "2026-11-12T09:15:33-03:00",
+      "entregueEm": "2026-11-12T09:16:33-03:00",
+      "status": "entregue"
+    },
+    {
+      "id": "env_0135",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0134",
+      "telefone": "5511900001055",
+      "mensagemRenderizada": "Olá, Marcos Oliveira! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T09:18:13-03:00",
+      "enviadoEm": "2026-11-12T09:18:13-03:00",
+      "entregueEm": "2026-11-12T09:19:13-03:00",
+      "status": "entregue"
+    },
+    {
+      "id": "env_0137",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0136",
+      "telefone": "5511900001056",
+      "mensagemRenderizada": "Olá, Otávio Barbosa! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T09:20:54-03:00",
+      "enviadoEm": "2026-11-12T09:20:54-03:00",
+      "entregueEm": "2026-11-12T09:21:54-03:00",
+      "status": "entregue"
+    },
+    {
+      "id": "env_0139",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0138",
+      "telefone": "5511900001057",
+      "mensagemRenderizada": "Olá, Rafael Teixeira! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T09:24:04-03:00",
+      "enviadoEm": "2026-11-12T09:24:04-03:00",
+      "entregueEm": "2026-11-12T09:25:04-03:00",
+      "status": "entregue"
+    },
+    {
+      "id": "env_0141",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0140",
+      "telefone": "5511900001058",
+      "mensagemRenderizada": "Olá, Thiago Moreira! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T09:27:15-03:00",
+      "enviadoEm": "2026-11-12T09:27:15-03:00",
+      "entregueEm": "2026-11-12T09:28:15-03:00",
+      "status": "entregue"
+    },
+    {
+      "id": "env_0143",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0142",
+      "telefone": "5511900001059",
+      "mensagemRenderizada": "Olá, William Pires! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T09:31:43-03:00",
+      "enviadoEm": "2026-11-12T09:31:43-03:00",
+      "entregueEm": "2026-11-12T09:32:43-03:00",
+      "status": "entregue"
+    },
+    {
+      "id": "env_0145",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0144",
+      "telefone": "5511900001060",
+      "mensagemRenderizada": "Olá, Lucas Nogueira! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T09:34:55-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "falhou"
+    },
+    {
+      "id": "env_0147",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0146",
+      "telefone": "5511900001061",
+      "mensagemRenderizada": "Olá, Renata Vieira! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T09:37:22-03:00",
+      "enviadoEm": "2026-11-12T09:37:22-03:00",
+      "entregueEm": "2026-11-12T09:38:22-03:00",
       "status": "entregue"
     },
     {
       "id": "env_0149",
-      "campanhaId": "cmp_confirmacao",
+      "campanhaId": "cmp_reativacao",
       "destinatarioId": "dst_0148",
-      "telefone": "5511900001044",
-      "mensagemRenderizada": "Oi, Eduarda Lima, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em segunda-feira às 9h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
-      "agendadoPara": "2026-11-13T09:00:00-03:00",
-      "enviadoEm": null,
-      "entregueEm": null,
-      "status": "pendente"
+      "telefone": "5511900001062",
+      "mensagemRenderizada": "Olá, Tatiane Ramos! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T09:39:24-03:00",
+      "enviadoEm": "2026-11-12T09:39:24-03:00",
+      "entregueEm": "2026-11-12T09:40:24-03:00",
+      "status": "entregue"
     },
     {
       "id": "env_0151",
-      "campanhaId": "cmp_confirmacao",
+      "campanhaId": "cmp_reativacao",
       "destinatarioId": "dst_0150",
-      "telefone": "5511900001045",
-      "mensagemRenderizada": "Oi, Gabriela Rocha, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em terça-feira às 10h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
-      "agendadoPara": "2026-11-13T09:04:58-03:00",
-      "enviadoEm": null,
-      "entregueEm": null,
-      "status": "pendente"
+      "telefone": "5511900001063",
+      "mensagemRenderizada": "Olá, Beatriz Monteiro! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T09:43:18-03:00",
+      "enviadoEm": "2026-11-12T09:43:18-03:00",
+      "entregueEm": "2026-11-12T09:44:18-03:00",
+      "status": "entregue"
     },
     {
       "id": "env_0153",
-      "campanhaId": "cmp_confirmacao",
+      "campanhaId": "cmp_reativacao",
       "destinatarioId": "dst_0152",
-      "telefone": "5511900001046",
-      "mensagemRenderizada": "Oi, Isabela Martins, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em quarta-feira às 11h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
-      "agendadoPara": "2026-11-13T09:09:28-03:00",
-      "enviadoEm": null,
-      "entregueEm": null,
-      "status": "pendente"
+      "telefone": "5511900001064",
+      "mensagemRenderizada": "Olá, Débora Farias! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T13:30:01-03:00",
+      "enviadoEm": "2026-11-12T13:30:01-03:00",
+      "entregueEm": "2026-11-12T13:31:01-03:00",
+      "status": "entregue"
     },
     {
       "id": "env_0155",
-      "campanhaId": "cmp_confirmacao",
+      "campanhaId": "cmp_reativacao",
       "destinatarioId": "dst_0154",
-      "telefone": "5511900001047",
-      "mensagemRenderizada": "Oi, Larissa Gomes, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em quinta-feira às 12h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
-      "agendadoPara": "2026-11-13T09:12:48-03:00",
-      "enviadoEm": null,
-      "entregueEm": null,
-      "status": "pendente"
+      "telefone": "5511900001065",
+      "mensagemRenderizada": "Olá, Juliana Dias! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T13:34:03-03:00",
+      "enviadoEm": "2026-11-12T13:34:03-03:00",
+      "entregueEm": "2026-11-12T13:35:03-03:00",
+      "status": "entregue"
     },
     {
       "id": "env_0157",
-      "campanhaId": "cmp_confirmacao",
+      "campanhaId": "cmp_reativacao",
       "destinatarioId": "dst_0156",
-      "telefone": "5511900001048",
-      "mensagemRenderizada": "Oi, Natália Fernandes, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em sexta-feira às 13h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
-      "agendadoPara": "2026-11-13T09:17:35-03:00",
-      "enviadoEm": null,
-      "entregueEm": null,
-      "status": "pendente"
+      "telefone": "5511900001066",
+      "mensagemRenderizada": "Olá, Mônica Santana! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T13:37:06-03:00",
+      "enviadoEm": "2026-11-12T13:37:06-03:00",
+      "entregueEm": "2026-11-12T13:38:06-03:00",
+      "status": "entregue"
     },
     {
       "id": "env_0159",
-      "campanhaId": "cmp_confirmacao",
+      "campanhaId": "cmp_reativacao",
       "destinatarioId": "dst_0158",
-      "telefone": "5511900001049",
-      "mensagemRenderizada": "Oi, Patrícia Duarte, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em segunda-feira às 14h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
-      "agendadoPara": "2026-11-13T10:31:25-03:00",
-      "enviadoEm": null,
-      "entregueEm": null,
-      "status": "pendente"
+      "telefone": "5511900001067",
+      "mensagemRenderizada": "Olá, Roberta Cunha! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T13:39:10-03:00",
+      "enviadoEm": "2026-11-12T13:39:10-03:00",
+      "entregueEm": "2026-11-12T13:40:10-03:00",
+      "status": "entregue"
     },
     {
       "id": "env_0161",
-      "campanhaId": "cmp_confirmacao",
+      "campanhaId": "cmp_reativacao",
       "destinatarioId": "dst_0160",
-      "telefone": "5511900001050",
-      "mensagemRenderizada": "Oi, Sabrina Lopes, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em terça-feira às 15h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
-      "agendadoPara": "2026-11-13T10:34:13-03:00",
-      "enviadoEm": null,
-      "entregueEm": null,
-      "status": "pendente"
+      "telefone": "5511900001068",
+      "mensagemRenderizada": "Olá, Tiago Andrade! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T13:43:40-03:00",
+      "enviadoEm": "2026-11-12T13:43:40-03:00",
+      "entregueEm": "2026-11-12T13:44:40-03:00",
+      "status": "entregue"
     },
     {
       "id": "env_0163",
-      "campanhaId": "cmp_confirmacao",
+      "campanhaId": "cmp_reativacao",
       "destinatarioId": "dst_0162",
-      "telefone": "5511900001051",
-      "mensagemRenderizada": "Oi, Vanessa Cardoso, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em quarta-feira às 16h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
-      "agendadoPara": "2026-11-13T10:38:38-03:00",
-      "enviadoEm": null,
-      "entregueEm": null,
-      "status": "pendente"
+      "telefone": "5511900001069",
+      "mensagemRenderizada": "Olá, Gustavo Lacerda! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T13:46:44-03:00",
+      "enviadoEm": "2026-11-12T13:46:44-03:00",
+      "entregueEm": "2026-11-12T13:47:44-03:00",
+      "status": "entregue"
     },
     {
       "id": "env_0165",
-      "campanhaId": "cmp_confirmacao",
+      "campanhaId": "cmp_reativacao",
       "destinatarioId": "dst_0164",
-      "telefone": "5511900001052",
-      "mensagemRenderizada": "Oi, Yasmin Freitas, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em quinta-feira às 9h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
-      "agendadoPara": "2026-11-13T10:42:23-03:00",
-      "enviadoEm": null,
-      "entregueEm": null,
-      "status": "pendente"
+      "telefone": "5511900001070",
+      "mensagemRenderizada": "Olá, Bruno Carvalho! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T13:50:39-03:00",
+      "enviadoEm": "2026-11-12T13:50:39-03:00",
+      "entregueEm": "2026-11-12T13:51:39-03:00",
+      "status": "entregue"
     },
     {
       "id": "env_0167",
-      "campanhaId": "cmp_confirmacao",
+      "campanhaId": "cmp_reativacao",
       "destinatarioId": "dst_0166",
-      "telefone": "5511900001053",
-      "mensagemRenderizada": "Oi, Mariana Castro, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em sexta-feira às 10h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
-      "agendadoPara": "2026-11-13T10:45:55-03:00",
-      "enviadoEm": null,
-      "entregueEm": null,
-      "status": "pendente"
+      "telefone": "5511900001071",
+      "mensagemRenderizada": "Olá, Daniel Souza! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T13:54:01-03:00",
+      "enviadoEm": "2026-11-12T13:54:01-03:00",
+      "entregueEm": "2026-11-12T13:55:01-03:00",
+      "status": "entregue"
     },
     {
       "id": "env_0169",
-      "campanhaId": "cmp_confirmacao",
+      "campanhaId": "cmp_reativacao",
       "destinatarioId": "dst_0168",
-      "telefone": "5511900001054",
-      "mensagemRenderizada": "Oi, Sérgio Campos, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em segunda-feira às 11h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
-      "agendadoPara": "2026-11-13T12:01:01-03:00",
+      "telefone": "5511900001072",
+      "mensagemRenderizada": "Olá, Felipe Araújo! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T13:57:34-03:00",
+      "enviadoEm": "2026-11-12T13:57:34-03:00",
+      "entregueEm": "2026-11-12T13:58:34-03:00",
+      "status": "entregue"
+    },
+    {
+      "id": "env_0171",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0170",
+      "telefone": "5511900001073",
+      "mensagemRenderizada": "Olá, Henrique Alves! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T14:02:33-03:00",
+      "enviadoEm": "2026-11-12T14:02:33-03:00",
+      "entregueEm": "2026-11-12T14:03:33-03:00",
+      "status": "entregue"
+    },
+    {
+      "id": "env_0173",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0172",
+      "telefone": "5511900001074",
+      "mensagemRenderizada": "Olá, João Pedro Costa! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T14:04:50-03:00",
+      "enviadoEm": "2026-11-12T14:04:50-03:00",
+      "entregueEm": "2026-11-12T14:05:50-03:00",
+      "status": "entregue"
+    },
+    {
+      "id": "env_0175",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0174",
+      "telefone": "5511900001075",
+      "mensagemRenderizada": "Olá, Marcos Oliveira! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T14:09:06-03:00",
+      "enviadoEm": "2026-11-12T14:09:06-03:00",
+      "entregueEm": "2026-11-12T14:10:06-03:00",
+      "status": "entregue"
+    },
+    {
+      "id": "env_0177",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0176",
+      "telefone": "5511900001076",
+      "mensagemRenderizada": "Olá, Otávio Barbosa! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T14:12:45-03:00",
+      "enviadoEm": "2026-11-12T14:12:45-03:00",
+      "entregueEm": "2026-11-12T14:13:45-03:00",
+      "status": "entregue"
+    },
+    {
+      "id": "env_0179",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0178",
+      "telefone": "5511900001077",
+      "mensagemRenderizada": "Olá, Rafael Teixeira! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T14:16:42-03:00",
+      "enviadoEm": "2026-11-12T14:16:42-03:00",
+      "entregueEm": "2026-11-12T14:17:42-03:00",
+      "status": "entregue"
+    },
+    {
+      "id": "env_0181",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0180",
+      "telefone": "5511900001078",
+      "mensagemRenderizada": "Olá, Thiago Moreira! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-12T14:19:31-03:00",
+      "enviadoEm": "2026-11-12T14:19:31-03:00",
+      "entregueEm": "2026-11-12T14:20:31-03:00",
+      "status": "entregue"
+    },
+    {
+      "id": "env_0183",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0182",
+      "telefone": "5511900001079",
+      "mensagemRenderizada": "Olá, William Pires! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T09:00:22-03:00",
       "enviadoEm": null,
       "entregueEm": null,
       "status": "pendente"
     },
     {
-      "id": "env_0171",
+      "id": "env_0185",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0184",
+      "telefone": "5511900001080",
+      "mensagemRenderizada": "Olá, Lucas Nogueira! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T09:04:16-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0187",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0186",
+      "telefone": "5511900001081",
+      "mensagemRenderizada": "Olá, Renata Vieira! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T09:08:47-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0189",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0188",
+      "telefone": "5511900001082",
+      "mensagemRenderizada": "Olá, Tatiane Ramos! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T09:13:07-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0191",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0190",
+      "telefone": "5511900001083",
+      "mensagemRenderizada": "Olá, Beatriz Monteiro! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T09:17:53-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0193",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0192",
+      "telefone": "5511900001084",
+      "mensagemRenderizada": "Olá, Débora Farias! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T09:20:42-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0195",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0194",
+      "telefone": "5511900001085",
+      "mensagemRenderizada": "Olá, Juliana Dias! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T09:22:48-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0197",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0196",
+      "telefone": "5511900001086",
+      "mensagemRenderizada": "Olá, Mônica Santana! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T09:26:04-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0199",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0198",
+      "telefone": "5511900001087",
+      "mensagemRenderizada": "Olá, Roberta Cunha! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T09:29:35-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0201",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0200",
+      "telefone": "5511900001088",
+      "mensagemRenderizada": "Olá, Tiago Andrade! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T09:32:37-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0203",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0202",
+      "telefone": "5511900001089",
+      "mensagemRenderizada": "Olá, Gustavo Lacerda! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T09:34:59-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0205",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0204",
+      "telefone": "5511900001090",
+      "mensagemRenderizada": "Olá, Bruno Carvalho! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T09:39:08-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0207",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0206",
+      "telefone": "5511900001091",
+      "mensagemRenderizada": "Olá, Daniel Souza! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T09:41:12-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0209",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0208",
+      "telefone": "5511900001092",
+      "mensagemRenderizada": "Olá, Felipe Araújo! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T09:44:00-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0211",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0210",
+      "telefone": "5511900001093",
+      "mensagemRenderizada": "Olá, Henrique Alves! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T09:46:40-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0213",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0212",
+      "telefone": "5511900001094",
+      "mensagemRenderizada": "Olá, João Pedro Costa! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T13:31:15-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0215",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0214",
+      "telefone": "5511900001095",
+      "mensagemRenderizada": "Olá, Marcos Oliveira! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T13:35:48-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0217",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0216",
+      "telefone": "5511900001096",
+      "mensagemRenderizada": "Olá, Otávio Barbosa! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T13:38:50-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0219",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0218",
+      "telefone": "5511900001097",
+      "mensagemRenderizada": "Olá, Rafael Teixeira! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T13:42:02-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0221",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0220",
+      "telefone": "5511900001098",
+      "mensagemRenderizada": "Olá, Thiago Moreira! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T13:45:34-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0223",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0222",
+      "telefone": "5511900001099",
+      "mensagemRenderizada": "Olá, William Pires! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T13:49:04-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0225",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0224",
+      "telefone": "5511900001100",
+      "mensagemRenderizada": "Olá, Lucas Nogueira! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T13:52:38-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0227",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0226",
+      "telefone": "5511900001101",
+      "mensagemRenderizada": "Olá, Renata Vieira! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T13:56:58-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0229",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0228",
+      "telefone": "5511900001102",
+      "mensagemRenderizada": "Olá, Tatiane Ramos! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T14:01:52-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0231",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0230",
+      "telefone": "5511900001103",
+      "mensagemRenderizada": "Olá, Beatriz Monteiro! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T14:05:17-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0233",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0232",
+      "telefone": "5511900001104",
+      "mensagemRenderizada": "Olá, Débora Farias! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T14:09:26-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0235",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0234",
+      "telefone": "5511900001105",
+      "mensagemRenderizada": "Olá, Juliana Dias! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T14:13:31-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0237",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0236",
+      "telefone": "5511900001106",
+      "mensagemRenderizada": "Olá, Mônica Santana! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T14:17:33-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0239",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0238",
+      "telefone": "5511900001107",
+      "mensagemRenderizada": "Olá, Roberta Cunha! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T14:19:44-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0241",
+      "campanhaId": "cmp_reativacao",
+      "destinatarioId": "dst_0240",
+      "telefone": "5511900001108",
+      "mensagemRenderizada": "Olá, Tiago Andrade! Sentimos sua falta aqui na Clínica Vitta. Este mês estamos com horários disponíveis para avaliação. Posso te mandar as opções de dia e horário?",
+      "agendadoPara": "2026-11-13T14:24:03-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0341",
       "campanhaId": "cmp_confirmacao",
-      "destinatarioId": "dst_0170",
-      "telefone": "5511900001055",
-      "mensagemRenderizada": "Oi, Vinícius Correia, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em terça-feira às 12h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
-      "agendadoPara": "2026-11-13T12:03:02-03:00",
+      "destinatarioId": "dst_0340",
+      "telefone": "5511900001109",
+      "mensagemRenderizada": "Oi, Débora Farias, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em segunda-feira às 9h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T09:01:29-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0343",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0342",
+      "telefone": "5511900001110",
+      "mensagemRenderizada": "Oi, Juliana Dias, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em terça-feira às 10h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T09:04:42-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0345",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0344",
+      "telefone": "5511900001111",
+      "mensagemRenderizada": "Oi, Mônica Santana, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em quarta-feira às 11h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T09:08:37-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0347",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0346",
+      "telefone": "5511900001112",
+      "mensagemRenderizada": "Oi, Roberta Cunha, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em quinta-feira às 12h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T09:12:52-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0349",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0348",
+      "telefone": "5511900001113",
+      "mensagemRenderizada": "Oi, Tiago Andrade, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em sexta-feira às 13h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T09:15:27-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0351",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0350",
+      "telefone": "5511900001114",
+      "mensagemRenderizada": "Oi, Gustavo Lacerda, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em segunda-feira às 14h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T09:20:01-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0353",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0352",
+      "telefone": "5511900001115",
+      "mensagemRenderizada": "Oi, Bruno Carvalho, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em terça-feira às 15h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T09:24:26-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0355",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0354",
+      "telefone": "5511900001116",
+      "mensagemRenderizada": "Oi, Daniel Souza, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em quarta-feira às 16h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T09:27:56-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0357",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0356",
+      "telefone": "5511900001117",
+      "mensagemRenderizada": "Oi, Felipe Araújo, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em quinta-feira às 9h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T09:32:03-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0359",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0358",
+      "telefone": "5511900001118",
+      "mensagemRenderizada": "Oi, Henrique Alves, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em sexta-feira às 10h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T09:34:36-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0361",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0360",
+      "telefone": "5511900001119",
+      "mensagemRenderizada": "Oi, João Pedro Costa, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em segunda-feira às 11h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T09:37:40-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0363",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0362",
+      "telefone": "5511900001120",
+      "mensagemRenderizada": "Oi, Marcos Oliveira, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em terça-feira às 12h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T09:41:17-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0365",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0364",
+      "telefone": "5511900001121",
+      "mensagemRenderizada": "Oi, Otávio Barbosa, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em quarta-feira às 13h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T09:44:50-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0367",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0366",
+      "telefone": "5511900001122",
+      "mensagemRenderizada": "Oi, Rafael Teixeira, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em quinta-feira às 14h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T09:48:13-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0369",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0368",
+      "telefone": "5511900001123",
+      "mensagemRenderizada": "Oi, Thiago Moreira, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em sexta-feira às 15h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T09:52:25-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0371",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0370",
+      "telefone": "5511900001124",
+      "mensagemRenderizada": "Oi, William Pires, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em segunda-feira às 16h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T13:30:28-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0373",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0372",
+      "telefone": "5511900001125",
+      "mensagemRenderizada": "Oi, Lucas Nogueira, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em terça-feira às 9h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T13:33:55-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0375",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0374",
+      "telefone": "5511900001126",
+      "mensagemRenderizada": "Oi, Renata Vieira, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em quarta-feira às 10h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T13:37:31-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0377",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0376",
+      "telefone": "5511900001127",
+      "mensagemRenderizada": "Oi, Tatiane Ramos, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em quinta-feira às 11h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T13:40:50-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0379",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0378",
+      "telefone": "5511900001128",
+      "mensagemRenderizada": "Oi, Beatriz Monteiro, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em sexta-feira às 12h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T13:43:32-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0381",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0380",
+      "telefone": "5511900001129",
+      "mensagemRenderizada": "Oi, Débora Farias, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em segunda-feira às 13h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T13:46:12-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0383",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0382",
+      "telefone": "5511900001130",
+      "mensagemRenderizada": "Oi, Juliana Dias, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em terça-feira às 14h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T13:48:59-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0385",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0384",
+      "telefone": "5511900001131",
+      "mensagemRenderizada": "Oi, Mônica Santana, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em quarta-feira às 15h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T13:52:18-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0387",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0386",
+      "telefone": "5511900001132",
+      "mensagemRenderizada": "Oi, Roberta Cunha, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em quinta-feira às 16h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T13:54:55-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0389",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0388",
+      "telefone": "5511900001133",
+      "mensagemRenderizada": "Oi, Tiago Andrade, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em sexta-feira às 9h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T13:58:41-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0391",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0390",
+      "telefone": "5511900001134",
+      "mensagemRenderizada": "Oi, Gustavo Lacerda, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em segunda-feira às 10h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T14:02:44-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0393",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0392",
+      "telefone": "5511900001135",
+      "mensagemRenderizada": "Oi, Bruno Carvalho, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em terça-feira às 11h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T14:07:13-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0395",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0394",
+      "telefone": "5511900001136",
+      "mensagemRenderizada": "Oi, Daniel Souza, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em quarta-feira às 12h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T14:09:17-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0397",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0396",
+      "telefone": "5511900001137",
+      "mensagemRenderizada": "Oi, Felipe Araújo, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em quinta-feira às 13h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T14:12:25-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0399",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0398",
+      "telefone": "5511900001138",
+      "mensagemRenderizada": "Oi, Henrique Alves, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em sexta-feira às 14h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-16T14:14:39-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0401",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0400",
+      "telefone": "5511900001139",
+      "mensagemRenderizada": "Oi, João Pedro Costa, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em segunda-feira às 15h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-17T09:00:13-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0403",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0402",
+      "telefone": "5511900001140",
+      "mensagemRenderizada": "Oi, Marcos Oliveira, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em terça-feira às 16h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-17T09:03:42-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0405",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0404",
+      "telefone": "5511900001141",
+      "mensagemRenderizada": "Oi, Otávio Barbosa, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em quarta-feira às 9h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-17T09:06:26-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0407",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0406",
+      "telefone": "5511900001142",
+      "mensagemRenderizada": "Oi, Rafael Teixeira, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em quinta-feira às 10h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-17T09:08:43-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0409",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0408",
+      "telefone": "5511900001143",
+      "mensagemRenderizada": "Oi, Thiago Moreira, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em sexta-feira às 11h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-17T09:12:47-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0411",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0410",
+      "telefone": "5511900001144",
+      "mensagemRenderizada": "Oi, William Pires, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em segunda-feira às 12h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-17T09:15:10-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0413",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0412",
+      "telefone": "5511900001145",
+      "mensagemRenderizada": "Oi, Lucas Nogueira, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em terça-feira às 13h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-17T09:18:59-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0415",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0414",
+      "telefone": "5511900001146",
+      "mensagemRenderizada": "Oi, Renata Vieira, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em quarta-feira às 14h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-17T09:23:16-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0417",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0416",
+      "telefone": "5511900001147",
+      "mensagemRenderizada": "Oi, Tatiane Ramos, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em quinta-feira às 15h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-17T09:27:11-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0419",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0418",
+      "telefone": "5511900001148",
+      "mensagemRenderizada": "Oi, Beatriz Monteiro, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em sexta-feira às 16h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-17T09:31:42-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0421",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0420",
+      "telefone": "5511900001149",
+      "mensagemRenderizada": "Oi, Débora Farias, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em segunda-feira às 9h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-17T09:35:01-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0423",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0422",
+      "telefone": "5511900001150",
+      "mensagemRenderizada": "Oi, Juliana Dias, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em terça-feira às 10h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-17T09:39:45-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0425",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0424",
+      "telefone": "5511900001151",
+      "mensagemRenderizada": "Oi, Mônica Santana, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em quarta-feira às 11h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-17T09:42:54-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0427",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0426",
+      "telefone": "5511900001152",
+      "mensagemRenderizada": "Oi, Roberta Cunha, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em quinta-feira às 12h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-17T09:47:40-03:00",
+      "enviadoEm": null,
+      "entregueEm": null,
+      "status": "pendente"
+    },
+    {
+      "id": "env_0429",
+      "campanhaId": "cmp_confirmacao",
+      "destinatarioId": "dst_0428",
+      "telefone": "5511900001153",
+      "mensagemRenderizada": "Oi, Tiago Andrade, tudo bem? Passando para confirmar sua consulta na Clínica Vitta em sexta-feira às 13h. Pode responder SIM para confirmar ou nos avisar se precisar remarcar.",
+      "agendadoPara": "2026-11-17T09:52:18-03:00",
       "enviadoEm": null,
       "entregueEm": null,
       "status": "pendente"
@@ -1306,7 +3335,7 @@
       "textoOriginal": "Qual o valor da consulta de retorno? Aceita convênio?",
       "classificacao": "duvida",
       "virouAgendamento": false,
-      "recebidaEm": "2026-11-03T09:20:50-03:00"
+      "recebidaEm": "2026-11-03T09:22:47-03:00"
     },
     {
       "id": "rsp_0057",
@@ -1316,7 +3345,7 @@
       "textoOriginal": "Obrigada! Já marquei pelo telefone semana passada 😊",
       "classificacao": "ja_resolveu",
       "virouAgendamento": false,
-      "recebidaEm": "2026-11-03T10:50:36-03:00"
+      "recebidaEm": "2026-11-03T09:36:55-03:00"
     },
     {
       "id": "rsp_0058",
@@ -1326,7 +3355,7 @@
       "textoOriginal": "Pode ser sábado de manhã?",
       "classificacao": "interesse",
       "virouAgendamento": true,
-      "recebidaEm": "2026-11-03T11:04:19-03:00"
+      "recebidaEm": "2026-11-03T09:51:36-03:00"
     },
     {
       "id": "rsp_0059",
@@ -1336,7 +3365,7 @@
       "textoOriginal": "Por favor, não me mandem mais mensagens.",
       "classificacao": "pediu_parar",
       "virouAgendamento": false,
-      "recebidaEm": "2026-11-03T12:40:40-03:00"
+      "recebidaEm": "2026-11-03T10:08:12-03:00"
     },
     {
       "id": "rsp_0061",
@@ -1346,87 +3375,57 @@
       "textoOriginal": "Sim! Me manda os horários de terça.",
       "classificacao": "interesse",
       "virouAgendamento": true,
-      "recebidaEm": "2026-11-03T14:21:57-03:00"
+      "recebidaEm": "2026-11-03T14:29:09-03:00"
     },
     {
-      "id": "rsp_0139",
+      "id": "rsp_0334",
       "campanhaId": "cmp_reativacao",
       "destinatarioId": "dst_0064",
       "telefone": "5511900001020",
       "textoOriginal": "Oi, quero voltar sim! Tem avaliação na sexta?",
       "classificacao": "interesse",
       "virouAgendamento": true,
-      "recebidaEm": "2026-11-09T09:14:58-03:00"
+      "recebidaEm": "2026-11-11T09:14:51-03:00"
     },
     {
-      "id": "rsp_0140",
+      "id": "rsp_0335",
       "campanhaId": "cmp_reativacao",
       "destinatarioId": "dst_0072",
       "telefone": "5511900001024",
       "textoOriginal": "Vocês ainda atendem na mesma unidade da Av. Paulista?",
       "classificacao": "duvida",
       "virouAgendamento": false,
-      "recebidaEm": "2026-11-09T10:53:48-03:00"
+      "recebidaEm": "2026-11-11T09:41:28-03:00"
     },
     {
-      "id": "rsp_0141",
-      "campanhaId": "cmp_reativacao",
-      "destinatarioId": "dst_0076",
-      "telefone": "5511900001026",
-      "textoOriginal": "PARAR",
-      "classificacao": "pediu_parar",
-      "virouAgendamento": false,
-      "recebidaEm": "2026-11-09T11:06:31-03:00"
-    },
-    {
-      "id": "rsp_0143",
-      "campanhaId": "cmp_reativacao",
-      "destinatarioId": "dst_0082",
-      "telefone": "5511900001029",
-      "textoOriginal": "Estou fazendo acompanhamento em outra clínica, obrigado.",
-      "classificacao": "ja_resolveu",
-      "virouAgendamento": false,
-      "recebidaEm": "2026-11-09T12:39:21-03:00"
-    },
-    {
-      "id": "rsp_0144",
+      "id": "rsp_0336",
       "campanhaId": "cmp_reativacao",
       "destinatarioId": "dst_0086",
       "telefone": "5511900001031",
       "textoOriginal": "Manda as opções, por favor!",
       "classificacao": "interesse",
       "virouAgendamento": false,
-      "recebidaEm": "2026-11-09T12:54:31-03:00"
+      "recebidaEm": "2026-11-11T10:29:12-03:00"
     },
     {
-      "id": "rsp_0145",
+      "id": "rsp_0337",
       "campanhaId": "cmp_reativacao",
-      "destinatarioId": "dst_0092",
-      "telefone": "5511900001034",
-      "textoOriginal": "A avaliação é gratuita?",
-      "classificacao": "duvida",
+      "destinatarioId": "dst_0102",
+      "telefone": "5511900001039",
+      "textoOriginal": "Estou fazendo acompanhamento em outra clínica, obrigado.",
+      "classificacao": "ja_resolveu",
       "virouAgendamento": false,
-      "recebidaEm": "2026-11-09T14:23:54-03:00"
+      "recebidaEm": "2026-11-11T14:56:20-03:00"
     },
     {
-      "id": "rsp_0146",
+      "id": "rsp_0338",
       "campanhaId": "cmp_reativacao",
-      "destinatarioId": "dst_0098",
-      "telefone": "5511900001037",
-      "textoOriginal": "Pode ser segunda às 10h?",
-      "classificacao": "interesse",
-      "virouAgendamento": true,
-      "recebidaEm": "2026-11-09T14:44:32-03:00"
-    },
-    {
-      "id": "rsp_0147",
-      "campanhaId": "cmp_reativacao",
-      "destinatarioId": "dst_0106",
-      "telefone": "5511900001041",
-      "textoOriginal": "Sim, quero agendar para a minha filha também.",
-      "classificacao": "interesse",
-      "virouAgendamento": true,
-      "recebidaEm": "2026-11-09T16:20:49-03:00"
+      "destinatarioId": "dst_0128",
+      "telefone": "5511900001052",
+      "textoOriginal": "PARAR",
+      "classificacao": "pediu_parar",
+      "virouAgendamento": false,
+      "recebidaEm": "2026-11-12T10:55:55-03:00"
     }
   ],
   "bloqueios": [
@@ -1456,14 +3455,14 @@
       "clienteId": "cli_vitta",
       "telefone": "5511900001010",
       "motivo": "Pediu para parar (resposta à campanha)",
-      "criadoEm": "2026-11-03T12:41:40-03:00"
+      "criadoEm": "2026-11-03T10:09:12-03:00"
     },
     {
-      "id": "blq_0142",
+      "id": "blq_0339",
       "clienteId": "cli_vitta",
-      "telefone": "5511900001026",
+      "telefone": "5511900001052",
       "motivo": "Pediu para parar (resposta à campanha)",
-      "criadoEm": "2026-11-09T11:07:31-03:00"
+      "criadoEm": "2026-11-12T10:56:55-03:00"
     }
   ]
 }

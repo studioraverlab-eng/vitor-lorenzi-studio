@@ -10,6 +10,9 @@ export type StatusCampanha =
   | "concluida"
   | "pausada";
 
+/** Situação exibida ao cliente, derivada do andamento (ver resumirCampanhas). */
+export type SituacaoCampanha = "na_fila" | "enviando" | "concluida" | "pausada";
+
 export type StatusDestinatario =
   | "pendente"
   | "na_fila"
@@ -77,6 +80,8 @@ export interface Campanha {
   nome: string;
   textoBase: string;
   agendamentoInicio: string;
+  /** Quantas mensagens enviar por dia nesta campanha (padrão 30). */
+  porDia: number;
   status: StatusCampanha;
   totalDestinatarios: number;
   ignoradosBloqueados: number;
